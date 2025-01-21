@@ -36,5 +36,15 @@
         },
         "closure": "Road Closed",
         "control": "Traffic Control"
+    },
+    "Support": {
+      "scene": {
+        "bankName": "Bank Name",
+        "accountNumber": "Account Number",
+        "accountName": "Account Name",
+        "malaysiaQR": "Malaysia National QR",
+        "detail": "Bank Transfer Details",
+        "copied": "{field} copied to clipboard!"
+      }
     }
 }
