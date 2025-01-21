@@ -169,11 +169,6 @@ export const metadata: Metadata = {
             "ms-MY": "https://chariottracker.com/ms",
         },
     },
-    viewport: {
-        width: "device-width",
-        initialScale: 1,
-        maximumScale: 5,
-    },
     formatDetection: {
         telephone: true,
         date: true,
