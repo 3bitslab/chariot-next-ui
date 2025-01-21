@@ -51,7 +51,20 @@
         "description": "Support The Development",
         "reason": "Your donation will help us to maintain the server and keep the service running.",
         "gratitude": "Thank you for your support!"
-
-      }
+      },
+      "tnc": {
+            "title": "Terms and Conditions",
+            "acceptTerms": "I accept the Terms and Conditions",
+            "supportNow": "Support now!",
+            "items": {
+                "independentInitiative": "Independent Initiative: This project, known as the Penang Silver Chariot Tracker, is developed and managed by ByeByte Technologies, an independent company. By donating, you acknowledge and agree that the Chariot Tracker is a privately developed initiative led by its creators, Manickam Murugappan and Lee Zi Hang, and is not affiliated with any temple, religious organization, or committee.",
+                "purposeOfDonations": "Purpose of Donations: All funds received will be used exclusively for the development, maintenance, and enhancement of the Penang Silver Chariot Tracker project. This includes, but is not limited to, software development costs, server and hosting fees, and other operational expenses necessary for the functioning of the project.",
+                "ownershipAndManagement": "Ownership and Management of Funds: Donations will be managed solely by ByeByte Technologies and its creators, Manickam Murugappan and Lee Zi Hang. These funds will not be directed to or through any temple, religious body, or committee associated with the festival or event being tracked.",
+                "nonRefundableContributions": "Non-Refundable Contributions: All donations are voluntary and non-refundable. By making a donation, you acknowledge that you do so without expectation of return or any specific service beyond the continued improvement and operation of the Penang Silver Chariot Tracker project.",
+                "transparencyAndAccountability": "Transparency and Accountability: While funds will be used to maintain and develop the project, ByeByte Technologies is committed to transparency. Summaries of how funds are allocated may be provided periodically at the discretion of the project team.",
+                "noAffiliationDisclaimer": "No Affiliation Disclaimer: Donors must acknowledge that this project operates independently and is not endorsed by or connected to any religious entity. Donations should not be construed as contributions to or support of any temple or religious practice.",
+                "acceptanceOfTerms": "Acceptance of Terms: By making a donation, you agree to these terms and conditions. You confirm that you understand the purpose and management of the funds, as well as the project’s independent status."
+            }
+        }
     }
 }
