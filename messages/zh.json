@@ -1,0 +1,96 @@
+{
+    "common": {
+        "switch": {
+            "show": "在地图上显示",
+            "hide": "在地图上隐藏"
+        },
+        "badge": {
+            "slower": "较慢",
+            "faster": "较快",
+            "pending": "待处理"
+        },
+        "terms": {
+            "arrival": "到达"
+        }
+    },
+    "Checkpoint": {
+        "drawer": {
+            "title": "检查点"
+        }
+    },
+    "Developers": {
+        "drawer": {
+            "title": "开发人员"
+        },
+        "mani": {
+            "description": "地面代理，我确保数据准确无误。"
+        },
+        "lee": {
+            "description": "幕后操作者，我确保一切顺利运行。"
+        }
+    },
+    "Roadblock": {
+        "drawer": {
+            "title": "道路封闭",
+            "statement": "PDRM 2023 官方声明"
+        },
+        "closure": "道路封闭",
+        "control": "交通管制"
+    },
+    "Support": {
+        "scene": {
+            "bankName": "银行名称",
+            "accountNumber": "账户号码",
+            "accountName": "账户名称",
+            "malaysiaQR": "马来西亚国家二维码",
+            "detail": "银行转账详情",
+            "copied": "{field} 已复制到剪贴板！"
+        },
+        "drawer": {
+            "title": "支持我们",
+            "description": "支持项目开发",
+            "reason": "您的捐款将帮助我们维护服务器并保持服务运行。",
+            "gratitude": "感谢您的支持！"
+        },
+        "tnc": {
+            "title": "条款与条件",
+            "acceptTerms": "我接受条款和条件",
+            "supportNow": "立即支持！",
+            "items": {
+                "independentInitiative": "独立项目：槟城银色战车追踪器由 ByeByte Technologies 开发和管理。",
+                "purposeOfDonations": "捐款用途：所有资金将用于项目的开发和维护。",
+                "ownershipAndManagement": "资金管理：捐款由 ByeByte Technologies 及其创建者管理。",
+                "nonRefundableContributions": "不可退款捐款：所有捐款均为自愿，且不可退款。",
+                "transparencyAndAccountability": "透明度：项目团队可能会定期提供资金使用情况。",
+                "noAffiliationDisclaimer": "无隶属关系：本项目与任何宗教组织无关。",
+                "acceptanceOfTerms": "通过捐款，您接受这些条款和条件。"
+            }
+        }
+    },
+    "Theme": {
+        "drawerTitle": "选择地图模式",
+        "dark": {
+            "title": "深色",
+            "description": "适合夜晚高效工作的用户。"
+        },
+        "light": {
+            "title": "浅色",
+            "description": "适合白天模式的用户。"
+        },
+        "system": {
+            "title": "系统",
+            "description": "自动根据操作系统模式进行调整。"
+        }
+    },
+    "Tracker": {
+        "drawerTitle": "选择追踪器",
+        "chariot": {
+            "title": "战车",
+            "description": "追踪载有穆鲁干神像的银色战车。"
+        },
+        "kavadi": {
+            "title": "卡瓦迪",
+            "description": "追踪抬着卡瓦迪的信徒。"
+        }
+    }
+}
