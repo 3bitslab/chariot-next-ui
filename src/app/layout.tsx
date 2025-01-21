@@ -157,12 +157,29 @@ export const metadata: Metadata = {
     verification: {
         google: "google-site-verification-code", // Add your Google verification code
     },
+    other: {
+        "facebook-domain-verification": "facebook-domain-verification-code",
+    },
     alternates: {
         canonical: "https://chariottracker.com",
         languages: {
             "en-US": "https://chariottracker.com",
             "zh-CN": "https://chariottracker.com/zh",
+            "ta-IN": "https://chariottracker.com/ta",
+            "ms-MY": "https://chariottracker.com/ms",
         },
+    },
+    viewport: {
+        width: "device-width",
+        initialScale: 1,
+        maximumScale: 5,
+    },
+    formatDetection: {
+        telephone: true,
+        date: true,
+        address: true,
+        email: true,
+        url: true,
     },
 };
 
