@@ -12,8 +12,10 @@ import { checkpointAtom } from "@/atoms/checkpoint";
 import { useAtom } from "jotai";
 import { Switch } from "@/components/ui/switch";
 import { useGetCheckpoints } from "@/hooks/useGetCheckpoints";
+import { useTranslations } from "next-intl";
 
 function CheckpointDrawer() {
+    const t = useTranslations("Checkpoint");
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(checkpointAtom);
 
     const { data: checkpoints } = useGetCheckpoints();
@@ -29,7 +31,7 @@ function CheckpointDrawer() {
                 <div className="py-5 gap-y-3 flex flex-col w-full max-h-[50%] overflow-auto">
                     <DrawerTitle className="py-3 flex justify-between items-center">
                         <span className="font-semibold opacity-80 text-primary-800 dark:text-primary-150">
-                            Checkpoints
+                            {t("drawer.title")}
                         </span>
                         <div className="flex items-center space-x-2">
                             <Switch
