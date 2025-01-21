@@ -155,9 +155,10 @@ export const metadata: Metadata = {
         },
     },
     verification: {
-        google: "google-site-verification-code", // Add your Google verification code
+        google: "google-site-verification-code", // TODOD: Add your Google verification code
     },
     other: {
+        // TODO: Add more meta verification
         "facebook-domain-verification": "facebook-domain-verification-code",
     },
     // TODO: add more language routes
