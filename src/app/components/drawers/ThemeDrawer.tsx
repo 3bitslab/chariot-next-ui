@@ -11,15 +11,16 @@ import { ChevronDown, ComputerIcon, MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import Divider from "../Divider";
+import { useTranslations } from "next-intl";
 
 function ThemeDrawer() {
     const { theme, setTheme } = useTheme();
+    const t = useTranslations("Theme");
 
     const selectableItems: TSelectableItem[] = [
         {
             title: "dark",
-            description:
-                "For those who believe night is prime productivity time.",
+            description: t("dark.description"),
             logo: (
                 <MoonIcon
                     strokeWidth={1}
@@ -30,8 +31,7 @@ function ThemeDrawer() {
         },
         {
             title: "light",
-            description:
-                "For those who want to be blinded by the sun at midnight.",
+            description: t("light.description"),
             logo: (
                 <SunIcon
                     size={30}
@@ -42,8 +42,7 @@ function ThemeDrawer() {
         },
         {
             title: "system",
-            description:
-                "For the indecisive ones who let their OS make life decisions.",
+            description: t("system.description"),
             logo: (
                 <ComputerIcon
                     size={30}
@@ -64,14 +63,14 @@ function ThemeDrawer() {
                                 ?.logo
                         }
                     </div>
-                    <span className="capitalize">{theme}</span>
+                    <span className="capitalize">{t(`${theme}.title`)}</span>
                     <ChevronDown />
                 </Button>
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 gap-y-3 flex flex-col w-full">
                     <DrawerTitle className="font-control opacity-70 dark:opacity-90 py-3">
-                        Choose Map Mode
+                        {t("drawerTitle")}
                     </DrawerTitle>
                     <Divider />
                     <Selectables

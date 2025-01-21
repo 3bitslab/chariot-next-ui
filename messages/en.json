@@ -66,5 +66,20 @@
                 "acceptanceOfTerms": "Acceptance of Terms: By making a donation, you agree to these terms and conditions. You confirm that you understand the purpose and management of the funds, as well as the project’s independent status."
             }
         }
+    },
+    "Theme": {
+        "drawerTitle": "Choose Map Mode",
+        "dark": {
+            "title": "Dark",
+            "description": "For those who believe night is prime productivity time."
+        },
+        "light": {
+            "title": "Light",
+            "description": "For those who want to be blinded by the sun at midnight."
+        },
+        "system": {
+            "title": "System",
+            "description": "For the indecisive ones who let their OS make life decisions."
+        }
     }
 }
