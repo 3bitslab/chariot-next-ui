@@ -16,6 +16,8 @@ import { useTranslations } from "next-intl";
 
 function CheckpointDrawer() {
     const t = useTranslations("Checkpoint");
+    const tc = useTranslations("common.switch");
+
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(checkpointAtom);
 
     const { data: checkpoints } = useGetCheckpoints();
@@ -39,9 +41,7 @@ function CheckpointDrawer() {
                                 onCheckedChange={setIsDisplayedOnMap}
                             />
                             <label className="text-sm font-medium">
-                                {isDisplayedOnMap
-                                    ? "Hide on Map"
-                                    : "Show on Map"}
+                                {isDisplayedOnMap ? tc("hide") : tc("show")}
                             </label>
                         </div>
                     </DrawerTitle>

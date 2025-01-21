@@ -1,7 +1,32 @@
 {
+    "common": {
+        "switch": {
+            "show": "Show On Map",
+            "hide": "Hide On Map"
+        },
+        "badge": {
+            "slower": "Slower",
+            "faster": "Faster",
+            "pending": "Pending"
+        },
+        "terms": {
+            "arrival": "Arrival"
+        }
+    },
     "Checkpoint": {
-      "drawer": {
-        "title": "Checkpoint"
-      }
+        "drawer": {
+            "title": "Checkpoint"
+        }
+    },
+    "Developers": {
+        "drawer": {
+            "title": "The Developers"
+        },
+        "mani": {
+            "description": "Agent on the ground. I make sure the data is accurate and up-to-date."
+        },
+        "lee": {
+            "description": "The handler in the shadows. I make sure everything runs smoothly."
+        }
     }
 }
