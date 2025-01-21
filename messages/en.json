@@ -45,6 +45,13 @@
         "malaysiaQR": "Malaysia National QR",
         "detail": "Bank Transfer Details",
         "copied": "{field} copied to clipboard!"
+      },
+      "drawer": {
+        "title": "Support Us",
+        "description": "Support The Development",
+        "reason": "Your donation will help us to maintain the server and keep the service running.",
+        "gratitude": "Thank you for your support!"
+
       }
     }
 }
