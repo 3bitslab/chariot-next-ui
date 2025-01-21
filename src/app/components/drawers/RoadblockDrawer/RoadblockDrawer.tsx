@@ -11,9 +11,11 @@ import Divider from "../../Divider";
 import { Switch } from "@/components/ui/switch";
 import { roadBlockAtom } from "@/atoms/road-block";
 import { useAtom } from "jotai";
+import { useTranslations } from "next-intl";
 
 function RoadblockDrawer() {
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(roadBlockAtom);
+    const t = useTranslations();
 
     const roads = [
         {
@@ -84,7 +86,7 @@ function RoadblockDrawer() {
                 <div className="py-5 gap-y-3 flex flex-col w-full overflow-y-auto max-h-[50%]">
                     <DrawerTitle className="py-3 flex justify-between items-center">
                         <span className="font-control opacity-70 dark:opacity-90">
-                            Roadblocks
+                            {t("Roadblock.drawer.title")}
                         </span>
                         <div className="flex items-center space-x-2">
                             <Switch
@@ -102,8 +104,8 @@ function RoadblockDrawer() {
                             />
                             <label className="text-sm font-control">
                                 {isDisplayedOnMap
-                                    ? "Hide on Map"
-                                    : "Show on Map"}
+                                    ? t("common.switch.hide")
+                                    : t("common.switch.show")}
                             </label>
                         </div>
                     </DrawerTitle>
@@ -125,7 +127,7 @@ function RoadblockDrawer() {
                             className="text-sm text-blue-500 underline flex items-center gap-1"
                         >
                             <Info size={14} />
-                            <span>PDRM 2023 Official Statement</span>
+                            <span>{t("Roadblock.drawer.statement")}</span>
                         </a>
                     </div>
                 </div>

@@ -28,5 +28,13 @@
         "lee": {
             "description": "The handler in the shadows. I make sure everything runs smoothly."
         }
+    },
+    "Roadblock": {
+        "drawer": {
+            "title": "Roadblock",
+            "statement": "PDRM 2023 Official Statement"
+        },
+        "closure": "Road Closed",
+        "control": "Traffic Control"
     }
 }
