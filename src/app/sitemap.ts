@@ -1,6 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+    // TODO: Add more language routes
     return [
         {
             url: "https://chariottracker.com",

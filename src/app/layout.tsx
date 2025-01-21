@@ -160,6 +160,7 @@ export const metadata: Metadata = {
     other: {
         "facebook-domain-verification": "facebook-domain-verification-code",
     },
+    // TODO: add more language routes
     alternates: {
         canonical: "https://chariottracker.com",
         languages: {
