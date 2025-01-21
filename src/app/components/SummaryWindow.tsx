@@ -76,7 +76,7 @@ function SummaryWindow({
         >
             <div className="relative items-center flex w-full justify-center">
                 {/* Current Road Name */}
-                <span className="text-xl text-center dark:text-primary-100 text-primary-800 font-inter">
+                <span className="text-xl lg:text-2xl text-center dark:text-primary-100 text-primary-800 font-inter">
                     {roadName}
                 </span>
                 <div className="flex items-center absolute right-0 justify-center">
@@ -113,7 +113,7 @@ function SummaryWindow({
             {/* Info metadata. */}
             <div className="flex justify-center text-center">
                 {/* Current Road Name */}
-                <span className="text-sm dark:text-primary-100/80 text-primary-800/80 font-inter">
+                <span className="text-sm lg:text-md dark:text-primary-100/80 text-primary-800/80 font-inter">
                     Last updated: {displayText}
                 </span>
             </div>

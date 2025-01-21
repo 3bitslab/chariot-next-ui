@@ -22,31 +22,19 @@ function RightNavbar() {
                     <RoadblockDrawer />
                     <DevelopersDrawer />
                     <button onClick={handleOverview}>
-                        <Route
-                            size={18}
-                            className="stroke-primary-850 dark:stroke-primary-150"
-                        />
+                        <Route className="stroke-primary-850 dark:stroke-primary-150 size-4 lg:size-6" />
                     </button>
                 </div>
 
                 <div className="flex flex-col px-3 py-4 m-4 space-y-8 rounded-full bg-primary-50 dark:bg-primary-900">
                     <button onClick={handleZoomIn}>
-                        <Plus
-                            size={18}
-                            className="stroke-primary-850 dark:stroke-primary-150"
-                        />
+                        <Plus className="stroke-primary-850 dark:stroke-primary-150 size-4 lg:size-6" />
                     </button>
                     <button onClick={handleZoomOut}>
-                        <Minus
-                            size={18}
-                            className="stroke-primary-850 dark:stroke-primary-150"
-                        />
+                        <Minus className="stroke-primary-850 dark:stroke-primary-150 size-4 lg:size-6" />
                     </button>
                     <button onClick={handleFocus}>
-                        <Locate
-                            size={18}
-                            className="stroke-primary-850 dark:stroke-primary-150"
-                        />
+                        <Locate className="stroke-primary-850 dark:stroke-primary-150 size-4 lg:size-6" />
                     </button>
                 </div>
             </div>

@@ -5,7 +5,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer";
-import { TrafficConeIcon, Info, } from "lucide-react";
+import { TrafficConeIcon, Info } from "lucide-react";
 import Roadblock from "./Roadblock";
 import Divider from "../../Divider";
 import { Switch } from "@/components/ui/switch";
@@ -77,10 +77,7 @@ function RoadblockDrawer() {
         <Drawer>
             <DrawerTrigger asChild>
                 <button>
-                    <TrafficConeIcon
-                        size={18}
-                        className="stroke-primary-850 dark:stroke-primary-150"
-                    />
+                    <TrafficConeIcon className="stroke-primary-850 dark:stroke-primary-150 size-4 lg:size-6" />
                 </button>
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">

@@ -22,10 +22,7 @@ function CheckpointDrawer() {
         <Drawer>
             <DrawerTrigger asChild>
                 <button>
-                    <Flag
-                        size={18}
-                        className="stroke-primary-850 dark:stroke-primary-150"
-                    />
+                    <Flag className="stroke-primary-850 dark:stroke-primary-150 size-4 lg:size-6" />
                 </button>
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
