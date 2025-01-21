@@ -81,5 +81,16 @@
             "title": "System",
             "description": "For the indecisive ones who let their OS make life decisions."
         }
+    },
+    "Tracker": {
+        "drawerTitle": "Choose Tracker",
+        "chariot": {
+            "title": "Chariot",
+            "description": "Track the silver chariot carrying the statue of Lord Murugan."
+        },
+        "kavadi": {
+            "title": "Kavadi",
+            "description": "Track the devotees carrying their kavadi to witness their kavadi aatam ahead of the silver chariot."
+        }
     }
 }
