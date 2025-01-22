@@ -1,20 +1,25 @@
+import { NextIntlClientProvider } from "next-intl";
+import { getMessages } from "next-intl/server";
+import { notFound } from "next/navigation";
+import { routing } from "@/i18n/routing";
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "./globals.css";
-import { ThemeProvider } from "./components/shared/ThemeProvider";
+import ".././globals.css";
+import { ThemeProvider } from ".././components/shared/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
-import { ReactQueryProvider } from "./components/shared/ReactQueryProvider";
-import { AnalyticsProvider } from "./components/shared/AnalyticsProvider";
+import { ReactQueryProvider } from ".././components/shared/ReactQueryProvider";
+import { AnalyticsProvider } from ".././components/shared/AnalyticsProvider";
 import { Suspense } from "react";
-import JsonLd from "./components/shared/JsonLd";
+import JsonLd from ".././components/shared/JsonLd";
 
 const geistSans = localFont({
-    src: "../fonts/GeistVF.woff",
+    src: "../../fonts/GeistVF.woff",
     variable: "--font-geist-sans",
     weight: "100 900",
 });
 const geistMono = localFont({
-    src: "../fonts/GeistMonoVF.woff",
+    src: "../../fonts/GeistMonoVF.woff",
     variable: "--font-geist-mono",
     weight: "100 900",
 });
@@ -180,31 +185,39 @@ export const metadata: Metadata = {
     },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
     children,
+    params: { locale },
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    if (!routing.locales.includes(locale as any)) {
+        notFound();
+    }
+
+    const messages = await getMessages();
     return (
-        <html lang="en" suppressHydrationWarning>
+        <html lang={locale} suppressHydrationWarning>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
-                <JsonLd />
-                <Suspense>
-                    <AnalyticsProvider />
-                </Suspense>
-                <ReactQueryProvider>
-                    <ThemeProvider
-                        attribute="class"
-                        defaultTheme="system"
-                        enableSystem
-                        disableTransitionOnChange
-                    >
-                        {children}
-                    </ThemeProvider>
-                </ReactQueryProvider>
-                <Toaster />
+                <NextIntlClientProvider messages={messages}>
+                    <JsonLd />
+                    <Suspense>
+                        <AnalyticsProvider />
+                    </Suspense>
+                    <ReactQueryProvider>
+                        <ThemeProvider
+                            attribute="class"
+                            defaultTheme="system"
+                            enableSystem
+                            disableTransitionOnChange
+                        >
+                            {children}
+                        </ThemeProvider>
+                    </ReactQueryProvider>
+                    <Toaster />
+                </NextIntlClientProvider>
             </body>
         </html>
     );

@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 
 export type TSelectableItem = {
     title: string;
+    value: string;
     description: string;
     logo: ReactNode;
 };

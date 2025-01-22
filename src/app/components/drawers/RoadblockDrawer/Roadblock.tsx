@@ -1,8 +1,9 @@
-import React from "react";
+import React, { use } from "react";
 import { Badge } from "@/components/ui/badge";
 import { Clock } from "lucide-react";
 import { PoliceIcon } from "../../markers/Police";
 import { RoadblockIcon } from "../../markers/RoadBlock";
+import { useTranslations } from "next-intl";
 
 const Roadblock = ({
     streetName,
@@ -18,6 +19,7 @@ const Roadblock = ({
         control: "constructive",
     };
     const Icon = type === "closure" ? RoadblockIcon : PoliceIcon;
+    const t = useTranslations();
 
     return (
         <div className="flex flex-col rounded-xl bg-white p-5 shadow dark:bg-primary-800">
@@ -41,12 +43,12 @@ const Roadblock = ({
 
                 {/* Right section: Type Badge */}
                 <Badge
-                    className="capitalize text-sm font-medium flex items-center gap-1 px-3 py-1"
+                    className="text-sm font-medium flex items-center gap-1 px-3 py-1"
                     variant={
                         badgeVariant[type] as "constructive" | "destructive"
                     }
                 >
-                    {type}
+                    {t(`Roadblock.${type}`)}
                 </Badge>
             </div>
         </div>

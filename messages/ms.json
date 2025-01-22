@@ -1,0 +1,104 @@
+{
+    "common": {
+        "switch": {
+            "show": "Tunjukkan di Peta",
+            "hide": "Sembunyikan di Peta"
+        },
+        "badge": {
+            "slower": "Perlahan",
+            "faster": "Cepat",
+            "pending": "Menunggu"
+        },
+        "terms": {
+            "arrival": "Ketibaan"
+        }
+    },
+    "Checkpoint": {
+        "drawer": {
+            "title": "Pemeriksaan"
+        }
+    },
+    "Developers": {
+        "drawer": {
+            "title": "Pembangun"
+        },
+        "mani": {
+            "description": "Ejen di lapangan. Saya memastikan data adalah tepat dan terkini."
+        },
+        "lee": {
+            "description": "Pengendali di belakang tabir. Saya memastikan semuanya berjalan lancar."
+        }
+    },
+    "Roadblock": {
+        "drawer": {
+            "title": "Sekatan Jalan Raya",
+            "statement": "Kenyataan Rasmi PDRM 2023"
+        },
+        "closure": "Jalan Ditutup",
+        "control": "Kawalan Trafik"
+    },
+    "Support": {
+        "scene": {
+            "bankName": "Nama Bank",
+            "accountNumber": "Nombor Akaun",
+            "accountName": "Nama Akaun",
+            "malaysiaQR": "Kod QR Kebangsaan Malaysia",
+            "detail": "Butiran Pemindahan Bank",
+            "copied": "{field} disalin ke papan klip!"
+        },
+        "drawer": {
+            "title": "Sokong Kami",
+            "description": "Sokong Pembangunan",
+            "reason": "Derma anda akan membantu kami mengekalkan pelayan dan memastikan perkhidmatan berjalan.",
+            "gratitude": "Terima kasih atas sokongan anda!"
+        },
+        "tnc": {
+            "title": "Terma dan Syarat",
+            "acceptTerms": "Saya menerima Terma dan Syarat",
+            "supportNow": "Sokong sekarang!",
+            "items": {
+                "independentInitiative": "Inisiatif Bebas: Projek ini, yang dikenali sebagai Penjejak Chariot Perak Pulau Pinang, dibangunkan dan dikendalikan oleh ByeByte Technologies, sebuah syarikat bebas. Dengan menderma, anda mengakui dan bersetuju bahawa Penjejak Chariot adalah inisiatif yang dibangunkan secara peribadi oleh penciptanya, Manickam Murugappan dan Lee Zi Hang, dan tidak berafiliasi dengan mana-mana kuil, organisasi agama, atau jawatankuasa.",
+                "purposeOfDonations": "Tujuan Derma: Semua dana yang diterima akan digunakan secara eksklusif untuk pembangunan, penyelenggaraan, dan peningkatan projek Penjejak Chariot Perak Pulau Pinang. Ini termasuk, tetapi tidak terhad kepada, kos pembangunan perisian, yuran pelayan dan hosting, serta perbelanjaan operasi lain yang diperlukan untuk menjalankan projek ini.",
+                "ownershipAndManagement": "Pemilikan dan Pengurusan Dana: Derma akan diuruskan sepenuhnya oleh ByeByte Technologies dan penciptanya, Manickam Murugappan dan Lee Zi Hang. Dana ini tidak akan disalurkan kepada atau melalui mana-mana kuil, badan agama, atau jawatankuasa yang berkaitan dengan perayaan atau acara yang dijejaki.",
+                "nonRefundableContributions": "Sumbangan Tidak Dikembalikan: Semua derma adalah secara sukarela dan tidak boleh dikembalikan. Dengan membuat derma, anda mengakui bahawa anda melakukannya tanpa jangkaan pulangan atau sebarang perkhidmatan khusus selain peningkatan dan operasi berterusan projek Penjejak Chariot Perak Pulau Pinang.",
+                "transparencyAndAccountability": "Ketelusan dan Akauntabiliti: Walaupun dana akan digunakan untuk mengekalkan dan membangunkan projek ini, ByeByte Technologies komited kepada ketelusan. Ringkasan bagaimana dana diperuntukkan mungkin disediakan secara berkala mengikut budi bicara pasukan projek.",
+                "noAffiliationDisclaimer": "Penafian Tiada Hubungan: Penderma mesti mengakui bahawa projek ini beroperasi secara bebas dan tidak disokong atau berkaitan dengan mana-mana entiti agama. Derma tidak boleh dianggap sebagai sumbangan kepada atau sokongan terhadap mana-mana kuil atau amalan keagamaan.",
+                "acceptanceOfTerms": "Penerimaan Terma: Dengan membuat derma, anda bersetuju dengan terma dan syarat ini. Anda mengesahkan bahawa anda memahami tujuan dan pengurusan dana serta status bebas projek ini."
+            }
+        }
+    },
+    "Theme": {
+        "drawerTitle": "Pilih Mod Peta",
+        "dark": {
+            "title": "Gelap",
+            "description": "Untuk mereka yang suka suasana tenang di waktu malam"
+        },
+        "light": {
+            "title": "Terang",
+            "description": "Untuk mereka yang suka cahaya yang cerah dan ceria"
+        },
+        "system": {
+            "title": "Sistem",
+            "description": "Untuk mereka yang tidak dapat membuat keputusan"
+        }
+    },
+    "Tracker": {
+        "drawerTitle": "Pilih Penjejak",
+        "chariot": {
+            "title": "Kereta Perak",
+            "description": "Pantau lokasi kereta perak yang membawa patung Dewa Murugan secara langsung."
+        },
+        "kavadi": {
+            "title": "Kavadi",
+            "description": "Pantau para penganut yang membawa kavadi dan melakukan tarian kavadi di hadapan kereta perak."
+        }
+    },
+    "Navigation": {
+        "home": "Laman Utama",
+        "roadblocks": "Sekatan Jalan",
+        "checkpoints": "Pemeriksaan",
+        "tracker": "Penjejak",
+        "support": "Sokongan",
+        "settings": "Tetapan"
+    }
+}

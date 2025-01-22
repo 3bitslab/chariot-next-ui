@@ -1,4 +1,5 @@
 import { Github, Linkedin, MailIcon } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import React from "react";
 
@@ -16,6 +17,8 @@ function Developer({
 }) {
     const { name, description, imageSrc, github, linkedIn, email } = developer;
 
+    const t = useTranslations();
+
     return (
         <div className="flex flex-col gap-y-2 items-center justify-center bg-primary-100 text-primary-850 rounded-lg px-8 py-5 text-center">
             <Image
@@ -27,7 +30,7 @@ function Developer({
                 className="rounded-full"
             />
             <span className="font-bold text-xl">{name}</span>
-            <span>{description}</span>
+            <span>{t(description)}</span>
             <div className="flex gap-x-3">
                 <a href={linkedIn} target="_blank">
                     <Linkedin />

@@ -92,10 +92,6 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
         );
     }, [traveled, remaining]);
 
-    useEffect(() => {
-        console.log(tracker);
-    }, [tracker]);
-
     return (
         <div>
             <SummaryWindow

@@ -1,0 +1,96 @@
+{
+    "common": {
+        "switch": {
+            "show": "在地图上显示",
+            "hide": "在地图上隐藏"
+        },
+        "badge": {
+            "slower": "较慢",
+            "faster": "较快",
+            "pending": "待处理"
+        },
+        "terms": {
+            "arrival": "到达"
+        }
+    },
+    "Checkpoint": {
+        "drawer": {
+            "title": "检查站"
+        }
+    },
+    "Developers": {
+        "drawer": {
+            "title": "开发人员"
+        },
+        "mani": {
+            "description": "我在前线把关，确保数据精准且最新。"
+        },
+        "lee": {
+            "description": "我在幕后操盘，确保一切稳定运行。"
+        }
+    },
+    "Roadblock": {
+        "drawer": {
+            "title": "道路封闭",
+            "statement": "PDRM 2023 官方声明"
+        },
+        "closure": "道路封闭",
+        "control": "交通管制"
+    },
+    "Support": {
+        "scene": {
+            "bankName": "银行名称",
+            "accountNumber": "账户号码",
+            "accountName": "账户名称",
+            "malaysiaQR": "马来西亚国家二维码",
+            "detail": "银行转账详情",
+            "copied": "{field} 已复制到剪贴板！"
+        },
+        "drawer": {
+            "title": "支持我们",
+            "description": "支持项目开发",
+            "reason": "您的捐款将帮助我们维护服务器并保持服务正常运行。",
+            "gratitude": "感谢您的支持！"
+        },
+        "tnc": {
+            "title": "条款与条件",
+            "acceptTerms": "我接受条款和条件",
+            "supportNow": "立即支持！",
+            "items": {
+                "independentInitiative": "独立项目：本项目，即 槟城银色战车追踪器 (Penang Silver Chariot Tracker)，由 ByeByte Technologies 独立开发和管理。捐赠者须知并同意，该追踪器项目是 Manickam Murugappan 和 Lee Zi Hang 独立领导和运营的私人项目，与任何寺庙、宗教组织或委员会无关。",
+                "purposeOfDonations": "捐款用途：所有收到的资金将专用于槟城银色战车追踪器项目的开发、维护和改进，包括但不限于软件开发成本、服务器和托管费用，以及项目正常运行所需的其他运营开支。",
+                "ownershipAndManagement": "资金管理：所有捐款将由 ByeByte Technologies 及其创建者 Manickam Murugappan 和 Lee Zi Hang 直接管理。这些资金不会转交或通过任何与该节日或活动相关的寺庙、宗教机构或委员会。",
+                "nonRefundableContributions": "不可退款捐款：所有捐款均为自愿，且不可退款。捐款人须知并同意，捐款时不会获得任何回报或特定服务，唯一目的仅限于支持槟城银色战车追踪器的持续改进和运营。",
+                "transparencyAndAccountability": "透明度和责任：尽管资金将用于项目的维护和开发，ByeByte Technologies 承诺保持财务透明度。团队可能会定期提供资金使用情况，但其具体内容和时间由项目团队决定。",
+                "noAffiliationDisclaimer": "无隶属关系声明：捐款人必须明确知悉，本项目完全独立运作，不受任何宗教机构认可或支持。捐款不应被视为对任何寺庙或宗教活动的资助或支持。",
+                "acceptanceOfTerms": "接受条款：捐款即表示您同意这些条款和条件，并确认已理解资金的用途、管理方式及项目的独立性。"
+            }
+        }
+    },
+    "Theme": {
+        "drawerTitle": "选择地图模式",
+        "dark": {
+            "title": "深色",
+            "description": "适合喜欢夜晚宁静氛围的人"
+        },
+        "light": {
+            "title": "浅色",
+            "description": "适合喜欢明亮和愉悦氛围的人"
+        },
+        "system": {
+            "title": "系统",
+            "description": "适合无法决定的人"
+        }
+    },
+    "Tracker": {
+        "drawerTitle": "选择追踪器",
+        "chariot": {
+            "title": "银色战车",
+            "description": "实时查看载着穆鲁干神像的银色战车的位置。"
+        },
+        "kavadi": {
+            "title": "卡瓦迪",
+            "description": "实时查看抬着卡瓦迪的信徒，他们在银色战车前进行卡瓦迪舞蹈。"
+        }
+    }
+}

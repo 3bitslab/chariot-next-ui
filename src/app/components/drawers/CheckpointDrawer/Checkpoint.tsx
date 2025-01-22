@@ -2,6 +2,7 @@ import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { ArrowDown, ArrowUp, Clock } from "lucide-react";
 import Divider from "../../Divider";
+import { useTranslations } from "next-intl";
 
 function formatDateAndTime(timestamp: string) {
     if (!timestamp || timestamp === "- - :- -") return "- - :- -";
@@ -44,6 +45,8 @@ function Checkpoint({
     const arrival2024 = getArrivalTime(2024);
     const isDeltaAvailable = delta !== null && delta !== undefined;
 
+    const t = useTranslations();
+
     return (
         <div className="flex flex-col rounded-xl bg-white p-5 shadow dark:bg-primary-800">
             {/* Header */}
@@ -84,7 +87,9 @@ function Checkpoint({
                         )}
                         <span>
                             {Math.abs(delta!)}s{" "}
-                            {delta! > 0 ? "slower" : "faster"}
+                            {delta! > 0
+                                ? t("common.badge.slower")
+                                : t("common.badge.faster")}
                         </span>
                     </Badge>
                 ) : (
@@ -92,7 +97,7 @@ function Checkpoint({
                         className="flex items-center gap-1 text-sm font-medium"
                         variant="secondary"
                     >
-                        <Clock size={15} /> Pending
+                        <Clock size={15} /> {t("common.badge.pending")}
                     </Badge>
                 )}
             </div>
@@ -106,7 +111,7 @@ function Checkpoint({
                 <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3">
                     <div className="flex flex-col">
                         <span className="text-xs font-medium text-primary-500 uppercase dark:text-primary-100">
-                            2025 Arrival
+                            2025 {t("common.terms.arrival")}
                         </span>
                         <span className="text-base font-semibold text-primary-800 dark:text-primary-100">
                             {arrival2025 || "- - : - -"}
@@ -115,7 +120,7 @@ function Checkpoint({
                     {arrival2024 && (
                         <div className="flex flex-col md:text-right opacity-75">
                             <span className="text-xs font-medium text-primary-500 uppercase dark:text-primary-100">
-                                2024 Arrival
+                                2024 {t("common.terms.arrival")}
                             </span>
                             <span className="text-base font-semibold text-primary-800 dark:text-primary-100">
                                 {arrival2024}
