@@ -20,7 +20,7 @@ function Developer({
     const t = useTranslations();
 
     return (
-        <div className="flex flex-col gap-y-2 items-center justify-center bg-primary-100 text-primary-850 rounded-lg px-8 py-5 text-center">
+        <div className="flex flex-col gap-y-2 items-center justify-center bg-primary-100 text-primary-850 rounded-lg px-8 py-5 text-center dark:bg-primary-800 dark:text-primary-50">
             <Image
                 src={imageSrc}
                 height={100}
@@ -29,8 +29,10 @@ function Developer({
                 draggable="false"
                 className="rounded-full"
             />
-            <span className="font-bold text-xl">{name}</span>
-            <span>{t(description)}</span>
+            <span className="font-bold text-xl opacity-80">{name}</span>
+            <span className="dark:text-primary-100 text-primary-700">
+                {t(description)}
+            </span>
             <div className="flex gap-x-3">
                 <a href={linkedIn} target="_blank">
                     <Linkedin />
