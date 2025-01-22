@@ -70,16 +70,16 @@
     "Theme": {
         "drawerTitle": "选择地图模式",
         "dark": {
-            "title": "深色模式",
-            "description": "适合那些觉得夜晚才是工作时间的夜猫子。"
+            "title": "深色",
+            "description": "适合喜欢夜晚宁静氛围的人"
         },
         "light": {
-            "title": "浅色模式",
-            "description": "适合那些觉得白天才该工作，不加班的人。"
+            "title": "浅色",
+            "description": "适合喜欢明亮和愉悦氛围的人"
         },
         "system": {
-            "title": "系统模式",
-            "description": "适合那些让系统替自己做决定的‘随便’党。"
+            "title": "系统",
+            "description": "适合无法决定的人"
         }
     },
     "Tracker": {

@@ -71,15 +71,15 @@
         "drawerTitle": "Pilih Mod Peta",
         "dark": {
             "title": "Gelap",
-            "description": "Untuk mereka yang rasa suasana malap itu menenangkan, macam duduk di kafe hipster dengan cahaya lilin."
+            "description": "Untuk mereka yang suka suasana tenang di waktu malam"
         },
         "light": {
             "title": "Terang",
-            "description": "Untuk mereka yang suka dunia berseri-seri, macam pagi yang cerah dengan secawan kopi."
+            "description": "Untuk mereka yang suka cahaya yang cerah dan ceria"
         },
         "system": {
             "title": "Sistem",
-            "description": "Untuk mereka yang mengikut arus dan biarkan teknologi tentukan pilihan hidup."
+            "description": "Untuk mereka yang tidak dapat membuat keputusan"
         }
     },
     "Tracker": {

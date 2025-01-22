@@ -38,21 +38,21 @@
         "control": "Traffic Control"
     },
     "Support": {
-      "scene": {
-        "bankName": "Bank Name",
-        "accountNumber": "Account Number",
-        "accountName": "Account Name",
-        "malaysiaQR": "Malaysia National QR",
-        "detail": "Bank Transfer Details",
-        "copied": "{field} copied to clipboard!"
-      },
-      "drawer": {
-        "title": "Support Us",
-        "description": "Support The Development",
-        "reason": "Your donation will help us to maintain the server and keep the service running.",
-        "gratitude": "Thank you for your support!"
-      },
-      "tnc": {
+        "scene": {
+            "bankName": "Bank Name",
+            "accountNumber": "Account Number",
+            "accountName": "Account Name",
+            "malaysiaQR": "Malaysia National QR",
+            "detail": "Bank Transfer Details",
+            "copied": "{field} copied to clipboard!"
+        },
+        "drawer": {
+            "title": "Support Us",
+            "description": "Support The Development",
+            "reason": "Your donation will help us to maintain the server and keep the service running.",
+            "gratitude": "Thank you for your support!"
+        },
+        "tnc": {
             "title": "Terms and Conditions",
             "acceptTerms": "I accept the Terms and Conditions",
             "supportNow": "Support now!",
@@ -71,21 +71,21 @@
         "drawerTitle": "Choose Map Mode",
         "dark": {
             "title": "Dark",
-            "description": "For those who believe night is prime productivity time."
+            "description": "For those who love the calm and quiet of the night"
         },
         "light": {
             "title": "Light",
-            "description": "For those who want to be blinded by the sun at midnight."
+            "description": "For those who like everything bright and cheerful"
         },
         "system": {
             "title": "System",
-            "description": "For the indecisive ones who let their OS make life decisions."
+            "description": "For those who can’t decide"
         }
     },
     "Tracker": {
         "drawerTitle": "Choose Tracker",
         "chariot": {
-            "title": "Silver Chariot",
+            "title": "Chariot",
             "description": "Track the silver chariot carrying the statue of Lord Murugan."
         },
         "kavadi": {
