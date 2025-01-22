@@ -19,7 +19,8 @@ function ThemeDrawer() {
 
     const selectableItems: TSelectableItem[] = [
         {
-            title: "dark",
+            title: t("dark.title"),
+            value: "dark",
             description: t("dark.description"),
             logo: (
                 <MoonIcon
@@ -30,7 +31,8 @@ function ThemeDrawer() {
             ),
         },
         {
-            title: "light",
+            title: t("light.title"),
+            value: "light",
             description: t("light.description"),
             logo: (
                 <SunIcon
@@ -41,7 +43,8 @@ function ThemeDrawer() {
             ),
         },
         {
-            title: "system",
+            title: t("system.title"),
+            value: "system",
             description: t("system.description"),
             logo: (
                 <ComputerIcon
@@ -59,7 +62,7 @@ function ThemeDrawer() {
                 <Button>
                     <div>
                         {
-                            selectableItems.find((item) => item.title === theme)
+                            selectableItems.find((item) => item.value === theme)
                                 ?.logo
                         }
                     </div>

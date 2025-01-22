@@ -26,14 +26,16 @@ function TrackerTypeDrawer() {
 
     const selectableItems: TSelectableItem[] = [
         {
-            title: "chariot",
+            title: t("chariot.title"),
+            value: "chariot",
             description: t("chariot.description"),
             logo: (
                 <ChariotIcon className="fill-primary-800 dark:fill-primary-250 w-16 h-16" />
             ),
         },
         {
-            title: "kavadi",
+            title: t("kavadi.title"),
+            value: "kavadi",
             description: t("kavadi.description"),
             logo: (
                 <KavadiIcon className="fill-primary-800 dark:fill-primary-250 w-16 h-16" />
@@ -48,7 +50,7 @@ function TrackerTypeDrawer() {
                     <div className="[&__svg]:!size-5">
                         {
                             selectableItems.find(
-                                (item) => item.title === tracker
+                                (item) => item.value === tracker
                             )?.logo
                         }
                     </div>

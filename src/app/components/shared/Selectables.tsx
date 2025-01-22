@@ -29,7 +29,7 @@ function Selectables({
                             {item.description}
                         </span>
                     </div>
-                    <RadioGroupItem value={item.title} id={item.title} />
+                    <RadioGroupItem value={item.value} id={item.title} />
                 </div>
             ))}
         </RadioGroup>
