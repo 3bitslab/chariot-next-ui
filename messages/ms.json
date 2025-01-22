@@ -71,26 +71,26 @@
         "drawerTitle": "Pilih Mod Peta",
         "dark": {
             "title": "Gelap",
-            "description": "Untuk mereka yang percaya waktu malam adalah masa terbaik untuk produktiviti."
+            "description": "Untuk mereka yang rasa suasana malap itu menenangkan, macam duduk di kafe hipster dengan cahaya lilin."
         },
         "light": {
             "title": "Terang",
-            "description": "Untuk mereka yang mahu disinari matahari pada tengah malam."
+            "description": "Untuk mereka yang suka dunia berseri-seri, macam pagi yang cerah dengan secawan kopi."
         },
         "system": {
             "title": "Sistem",
-            "description": "Untuk mereka yang membiarkan sistem operasi membuat keputusan hidup."
+            "description": "Untuk mereka yang mengikut arus dan biarkan teknologi tentukan pilihan hidup."
         }
     },
     "Tracker": {
         "drawerTitle": "Pilih Penjejak",
         "chariot": {
-            "title": "Chariot",
-            "description": "Jejak chariot perak yang membawa patung Dewa Murugan."
+            "title": "Kereta Perak",
+            "description": "Pantau lokasi kereta perak yang membawa patung Dewa Murugan secara langsung."
         },
         "kavadi": {
             "title": "Kavadi",
-            "description": "Jejak para penganut yang membawa kavadi untuk menyaksikan kavadi aatam mereka sebelum chariot perak."
+            "description": "Pantau para penganut yang membawa kavadi dan melakukan tarian kavadi di hadapan kereta perak."
         }
     },
     "Navigation": {

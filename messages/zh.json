@@ -85,12 +85,12 @@
     "Tracker": {
         "drawerTitle": "选择追踪器",
         "chariot": {
-            "title": "战车",
-            "description": "追踪运载穆鲁干神像的银色战车。"
+            "title": "银色战车",
+            "description": "实时查看载着穆鲁干神像的银色战车的位置。"
         },
         "kavadi": {
             "title": "卡瓦迪",
-            "description": "追踪抬着卡瓦迪的信徒，他们在战车前进行卡瓦迪舞蹈。"
+            "description": "实时查看抬着卡瓦迪的信徒，他们在银色战车前进行卡瓦迪舞蹈。"
         }
     }
 }
