@@ -23,10 +23,10 @@
             "title": "开发人员"
         },
         "mani": {
-            "description": "实地数据管理，我确保数据准确无误，并保持最新。"
+            "description": "我在前线把关，确保数据精准且最新。"
         },
         "lee": {
-            "description": "幕后运维，我确保一切系统正常运行。"
+            "description": "我在幕后操盘，确保一切稳定运行。"
         }
     },
     "Roadblock": {
@@ -71,15 +71,15 @@
         "drawerTitle": "选择地图模式",
         "dark": {
             "title": "深色模式",
-            "description": "适合喜欢夜间工作的用户。"
+            "description": "适合那些觉得夜晚才是工作时间的夜猫子。"
         },
         "light": {
             "title": "浅色模式",
-            "description": "适合喜欢白天明亮界面的用户。"
+            "description": "适合那些觉得白天才该工作，不加班的人。"
         },
         "system": {
             "title": "系统模式",
-            "description": "根据您的操作系统自动调整。"
+            "description": "适合那些让系统替自己做决定的‘随便’党。"
         }
     },
     "Tracker": {
