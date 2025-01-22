@@ -192,8 +192,6 @@ export default async function RootLayout({
     children: React.ReactNode;
 }>) {
     if (!routing.locales.includes(locale as any)) {
-        console.log(routing.locales);
-        console.log(locale);
         notFound();
     }
 
