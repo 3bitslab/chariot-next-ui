@@ -54,7 +54,9 @@ function TrackerTypeDrawer() {
                             )?.logo
                         }
                     </div>
-                    <span className="capitalize">{t(`${tracker}.title`)}</span>
+                    <span className="capitalize hidden min-[300px]:block">
+                        {t(`${tracker}.title`)}
+                    </span>
                     <ChevronDown />
                 </Button>
             </DrawerTrigger>

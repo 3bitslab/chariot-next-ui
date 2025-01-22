@@ -16,8 +16,9 @@ function RightNavbar() {
     const handleOverview = () => map.setView(MAP_COORDINATES.center, 15);
 
     return (
-        <div className="absolute z-[410] bottom-1/4 right-0 lg:bottom-10 mb-4 lg:mb-0 fade-in">
-            <div className="flex flex-col">
+        <>
+            {/* Default Right Sidebar for Large Screens */}
+            <div className="absolute z-[410] bottom-1/4 right-0 lg:bottom-10 mb-4 lg:mb-0 fade-in min-[500px]:hidden lg:flex flex-col">
                 <div className="flex flex-col px-3 py-4 m-4 space-y-8 rounded-full bg-primary-50 dark:bg-primary-900">
                     <RoadblockDrawer />
                     <DevelopersDrawer />
@@ -38,7 +39,28 @@ function RightNavbar() {
                     </button>
                 </div>
             </div>
-        </div>
+
+            {/* Left & Right Split Sidebar for Smaller Screens (Height < 500px) */}
+            <div className="absolute z-[410] top-1/4 bottom-1/4 left-0 flex flex-col justify-around space-y-4 p-3 bg-primary-50 dark:bg-primary-900 rounded-r-full max-[500px]:hidden">
+                <RoadblockDrawer />
+                <DevelopersDrawer />
+                <button onClick={handleOverview}>
+                    <Route className="stroke-primary-850 dark:stroke-primary-150 size-5" />
+                </button>
+            </div>
+
+            <div className="absolute z-[410] top-1/4 bottom-1/4 right-0 flex flex-col justify-around space-y-4 p-3 bg-primary-50 dark:bg-primary-900 rounded-l-full max-[500px]:hidden">
+                <button onClick={handleZoomIn}>
+                    <Plus className="stroke-primary-850 dark:stroke-primary-150 size-5" />
+                </button>
+                <button onClick={handleZoomOut}>
+                    <Minus className="stroke-primary-850 dark:stroke-primary-150 size-5" />
+                </button>
+                <button onClick={handleFocus}>
+                    <Locate className="stroke-primary-850 dark:stroke-primary-150 size-5" />
+                </button>
+            </div>
+        </>
     );
 }
 

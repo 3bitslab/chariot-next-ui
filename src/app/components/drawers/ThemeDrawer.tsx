@@ -66,7 +66,9 @@ function ThemeDrawer() {
                                 ?.logo
                         }
                     </div>
-                    <span className="capitalize">{t(`${theme}.title`)}</span>
+                    <span className="capitalize hidden min-[300px]:block">
+                        {t(`${theme}.title`)}
+                    </span>
                     <ChevronDown />
                 </Button>
             </DrawerTrigger>

@@ -24,7 +24,9 @@ function SupportDrawer() {
                         strokeWidth={1}
                         className="stroke-primary-850 dark:stroke-primary-50"
                     />
-                    <span className="capitalize">{t("title")}</span>
+                    <span className="capitalize hidden min-[450px]:block">
+                        {t("title")}
+                    </span>
                 </Button>
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
