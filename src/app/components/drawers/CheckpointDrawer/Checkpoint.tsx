@@ -50,11 +50,14 @@ function Checkpoint({
     return (
         <div className="flex flex-col rounded-xl bg-white p-5 shadow dark:bg-primary-800">
             {/* Header */}
-            <div className="flex flex-row justify-between items-center">
+            <div className="flex flex-row justify-between items-center flex-wrap gap-2">
                 {/* Left section: Index and Checkpoint Name */}
                 <div className="flex flex-row items-center gap-4">
-                    {/* Checkpoint Index */}
-                    <div className="relative flex items-center justify-center rounded-full bg-[#88c1d0] border-4 border-white shadow w-8 h-8 font-bold text-white text-base">
+                    {/* Checkpoint Index (Locked Shape) */}
+                    <div
+                        className="relative flex items-center justify-center rounded-full bg-[#88c1d0] border-4 border-white shadow 
+                        w-8 h-8 min-w-8 min-h-8 aspect-square font-bold text-white text-base flex-shrink-0"
+                    >
                         <span>{checkpointIndex + 1}</span>
                     </div>
 
@@ -76,11 +79,9 @@ function Checkpoint({
                 {isDeltaAvailable ? (
                     <Badge
                         className="flex items-center gap-1 text-sm font-medium"
-                        variant={
-                            delta && delta > 0 ? "destructive" : "constructive"
-                        }
+                        variant={delta > 0 ? "destructive" : "constructive"}
                     >
-                        {delta && delta > 0 ? (
+                        {delta > 0 ? (
                             <ArrowDown size={15} />
                         ) : (
                             <ArrowUp size={15} />
@@ -107,7 +108,7 @@ function Checkpoint({
             </div>
 
             {/* Body */}
-            <div className="pt-2 pl-12">
+            <div className="pt-2 sm:pl-12">
                 <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-3">
                     <div className="flex flex-col">
                         <span className="text-xs font-medium text-primary-500 uppercase dark:text-primary-100">

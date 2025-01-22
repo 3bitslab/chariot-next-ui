@@ -26,44 +26,24 @@ function CheckpointMarkers({
     }, [map]);
 
     const iconHTML = `
-        <div 
-            style="
-            transform: scale(${scale});
-            position: relative;
-            width: 45px; 
-            height: 45px; 
-            background: #88c1d0;
-            border-radius: 50%;
-            border: 4px solid #fff;
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            font-size: 16px;
-            font-weight: bold;
-            color: #fff;
-            box-shadow: 0 0 3px rgba(0,0,0,0.3);
-            "
-        >
-            ${index + 1}
-    <!-- A small pointer/arrow at the bottom -->
-    <div style="
-      position: absolute;
-      bottom: -10px;
-      left: 50%;           
-      transform: translateX(-50%);
-      width: 0; 
-      height: 0; 
-      border-left: 10px solid transparent;
-      border-right: 10px solid transparent;
-      border-top: 10px solid #fff;  /* same color as the white border */
-    "></div>
-        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="55" viewBox="0 0 50 60" style="transform: scale(${scale});">
+            <!-- Outer Circle -->
+            <circle cx="25" cy="25" r="22" fill="#88c1d0" stroke="white" stroke-width="4" />
+            
+            <!-- Index Number -->
+            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="16" font-weight="bold" fill="white">
+                ${index + 1}
+            </text>
+
+            <!-- Small Pointer (Arrow) -->
+            <polygon points="20,50 30,50 25,60" fill="white" />
+        </svg>
     `;
 
     const icon = L.divIcon({
         html: iconHTML,
         className: "",
-        iconAnchor: [22, 45],
+        iconAnchor: [25, 50],
         popupAnchor: [0, -40],
     });
 
