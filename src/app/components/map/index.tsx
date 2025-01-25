@@ -17,7 +17,7 @@ import {
     MAP_COORDINATES,
 } from "@/constants/coordinates";
 import { useTheme } from "next-themes";
-import { markerIcon } from "@/constants/icons";
+import { endIcon, startIcon } from "@/constants/icons";
 import { vehicleAtom } from "@/atoms/vehicle";
 import { useAtom } from "jotai";
 import { useGetProgressInfo } from "@/hooks/useGetProgressInfo";
@@ -187,14 +187,11 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 {/* Start Pin  */}
                 <Marker
                     position={MAP_COORDINATES.start}
-                    icon={markerIcon}
+                    icon={startIcon}
                 ></Marker>
 
                 {/* End Pin */}
-                <Marker
-                    position={MAP_COORDINATES.end}
-                    icon={markerIcon}
-                ></Marker>
+                <Marker position={MAP_COORDINATES.end} icon={endIcon}></Marker>
 
                 {/* Chariot Pulsating Pin */}
                 <Marker
