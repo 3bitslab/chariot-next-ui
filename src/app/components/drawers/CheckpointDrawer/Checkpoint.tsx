@@ -88,26 +88,21 @@ function Checkpoint({
                     <div className="mt-0 ml-auto">
                         {isDeltaAvailable ? (
                             <Badge
-                                className="inline-flex items-center gap-1 text-sm font-medium"
+                                className="inline-flex items-center gap-1 text-sm font-medium whitespace-nowrap"
                                 variant={
                                     delta > 0 ? "destructive" : "constructive"
                                 }
                             >
                                 {delta > 0 ? (
-                                    <ArrowDown size={15} />
-                                ) : (
                                     <ArrowUp size={15} />
+                                ) : (
+                                    <ArrowDown size={15} />
                                 )}
-                                <span>
-                                    {formatDelta(delta!)}{" "}
-                                    {delta! > 0
-                                        ? t("common.badge.slower")
-                                        : t("common.badge.faster")}
-                                </span>
+                                <span>{formatDelta(delta!)} </span>
                             </Badge>
                         ) : (
                             <Badge
-                                className="inline-flex items-center gap-1 text-sm font-medium"
+                                className="inline-flex items-center gap-1 text-sm font-medium whitespace-nowrap"
                                 variant="secondary"
                             >
                                 <Clock size={15} /> {t("common.badge.pending")}
