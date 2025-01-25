@@ -67,6 +67,7 @@
             "accountNumber": "Account Number",
             "accountName": "Account Name",
             "malaysiaQR": "Malaysia National QR",
+            "reference": "Reference",
             "detail": "Bank Transfer Details",
             "copied": "{field} copied to clipboard!"
         },

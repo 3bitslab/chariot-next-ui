@@ -12,6 +12,10 @@ function BankAccountScene() {
         { title: t("bankName"), value: "HSBC Bank Malaysia Berhad" },
         { title: t("accountName"), value: "Manickam Murugappan" },
         { title: t("accountNumber"), value: "371348475025" },
+        {
+            title: t("reference"),
+            value: "Penang Thaipusam SCT 2025",
+        },
     ];
 
     const handleCopyToClipboard = (value: string, label: string) => {
@@ -61,9 +65,11 @@ function BankAccountScene() {
                         >
                             <span className="font-bold">{detail.title}: </span>
                             <span>{detail.value}</span>
-                            {[t("accountName"), t("accountNumber")].includes(
-                                detail.title
-                            ) && (
+                            {[
+                                t("accountName"),
+                                t("accountNumber"),
+                                t("reference"),
+                            ].includes(detail.title) && (
                                 <button
                                     onClick={() =>
                                         handleCopyToClipboard(

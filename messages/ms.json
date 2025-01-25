@@ -68,6 +68,7 @@
             "accountName": "Nama Akaun",
             "malaysiaQR": "Kod QR Kebangsaan Malaysia",
             "detail": "Butiran Pemindahan Bank",
+            "reference": "Rujukan",
             "copied": "{field} disalin ke papan klip!"
         },
         "drawer": {

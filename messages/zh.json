@@ -67,6 +67,7 @@
             "accountNumber": "账户号码",
             "accountName": "账户名称",
             "malaysiaQR": "马来西亚国家二维码",
+            "reference": "参考",
             "detail": "银行转账详情",
             "copied": "{field} 已复制到剪贴板！"
         },
