@@ -12,20 +12,27 @@ type TrackProperties = {
         | Record<string, PropertyValue>;
 };
 
-if (typeof window !== "undefined" && MIXPANEL_TOKEN) {
-    mixpanel.init(MIXPANEL_TOKEN, {
-        debug: process.env.NODE_ENV !== "production",
-        track_pageview: true,
-        verbose: true,
-    });
-}
+let isInitialized = false;
+
+const initialize = () => {
+    if (!isInitialized && typeof window !== "undefined" && MIXPANEL_TOKEN) {
+        mixpanel.init(MIXPANEL_TOKEN, {
+            debug: process.env.NODE_ENV !== "production",
+            track_pageview: true,
+            verbose: true,
+            ignore_dnt: true,
+        });
+        isInitialized = true;
+    }
+};
 
 const track = (eventName: string, properties?: TrackProperties) => {
-    if (typeof window !== "undefined" && MIXPANEL_TOKEN) {
+    if (typeof window !== "undefined" && MIXPANEL_TOKEN && isInitialized) {
         mixpanel.track(eventName, properties);
     }
 };
 
 export const Analytics = {
     track,
+    initialize,
 };
