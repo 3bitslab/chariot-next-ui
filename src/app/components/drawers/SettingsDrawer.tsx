@@ -54,7 +54,7 @@ function SettingsDrawer() {
             <Drawer>
                 <DrawerTrigger asChild>
                     <Button>
-                    <Settings
+                        <Settings
                             size={24}
                             strokeWidth={1.5}
                             className="stroke-primary-850 dark:stroke-primary-150"
