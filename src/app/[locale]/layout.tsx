@@ -190,11 +190,11 @@ export default async function RootLayout({
     params,
 }: Readonly<{
     children: React.ReactNode;
-    params: { locale: string };
+    params: { locale: (typeof routing.locales)[number] };
 }>) {
     const { locale } = params;
 
-    if (!routing.locales.includes(locale as any)) {
+    if (!routing.locales.includes(locale)) {
         notFound();
     }
 
