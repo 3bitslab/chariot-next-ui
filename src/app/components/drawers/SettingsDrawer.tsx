@@ -42,39 +42,29 @@ function SettingsDrawer() {
 
     const getLanguageIcon = (lang: string) => {
         const baseClasses =
-            "size-8 rounded-full flex items-center justify-center text-xs font-medium bg-primary-850 dark:bg-primary-150 text-white dark:text-gray-900";
-        const labels = {
-            en: "ENG",
-            ms: "BM",
-            ta: "TM",
-            zh: "ZH",
-        };
-        return (
-            <div className={baseClasses}>
-                {labels[lang as keyof typeof labels]}
-            </div>
-        );
+            "size-8 rounded-full flex items-center justify-center text-xs font-medium bg-primary-850 dark:bg-primary-150 text-white dark:text-gray-900 uppercase";
+        return <div className={baseClasses}>{lang}</div>;
     };
 
     const getThemeIcon = () => {
         if (theme === "dark") {
             return (
                 <Moon
-                    size={28}
+                    size={32}
                     className="stroke-primary-850 dark:stroke-primary-150"
                 />
             );
         } else if (theme === "light") {
             return (
                 <Sun
-                    size={28}
+                    size={32}
                     className="stroke-primary-850 dark:stroke-primary-150"
                 />
             );
         }
         return (
             <Computer
-                size={24}
+                size={32}
                 className="stroke-primary-850 dark:stroke-primary-150"
             />
         );

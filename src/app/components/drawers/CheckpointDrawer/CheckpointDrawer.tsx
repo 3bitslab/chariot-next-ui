@@ -27,7 +27,7 @@ function CheckpointDrawer() {
         Analytics.track("Checkpoint Visibility Changed", {
             action: newState ? "show" : "hide",
             timestamp: new Date().toISOString(),
-            visibilityState: newState
+            visibilityState: newState,
         });
         setIsDisplayedOnMap(newState);
     };
