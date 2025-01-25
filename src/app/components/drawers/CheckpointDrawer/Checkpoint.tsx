@@ -21,6 +21,22 @@ function formatDateAndTime(timestamp: string) {
     return date.toLocaleString("en-GB", options);
 }
 
+function formatDelta(delta: number) {
+    if (delta === 0) return "0s";
+
+    const absDelta = Math.abs(delta);
+    const hours = Math.floor(absDelta / 3600);
+    const minutes = Math.floor((absDelta % 3600) / 60);
+    const seconds = absDelta % 60;
+
+    let formatted = "";
+    if (hours > 0) formatted += `${hours}h `;
+    if (minutes > 0) formatted += `${minutes}m `;
+    if (seconds > 0 && hours === 0) formatted += `${seconds}s`;
+
+    return formatted.trim();
+}
+
 interface CheckpointProps {
     address: string;
     landmark?: string;
@@ -51,19 +67,13 @@ function Checkpoint({
         <div className="flex flex-col rounded-xl bg-white p-5 shadow dark:bg-primary-800">
             {/* Header */}
             <div className="flex flex-row items-center gap-4">
-                {/* Left: Index Circle (centered within this row) */}
-                <div
-                    className="relative flex items-center justify-center
-        rounded-full bg-[#88c1d0] border-4 border-white shadow
-        w-8 h-8 min-w-8 min-h-8 aspect-square
-        font-bold text-white text-base flex-shrink-0"
-                >
+                {/* Left: Index Circle */}
+                <div className="relative flex items-center justify-center rounded-full bg-[#88c1d0] border-4 border-white shadow w-8 h-8 min-w-8 min-h-8 aspect-square font-bold text-white text-base flex-shrink-0">
                     <span>{checkpointIndex + 1}</span>
                 </div>
 
                 {/* Right: Landmark/Address & Badge */}
-                <div className="flex flex-col md:flex-row items-start md:items-center justify-between w-full">
-                    {/* Landmark & Address */}
+                <div className="flex flex-row items-center justify-between w-full">
                     <div className="flex flex-col">
                         <div className="text-lg font-semibold text-primary-900 dark:text-primary-50">
                             {landmark || address}
@@ -75,8 +85,7 @@ function Checkpoint({
                         )}
                     </div>
 
-                    {/* Badge (below text on small screens, far right on large) */}
-                    <div className="mt-2 md:mt-0 md:ml-auto">
+                    <div className="mt-0 ml-auto">
                         {isDeltaAvailable ? (
                             <Badge
                                 className="inline-flex items-center gap-1 text-sm font-medium"
@@ -90,7 +99,7 @@ function Checkpoint({
                                     <ArrowUp size={15} />
                                 )}
                                 <span>
-                                    {Math.abs(delta!)}s{" "}
+                                    {formatDelta(delta!)}{" "}
                                     {delta! > 0
                                         ? t("common.badge.slower")
                                         : t("common.badge.faster")}
