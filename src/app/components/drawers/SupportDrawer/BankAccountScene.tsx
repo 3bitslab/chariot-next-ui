@@ -53,7 +53,7 @@ function BankAccountScene() {
                 <span className="font-bold text-primary-850 dark:text-primary-50">
                     {t("detail")}
                 </span>
-                <div className="flex flex-col gap-y-3 rounded-lg bg-primary-100 p-3 w-full md:w-fit md:items-center">
+                <div className="flex flex-col gap-y-3 rounded-lg bg-primary-100 p-3 w-full md:w-fit md:items-center dark:bg-primary-850">
                     {bankAccountDetails.map((detail) => (
                         <div
                             key={detail.title}
@@ -71,9 +71,9 @@ function BankAccountScene() {
                                             detail.title
                                         )
                                     }
-                                    className="hover:cursor-pointer"
+                                    className="hover:cursor-pointer dark:text-primary-50 text-primary-900"
                                 >
-                                    <CopyIcon color="black" size={15} />
+                                    <CopyIcon size={15} />
                                 </button>
                             )}
                         </div>
