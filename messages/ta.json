@@ -13,6 +13,30 @@
             "arrival": "வந்தடைவு"
         }
     },
+    "Settings": {
+        "title": "அமைப்புகள்",
+        "theme": {
+            "tab": "தீம்"
+        },
+        "language": {
+            "tab": "மொழி"
+        }
+    },
+    "Language": {
+        "drawerTitle": "மொழியை தேர்வு செய்யவும்",
+        "english": {
+            "description": ""
+        },
+        "malay": {
+            "description": ""
+        },
+        "tamil": {
+            "description": "Tirunavarasi Pandithavan ஆல் மொழிபெயர்க்கப்பட்டது"
+        },
+        "chinese": {
+            "description": "Manisha Subramaniam ஆல் மொழிபெயர்க்கப்பட்டது"
+        }
+    },
     "Checkpoint": {
         "drawer": {
             "title": "சோதனை நிலையம்"

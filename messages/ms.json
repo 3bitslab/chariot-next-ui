@@ -13,6 +13,30 @@
             "arrival": "Ketibaan"
         }
     },
+    "Settings": {
+        "title": "Tetapan",
+        "theme": {
+            "tab": "Tema"
+        },
+        "language": {
+            "tab": "Bahasa"
+        }
+    },
+    "Language": {
+        "drawerTitle": "Pilih Bahasa",
+        "english": {
+            "description": ""
+        },
+        "malay": {
+            "description": ""
+        },
+        "tamil": {
+            "description": "Diterjemahkan oleh Tirunavarasi Pandithavan"
+        },
+        "chinese": {
+            "description": "Diterjemahkan oleh Manisha Subramaniam"
+        }
+    },
     "Checkpoint": {
         "drawer": {
             "title": "Pemeriksaan"

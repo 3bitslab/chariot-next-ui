@@ -13,6 +13,30 @@
             "arrival": "到达"
         }
     },
+    "Settings": {
+        "title": "设置",
+        "theme": {
+            "tab": "主题"
+        },
+        "language": {
+            "tab": "语言"
+        }
+    },
+    "Language": {
+        "drawerTitle": "选择语言",
+        "english": {
+            "description": ""
+        },
+        "malay": {
+            "description": ""
+        },
+        "tamil": {
+            "description": "由 Tirunavarasi Pandithavan 翻译"
+        },
+        "chinese": {
+            "description": "由 Manisha Subramaniam 翻译"
+        }
+    },
     "Checkpoint": {
         "drawer": {
             "title": "检查站"

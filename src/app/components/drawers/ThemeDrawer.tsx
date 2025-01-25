@@ -1,19 +1,18 @@
-import {
-    Drawer,
-    DrawerContent,
-    DrawerTitle,
-    DrawerTrigger,
-} from "@/components/ui/drawer";
+import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
 import React from "react";
 import Selectables from "../shared/Selectables";
 import { TSelectableItem } from "@/constants/types";
-import { ChevronDown, ComputerIcon, MoonIcon, SunIcon } from "lucide-react";
+import { ComputerIcon, MoonIcon, SunIcon } from "lucide-react";
 import { useTheme } from "next-themes";
-import { Button } from "@/components/ui/button";
 import Divider from "../Divider";
 import { useTranslations } from "next-intl";
 
-function ThemeDrawer() {
+interface ThemeDrawerProps {
+    isOpen: boolean;
+    onClose: () => void;
+}
+
+function ThemeDrawer({ isOpen, onClose }: ThemeDrawerProps) {
     const { theme, setTheme } = useTheme();
     const t = useTranslations("Theme");
 
@@ -57,21 +56,7 @@ function ThemeDrawer() {
     ];
 
     return (
-        <Drawer>
-            <DrawerTrigger asChild>
-                <Button>
-                    <div>
-                        {
-                            selectableItems.find((item) => item.value === theme)
-                                ?.logo
-                        }
-                    </div>
-                    <span className="capitalize hidden min-[300px]:block">
-                        {t(`${theme}.title`)}
-                    </span>
-                    <ChevronDown />
-                </Button>
-            </DrawerTrigger>
+        <Drawer open={isOpen} onOpenChange={onClose}>
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 gap-y-3 flex flex-col w-full">
                     <DrawerTitle className="font-control opacity-70 dark:opacity-90 py-3">

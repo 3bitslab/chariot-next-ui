@@ -1,5 +1,5 @@
 import React from "react";
-import ThemeDrawer from "../drawers/ThemeDrawer";
+import SettingsDrawer from "../drawers/SettingsDrawer";
 import TrackerTypeDrawer from "../drawers/TrackerTypeDrawer";
 import SupportDrawer from "../drawers/SupportDrawer/SupportDrawer";
 
@@ -9,7 +9,7 @@ function Navbar() {
             <div className="flex flex-row space-x-2 md:space-x-3 lg:space-x-4 grow">
                 <TrackerTypeDrawer />
                 <SupportDrawer />
-                <ThemeDrawer />
+                <SettingsDrawer />
             </div>
         </div>
     );
