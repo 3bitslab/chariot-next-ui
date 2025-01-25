@@ -10,12 +10,16 @@ import {
 } from "@/components/ui/dialog";
 import { analyticsConsentAtom } from "@/atoms/analytics";
 import { useAtom } from "jotai";
+import { Analytics } from "@/utils/mixpanel";
 
 export function AnalyticsConsentDialog() {
-    const [, setConsent] = useAtom(analyticsConsentAtom);
+    const [consent, setConsent] = useAtom(analyticsConsentAtom);
+    const { isDntEnabled } = Analytics;
+
+    const showDialog = isDntEnabled() && !consent;
 
     return (
-        <Dialog open={true}>
+        <Dialog open={showDialog}>
             <DialogContent className="sm:max-w-md">
                 <DialogHeader>
                     <DialogTitle>Analytics Consent Required</DialogTitle>

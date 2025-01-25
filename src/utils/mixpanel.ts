@@ -14,13 +14,17 @@ type TrackProperties = {
 
 let isInitialized = false;
 
+const isDntEnabled = () => {
+    if (typeof window === "undefined") return false;
+    return window.navigator.doNotTrack === "1";
+};
+
 const initialize = () => {
     if (!isInitialized && typeof window !== "undefined" && MIXPANEL_TOKEN) {
         mixpanel.init(MIXPANEL_TOKEN, {
             debug: process.env.NODE_ENV !== "production",
             track_pageview: true,
             verbose: true,
-            ignore_dnt: true,
         });
         isInitialized = true;
     }
@@ -35,4 +39,5 @@ const track = (eventName: string, properties?: TrackProperties) => {
 export const Analytics = {
     track,
     initialize,
+    isDntEnabled,
 };
