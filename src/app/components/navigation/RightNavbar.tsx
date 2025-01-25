@@ -18,7 +18,7 @@ function RightNavbar() {
     return (
         <>
             {/* Default Right Sidebar for Large Screens */}
-            <div className="absolute z-[410] bottom-1/4 right-0 lg:bottom-10 mb-4 lg:mb-0 fade-in min-[500px]:hidden lg:flex flex-col [@media(max-height:500px)]:hidden">
+            <div className="absolute z-[410] bottom-1/4 right-0 lg:bottom-10 mb-4 lg:mb-0 fade-in flex flex-col [@media(max-height:500px)]:hidden">
                 <div className="flex flex-col px-3 py-4 m-4 space-y-8 rounded-full bg-primary-50 dark:bg-primary-900">
                     <RoadblockDrawer />
                     <DevelopersDrawer />
