@@ -26,24 +26,20 @@ function CheckpointMarkers({
     }, [map]);
 
     const iconHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" width="45" height="55" viewBox="0 0 50 60" style="transform: scale(${scale});">
-            <!-- Outer Circle -->
-            <circle cx="25" cy="25" r="22" fill="#88c1d0" stroke="white" stroke-width="4" />
-            
-            <!-- Index Number -->
-            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="16" font-weight="bold" fill="white">
-                ${index + 1}
-            </text>
-
+        <div 
+            class="relative flex items-center justify-center w-[45px] h-[45px] bg-[#88c1d0] text-white text-[16px] font-bold rounded-full border-[4px] border-white shadow-md"
+            style="transform: scale(${scale});"
+        >
+            ${index + 1}
             <!-- Small Pointer (Arrow) -->
-            <polygon points="20,50 30,50 25,60" fill="white" />
-        </svg>
+            <div class="absolute bottom-[-10px] left-1/2 transform -translate-x-1/2 w-0 h-0 border-x-[10px] border-x-transparent border-t-[10px] border-t-white"></div>
+        </div>
     `;
 
     const icon = L.divIcon({
         html: iconHTML,
         className: "",
-        iconAnchor: [25, 50],
+        iconAnchor: [22, 45],
         popupAnchor: [0, -40],
     });
 
