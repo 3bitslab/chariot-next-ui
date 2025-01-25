@@ -60,21 +60,21 @@ function SettingsDrawer() {
         if (theme === "dark") {
             return (
                 <Moon
-                    size={20}
+                    size={28}
                     className="stroke-primary-850 dark:stroke-primary-150"
                 />
             );
         } else if (theme === "light") {
             return (
                 <Sun
-                    size={20}
+                    size={28}
                     className="stroke-primary-850 dark:stroke-primary-150"
                 />
             );
         }
         return (
             <Computer
-                size={20}
+                size={24}
                 className="stroke-primary-850 dark:stroke-primary-150"
             />
         );
