@@ -30,8 +30,10 @@ export function AnalyticsConsentDialog() {
                         better experience for everyone in our community.
                     </DialogDescription>
                 </DialogHeader>
-                <div className="flex justify-center pt-4">
-                    <Button onClick={() => setConsent(true)}>Accept</Button>
+                <div className="flex justify-end pt-4">
+                    <Button onClick={() => setConsent(true)} variant="dialog">
+                        Accept
+                    </Button>
                 </div>
             </DialogContent>
         </Dialog>
