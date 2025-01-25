@@ -35,19 +35,9 @@ function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps) {
 
     const getLanguageIcon = (lang: string) => {
         const baseClasses =
-            "w-10 h-10 aspect-square rounded-full flex items-center justify-center text-sm font-semibold bg-primary-850 dark:bg-primary-150 text-white dark:text-gray-900";
-        const labels = {
-            en: "ENG",
-            ms: "BM",
-            ta: "TM",
-            zh: "ZH",
-        };
+            "w-10 h-10 aspect-square rounded-full flex items-center justify-center text-sm font-semibold bg-primary-850 dark:bg-primary-150 text-white dark:text-gray-900 uppercase";
 
-        return (
-            <div className={baseClasses}>
-                {labels[lang as keyof typeof labels]}
-            </div>
-        );
+        return <div className={baseClasses}>{lang}</div>;
     };
 
     const selectableItems: TSelectableItem[] = [
