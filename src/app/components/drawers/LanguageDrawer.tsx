@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
 import Selectables from "../shared/Selectables";
 import { TSelectableItem } from "@/constants/types";
 import Divider from "../Divider";
 import { useTranslations } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
+import { useAtom } from "jotai";
+import { drawerAtom } from "@/atoms/drawer";
+import { languageAtom } from "@/atoms/language";
 
 interface LanguageDrawerProps {
     isOpen: boolean;
@@ -15,6 +18,20 @@ function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps) {
     const router = useRouter();
     const pathname = usePathname();
     const t = useTranslations("Language");
+    const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
+    const [currentLanguage, setCurrentLanguage] = useAtom(languageAtom);
+
+    useEffect(() => {
+        if (isOpen) {
+            setCurrentDrawer("language");
+        }
+    }, [isOpen, setCurrentDrawer]);
+
+    useEffect(() => {
+        if (currentDrawer && currentDrawer !== "language" && isOpen) {
+            onClose();
+        }
+    }, [currentDrawer, isOpen, onClose]);
 
     const getLanguageIcon = (lang: string) => {
         const baseClasses =
@@ -61,15 +78,11 @@ function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps) {
     ];
 
     const handleLanguageChange = (locale: string) => {
+        const validLocale = locale as typeof currentLanguage;
         const segments = pathname.split("/");
         segments[1] = locale;
+        setCurrentLanguage(validLocale);
         router.push(segments.join("/"));
-        onClose();
-    };
-
-    const getCurrentLanguage = () => {
-        const segments = pathname.split("/");
-        return segments[1] || "en";
     };
 
     return (
@@ -83,7 +96,7 @@ function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps) {
                     <Selectables
                         onItemChange={handleLanguageChange}
                         items={selectableItems}
-                        currentValue={getCurrentLanguage()}
+                        currentValue={currentLanguage}
                     />
                 </div>
             </DrawerContent>

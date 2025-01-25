@@ -1,5 +1,7 @@
 import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
-import React from "react";
+import React, { useEffect } from "react";
+import { useAtom } from "jotai";
+import { drawerAtom } from "@/atoms/drawer";
 import Selectables from "../shared/Selectables";
 import { TSelectableItem } from "@/constants/types";
 import { ComputerIcon, MoonIcon, SunIcon } from "lucide-react";
@@ -15,6 +17,19 @@ interface ThemeDrawerProps {
 function ThemeDrawer({ isOpen, onClose }: ThemeDrawerProps) {
     const { theme, setTheme } = useTheme();
     const t = useTranslations("Theme");
+    const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
+
+    useEffect(() => {
+        if (isOpen) {
+            setCurrentDrawer("theme");
+        }
+    }, [isOpen, setCurrentDrawer]);
+
+    useEffect(() => {
+        if (currentDrawer && currentDrawer !== "theme" && isOpen) {
+            onClose();
+        }
+    }, [currentDrawer, isOpen, onClose]);
 
     const selectableItems: TSelectableItem[] = [
         {

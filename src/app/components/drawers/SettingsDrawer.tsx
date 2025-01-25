@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useAtom } from "jotai";
+import { drawerAtom } from "@/atoms/drawer";
 import {
     Drawer,
     DrawerContent,
@@ -29,6 +31,14 @@ function SettingsDrawer() {
     const currentLanguage = pathname.split("/")[1] || "en";
     const [isThemeDrawerOpen, setIsThemeDrawerOpen] = useState(false);
     const [isLanguageDrawerOpen, setIsLanguageDrawerOpen] = useState(false);
+    const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        if (currentDrawer && currentDrawer !== "settings") {
+            setIsOpen(false);
+        }
+    }, [currentDrawer]);
 
     const getLanguageIcon = (lang: string) => {
         const baseClasses =
@@ -73,8 +83,12 @@ function SettingsDrawer() {
     const handleItemChange = (value: string) => {
         if (value === "theme") {
             setIsThemeDrawerOpen(true);
+            setCurrentDrawer("theme");
+            setIsOpen(false);
         } else if (value === "language") {
             setIsLanguageDrawerOpen(true);
+            setCurrentDrawer("language");
+            setIsOpen(false);
         }
     };
 
@@ -95,7 +109,13 @@ function SettingsDrawer() {
 
     return (
         <>
-            <Drawer>
+            <Drawer
+                open={isOpen}
+                onOpenChange={(open) => {
+                    setIsOpen(open);
+                    setCurrentDrawer(open ? "settings" : null);
+                }}
+            >
                 <DrawerTrigger asChild>
                     <Button>
                         <Settings
@@ -103,7 +123,7 @@ function SettingsDrawer() {
                             strokeWidth={1.5}
                             className="stroke-primary-850 dark:stroke-primary-150"
                         />
-                        <span className="capitalize hidden min-[300px]:block ml-2 text-sm font-medium">
+                        <span className="capitalize hidden min-[300px]:block">
                             {t("title")}
                         </span>
                         <ChevronDown className="ml-1" size={20} />
@@ -120,7 +140,7 @@ function SettingsDrawer() {
                                 <button
                                     key={item.value}
                                     onClick={() => handleItemChange(item.value)}
-                                    className="flex items-center justify-between w-full p-3 rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                    className="flex items-center justify-between w-full p-3 rounded-md cursor-pointer"
                                 >
                                     <div className="flex items-center space-x-2">
                                         <div>{item.logo}</div>
