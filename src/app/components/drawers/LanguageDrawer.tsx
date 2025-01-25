@@ -18,13 +18,14 @@ function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps) {
 
     const getLanguageIcon = (lang: string) => {
         const baseClasses =
-            "size-8 rounded-full flex items-center justify-center text-xs font-medium bg-primary-850 dark:bg-primary-150 text-white dark:text-gray-900";
+            "w-10 h-10 aspect-square rounded-full flex items-center justify-center text-sm font-semibold bg-primary-850 dark:bg-primary-150 text-white dark:text-gray-900";
         const labels = {
             en: "ENG",
             ms: "BM",
             ta: "TM",
             zh: "ZH",
         };
+
         return (
             <div className={baseClasses}>
                 {labels[lang as keyof typeof labels]}
