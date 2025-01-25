@@ -5,12 +5,20 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer";
 import React from "react";
+import { useAtom } from "jotai";
+import { drawerAtom } from "@/atoms/drawer";
 import { Info } from "lucide-react";
 import AboutUsTabs from "./AboutUsTabs";
 
 function AboutUsDrawer() {
+    const [, setCurrentDrawer] = useAtom(drawerAtom);
+
     return (
-        <Drawer>
+        <Drawer
+            onOpenChange={(open) => {
+                setCurrentDrawer(open ? "about" : null);
+            }}
+        >
             <DrawerTrigger asChild>
                 <button>
                     <Info

@@ -9,21 +9,37 @@ import { Flag } from "lucide-react";
 import Checkpoint from "./Checkpoint";
 import Divider from "../../Divider";
 import { checkpointAtom } from "@/atoms/checkpoint";
+import { drawerAtom } from "@/atoms/drawer";
 import { useAtom } from "jotai";
 import { Switch } from "@/components/ui/switch";
 import { useGetCheckpoints } from "@/hooks/useGetCheckpoints";
 import { useTranslations } from "next-intl";
+import { Analytics } from "@/utils/mixpanel";
 
 function CheckpointDrawer() {
     const t = useTranslations("Checkpoint");
     const tc = useTranslations("common.switch");
 
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(checkpointAtom);
+    const [, setCurrentDrawer] = useAtom(drawerAtom);
+
+    const handleVisibilityChange = (newState: boolean) => {
+        Analytics.track("Checkpoint Visibility Changed", {
+            action: newState ? "show" : "hide",
+            timestamp: new Date().toISOString(),
+            visibilityState: newState
+        });
+        setIsDisplayedOnMap(newState);
+    };
 
     const { data: checkpoints } = useGetCheckpoints();
 
     return (
-        <Drawer>
+        <Drawer
+            onOpenChange={(open) => {
+                setCurrentDrawer(open ? "checkpoint" : null);
+            }}
+        >
             <DrawerTrigger asChild>
                 <button>
                     <Flag className="stroke-primary-850 dark:stroke-primary-150 size-4 lg:size-6" />
@@ -38,7 +54,7 @@ function CheckpointDrawer() {
                         <div className="flex items-center space-x-2">
                             <Switch
                                 checked={isDisplayedOnMap}
-                                onCheckedChange={setIsDisplayedOnMap}
+                                onCheckedChange={handleVisibilityChange}
                             />
                             <label className="text-sm font-medium">
                                 {isDisplayedOnMap ? tc("hide") : tc("show")}

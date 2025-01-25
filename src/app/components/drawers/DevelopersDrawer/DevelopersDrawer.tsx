@@ -5,6 +5,8 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer";
 import React from "react";
+import { useAtom } from "jotai";
+import { drawerAtom } from "@/atoms/drawer";
 import { UserIcon } from "lucide-react";
 import { DEVELOPERS } from "@/constants/developers";
 import Developer from "./Developer";
@@ -12,9 +14,14 @@ import { useTranslations } from "next-intl";
 
 function DevelopersDrawer() {
     const t = useTranslations("Developers");
+    const [, setCurrentDrawer] = useAtom(drawerAtom);
 
     return (
-        <Drawer>
+        <Drawer
+            onOpenChange={(open) => {
+                setCurrentDrawer(open ? "developers" : null);
+            }}
+        >
             <DrawerTrigger asChild>
                 <button>
                     <UserIcon className="stroke-primary-850 dark:stroke-primary-150 size-4 lg:size-6" />

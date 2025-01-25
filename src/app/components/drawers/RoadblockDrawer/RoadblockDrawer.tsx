@@ -10,12 +10,24 @@ import Roadblock from "./Roadblock";
 import Divider from "../../Divider";
 import { Switch } from "@/components/ui/switch";
 import { roadBlockAtom } from "@/atoms/road-block";
+import { drawerAtom } from "@/atoms/drawer";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
+import { Analytics } from "@/utils/mixpanel";
 
 function RoadblockDrawer() {
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(roadBlockAtom);
+    const [, setCurrentDrawer] = useAtom(drawerAtom);
     const t = useTranslations();
+
+    const handleVisibilityChange = (newState: boolean) => {
+        Analytics.track("Roadblock Visibility Changed", {
+            action: newState ? "show" : "hide",
+            timestamp: new Date().toISOString(),
+            visibilityState: newState,
+        });
+        setIsDisplayedOnMap(newState);
+    };
 
     const roads = [
         {
@@ -76,7 +88,11 @@ function RoadblockDrawer() {
     ];
 
     return (
-        <Drawer>
+        <Drawer
+            onOpenChange={(open) => {
+                setCurrentDrawer(open ? "roadblock" : null);
+            }}
+        >
             <DrawerTrigger asChild>
                 <button>
                     <TrafficConeIcon className="stroke-primary-850 dark:stroke-primary-150 size-4 lg:size-6" />
@@ -91,7 +107,7 @@ function RoadblockDrawer() {
                         <div className="flex items-center space-x-2">
                             <Switch
                                 checked={isDisplayedOnMap}
-                                onCheckedChange={setIsDisplayedOnMap}
+                                onCheckedChange={handleVisibilityChange}
                                 className="
                   relative inline-flex h-5 w-10 shrink-0 cursor-pointer 
                   rounded-full border-2 border-transparent 

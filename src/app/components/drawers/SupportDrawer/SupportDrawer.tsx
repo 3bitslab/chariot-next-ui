@@ -1,5 +1,7 @@
 import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
 import React, { useState } from "react";
+import { useAtom } from "jotai";
+import { drawerAtom } from "@/atoms/drawer";
 import { HeartIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TNCScene from "./TNCScene";
@@ -8,6 +10,7 @@ import { useTranslations } from "next-intl";
 
 function SupportDrawer() {
     const [scene, setScene] = useState<0 | 1>(0);
+    const [, setCurrentDrawer] = useAtom(drawerAtom);
 
     const handleSceneChange = (scene: 0 | 1) => {
         setScene(scene);
@@ -16,7 +19,12 @@ function SupportDrawer() {
     const t = useTranslations("Support.drawer");
 
     return (
-        <Drawer onClose={() => setScene(0)}>
+        <Drawer
+            onClose={() => setScene(0)}
+            onOpenChange={(open) => {
+                setCurrentDrawer(open ? "support" : null);
+            }}
+        >
             <DrawerTrigger asChild>
                 <Button>
                     <HeartIcon

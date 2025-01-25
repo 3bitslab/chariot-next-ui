@@ -11,17 +11,38 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAtom } from "jotai";
 import { vehicleAtom } from "@/atoms/vehicle";
+import { drawerAtom } from "@/atoms/drawer";
 import Divider from "../Divider";
 import ChariotIcon from "../icons/Chariot";
 import KavadiIcon from "../icons/Kavadi";
 import { useTranslations } from "next-intl";
+import { Analytics } from "@/utils/mixpanel";
 
 function TrackerTypeDrawer() {
     const [tracker, setTracker] = useAtom(vehicleAtom);
+    const [, setCurrentDrawer] = useAtom(drawerAtom);
     const t = useTranslations("Tracker");
 
     const onItemChange = (data: string) => {
-        setTracker(data as TTrackerType);
+        const newType = data as TTrackerType;
+        const previousType = tracker;
+
+        // Track the selection
+        Analytics.track("Tracker Selected", {
+            selectedType: newType,
+            previousType: previousType,
+        });
+
+        // Track switches between types
+        if (previousType !== newType) {
+            Analytics.track("Tracker Switched", {
+                fromType: previousType,
+                toType: newType,
+                switchCount: 1, // Mixpanel will increment this
+            });
+        }
+
+        setTracker(newType);
     };
 
     const selectableItems: TSelectableItem[] = [
@@ -44,7 +65,11 @@ function TrackerTypeDrawer() {
     ];
 
     return (
-        <Drawer>
+        <Drawer
+            onOpenChange={(open) => {
+                setCurrentDrawer(open ? "tracker" : null);
+            }}
+        >
             <DrawerTrigger asChild>
                 <Button>
                     <div className="[&__svg]:!size-5">
