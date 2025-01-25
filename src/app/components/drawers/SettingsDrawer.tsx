@@ -1,26 +1,34 @@
-// SettingsDrawer.tsx
 import React, { useState } from "react";
-import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+import {
+    Drawer,
+    DrawerContent,
+    DrawerTitle,
+    DrawerTrigger,
+} from "@/components/ui/drawer";
 import { Button } from "@/components/ui/button";
 import {
     Settings,
     ChevronDown,
-    ChevronRight,
     Moon,
     Sun,
     Computer,
+    ChevronRight,
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import ThemeDrawer from "./ThemeDrawer";
 import LanguageDrawer from "./LanguageDrawer";
 import { useTheme } from "next-themes";
 import { usePathname } from "next/navigation";
+import Divider from "../Divider";
+import { TSelectableItem } from "@/constants/types";
 
 function SettingsDrawer() {
     const { theme } = useTheme();
     const t = useTranslations("Settings");
     const pathname = usePathname();
     const currentLanguage = pathname.split("/")[1] || "en";
+    const [isThemeDrawerOpen, setIsThemeDrawerOpen] = useState(false);
+    const [isLanguageDrawerOpen, setIsLanguageDrawerOpen] = useState(false);
 
     const getLanguageIcon = (lang: string) => {
         const baseClasses =
@@ -37,20 +45,56 @@ function SettingsDrawer() {
             </div>
         );
     };
-    const [isThemeDrawerOpen, setIsThemeDrawerOpen] = useState(false);
-    const [isLanguageDrawerOpen, setIsLanguageDrawerOpen] = useState(false);
 
-    const openThemeDrawer = () => {
-        setIsThemeDrawerOpen(true);
+    const getThemeIcon = () => {
+        if (theme === "dark") {
+            return (
+                <Moon
+                    size={20}
+                    className="stroke-primary-850 dark:stroke-primary-150"
+                />
+            );
+        } else if (theme === "light") {
+            return (
+                <Sun
+                    size={20}
+                    className="stroke-primary-850 dark:stroke-primary-150"
+                />
+            );
+        }
+        return (
+            <Computer
+                size={20}
+                className="stroke-primary-850 dark:stroke-primary-150"
+            />
+        );
     };
 
-    const openLanguageDrawer = () => {
-        setIsLanguageDrawerOpen(true);
+    const handleItemChange = (value: string) => {
+        if (value === "theme") {
+            setIsThemeDrawerOpen(true);
+        } else if (value === "language") {
+            setIsLanguageDrawerOpen(true);
+        }
     };
+
+    const selectableItems: TSelectableItem[] = [
+        {
+            title: t("theme.tab"),
+            value: "theme",
+            description: "",
+            logo: getThemeIcon(),
+        },
+        {
+            title: t("language.tab"),
+            value: "language",
+            description: "",
+            logo: getLanguageIcon(currentLanguage),
+        },
+    ];
 
     return (
         <>
-            {/* Main Settings Drawer */}
             <Drawer>
                 <DrawerTrigger asChild>
                     <Button>
@@ -66,68 +110,45 @@ function SettingsDrawer() {
                     </Button>
                 </DrawerTrigger>
                 <DrawerContent className="px-3 w-full">
-                    <div className="flex flex-col gap-4">
-                        {/* Theme Button */}
-                        <Button
-                            variant="ghost"
-                            onClick={openThemeDrawer}
-                            className="justify-between flex items-center text-left w-full p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                        >
-                            <div className="flex items-center">
-                                {theme === "dark" ? (
-                                    <Moon
+                    <div className="py-5 gap-y-3 flex flex-col w-full">
+                        <DrawerTitle className="font-control opacity-70 dark:opacity-90 py-3">
+                            {t("title")}
+                        </DrawerTitle>
+                        <Divider />
+                        <div className="gap-y-5 md:flex md:w-full md:gap-x-10">
+                            {selectableItems.map((item) => (
+                                <button
+                                    key={item.value}
+                                    onClick={() => handleItemChange(item.value)}
+                                    className="flex items-center justify-between w-full p-3 rounded-md cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                >
+                                    <div className="flex items-center space-x-2">
+                                        <div>{item.logo}</div>
+                                        <div className="flex flex-col px-2 md:px-0">
+                                            <span className="text-lg font-semibold text-primary-850 dark:text-primary-50 capitalize">
+                                                {item.title}
+                                            </span>
+                                            <span className="text-sm text-primary-800 dark:text-primary-100">
+                                                {item.description}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <ChevronRight
                                         size={20}
                                         className="stroke-primary-850 dark:stroke-primary-150"
                                     />
-                                ) : theme === "light" ? (
-                                    <Sun
-                                        size={20}
-                                        className="stroke-primary-850 dark:stroke-primary-150"
-                                    />
-                                ) : (
-                                    <Computer
-                                        size={20}
-                                        className="stroke-primary-850 dark:stroke-primary-150"
-                                    />
-                                )}
-                                <span className="ml-3 text-sm font-medium">
-                                    {t("theme.tab")}
-                                </span>
-                            </div>
-                            <ChevronRight
-                                size={20}
-                                className="stroke-primary-850 dark:stroke-primary-150"
-                            />
-                        </Button>
-
-                        {/* Language Button */}
-                        <Button
-                            variant="ghost"
-                            onClick={openLanguageDrawer}
-                            className="justify-between flex items-center text-left w-full p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                        >
-                            <div className="flex items-center">
-                                {getLanguageIcon(currentLanguage)}
-                                <span className="ml-3 text-sm font-medium">
-                                    {t("language.tab")}
-                                </span>
-                            </div>
-                            <ChevronRight
-                                size={20}
-                                className="stroke-primary-850 dark:stroke-primary-150"
-                            />
-                        </Button>
+                                </button>
+                            ))}
+                        </div>
                     </div>
                 </DrawerContent>
             </Drawer>
 
-            {/* Theme Drawer */}
             <ThemeDrawer
                 isOpen={isThemeDrawerOpen}
                 onClose={() => setIsThemeDrawerOpen(false)}
             />
 
-            {/* Language Drawer */}
             <LanguageDrawer
                 isOpen={isLanguageDrawerOpen}
                 onClose={() => setIsLanguageDrawerOpen(false)}
