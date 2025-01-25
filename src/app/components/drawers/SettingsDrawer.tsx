@@ -121,11 +121,11 @@ function SettingsDrawer() {
                 </DrawerTrigger>
                 <DrawerContent className="px-3 w-full">
                     <div className="py-5 gap-y-3 flex flex-col w-full">
-                        <DrawerTitle className="font-control opacity-70 dark:opacity-90 py-3">
+                        <DrawerTitle className="font-control opacity-70 dark:opacity-90 py-3 mb-2">
                             {t("title")}
                         </DrawerTitle>
                         <Divider />
-                        <div className="gap-y-5 md:flex md:w-full md:gap-x-10">
+                        <div className="gap-y-5 md:flex md:w-full md:gap-x-10 space-y-6">
                             {selectableItems.map((item) => (
                                 <button
                                     key={item.value}

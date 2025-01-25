@@ -51,7 +51,7 @@ function TrackerTypeDrawer() {
             value: "chariot",
             description: t("chariot.description"),
             logo: (
-                <ChariotIcon className="fill-primary-800 dark:fill-primary-250 w-16 h-16" />
+                <ChariotIcon className="fill-primary-800 dark:fill-primary-250 size-14 lg:size-16" />
             ),
         },
         {
@@ -59,7 +59,7 @@ function TrackerTypeDrawer() {
             value: "kavadi",
             description: t("kavadi.description"),
             logo: (
-                <KavadiIcon className="fill-primary-800 dark:fill-primary-250 w-16 h-16" />
+                <KavadiIcon className="fill-primary-800 dark:fill-primary-250 size-14 lg:size-16" />
             ),
         },
     ];
