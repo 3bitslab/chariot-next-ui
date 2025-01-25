@@ -20,13 +20,14 @@ export function AnalyticsConsentDialog() {
                 <DialogHeader>
                     <DialogTitle>Analytics Consent Required</DialogTitle>
                     <DialogDescription>
-                        We use analytics to improve your experience and
-                        understand how our service is used. This helps us make
-                        the Chariot Tracker better for everyone.
+                        We&apos;re committed to making Chariot Tracker better
+                        for you! By allowing anonymous analytics, you help us
+                        understand how people use our app and what we can
+                        improve.
                         <br />
                         <br />
-                        By clicking Accept, you agree to allow us to collect
-                        anonymous usage data.
+                        Your feedback through usage patterns helps us create a
+                        better experience for everyone in our community.
                     </DialogDescription>
                 </DialogHeader>
                 <div className="flex justify-center pt-4">
