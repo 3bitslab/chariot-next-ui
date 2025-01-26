@@ -25,6 +25,7 @@ const initialize = () => {
             debug: process.env.NODE_ENV !== "production",
             track_pageview: true,
             verbose: true,
+            ignore_dnt: true,
         });
         isInitialized = true;
     }

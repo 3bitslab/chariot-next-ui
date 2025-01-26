@@ -17,9 +17,8 @@ export function AnalyticsProvider() {
     const [hasConsent] = useAtom(analyticsConsentAtom);
     const [dntEnabled] = useAtom(dntStatusAtom);
 
-    // Initialize analytics after consent and only if DNT is not enabled
     useEffect(() => {
-        if (hasConsent && !dntEnabled) {
+        if (hasConsent) {
             Analytics.initialize();
         }
     }, [hasConsent, dntEnabled]);
