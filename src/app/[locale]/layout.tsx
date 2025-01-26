@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         title: "Penang Silver Chariot Tracker | Live Thaipusam Tracking",
         description:
             "Live tracking service for Penang Thaipusam Silver Chariot. Follow the chariot's journey in real-time during the Thaipusam festival.",
-        url: "https://chariottracker.com",
+        url: "https://www.chariottracker.com",
         siteName: "Penang Silver Chariot Tracker",
         images: [
             {
@@ -163,12 +163,12 @@ export const metadata: Metadata = {
         google: "google-site-verification=tWhYvNmnJFjtc3TjNf64dW1jpDd-JxСM3CDaozNIЕЗE",
     },
     alternates: {
-        canonical: "https://chariottracker.com",
+        canonical: "https://www.chariottracker.com",
         languages: {
-            "en-US": "https://chariottracker.com",
-            "zh-CN": "https://chariottracker.com/zh",
-            "ta-IN": "https://chariottracker.com/ta",
-            "ms-MY": "https://chariottracker.com/ms",
+            "en-US": "https://www.chariottracker.com/en",
+            "zh-CN": "https://www.chariottracker.com/zh",
+            "ta-IN": "https://www.chariottracker.com/ta",
+            "ms-MY": "https://www.chariottracker.com/ms",
         },
     },
     formatDetection: {
