@@ -26,6 +26,7 @@ const initialize = () => {
             track_pageview: true,
             verbose: true,
             ignore_dnt: true,
+            persistence: "localStorage",
         });
         isInitialized = true;
     }
