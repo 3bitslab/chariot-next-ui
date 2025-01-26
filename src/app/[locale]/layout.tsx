@@ -160,13 +160,8 @@ export const metadata: Metadata = {
         },
     },
     verification: {
-        google: "google-site-verification-code", // TODOD: Add your Google verification code
+        google: "google-site-verification=tWhYvNmnJFjtc3TjNf64dW1jpDd-JxСM3CDaozNIЕЗE",
     },
-    other: {
-        // TODO: Add more meta verification
-        "facebook-domain-verification": "facebook-domain-verification-code",
-    },
-    // TODO: add more language routes
     alternates: {
         canonical: "https://chariottracker.com",
         languages: {
