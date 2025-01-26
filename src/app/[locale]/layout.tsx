@@ -2,6 +2,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
+import { Provider } from "jotai";
 
 import type { Metadata } from "next";
 import localFont from "next/font/local";
@@ -200,21 +201,23 @@ export default async function RootLayout({
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
                 <NextIntlClientProvider messages={messages}>
-                    <JsonLd />
-                    <Suspense>
-                        <AnalyticsProvider />
-                    </Suspense>
-                    <ReactQueryProvider>
-                        <ThemeProvider
-                            attribute="class"
-                            defaultTheme="system"
-                            enableSystem
-                            disableTransitionOnChange
-                        >
-                            {children}
-                        </ThemeProvider>
-                    </ReactQueryProvider>
-                    <Toaster />
+                    <Provider>
+                        <JsonLd />
+                        <Suspense>
+                            <AnalyticsProvider />
+                        </Suspense>
+                        <ReactQueryProvider>
+                            <ThemeProvider
+                                attribute="class"
+                                defaultTheme="system"
+                                enableSystem
+                                disableTransitionOnChange
+                            >
+                                {children}
+                            </ThemeProvider>
+                        </ReactQueryProvider>
+                        <Toaster />
+                    </Provider>
                 </NextIntlClientProvider>
             </body>
         </html>

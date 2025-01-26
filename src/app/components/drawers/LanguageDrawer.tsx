@@ -22,6 +22,13 @@ function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps) {
     const [currentLanguage, setCurrentLanguage] = useAtom(languageAtom);
 
     useEffect(() => {
+        const currentLocale = pathname.split("/")[1];
+        if (currentLocale && currentLocale !== currentLanguage) {
+            setCurrentLanguage(currentLocale as typeof currentLanguage);
+        }
+    }, [pathname, currentLanguage, setCurrentLanguage]);
+
+    useEffect(() => {
         if (isOpen) {
             setCurrentDrawer("language");
         }
