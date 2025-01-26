@@ -8,15 +8,14 @@ import {
     DialogHeader,
     DialogTitle,
 } from "@/components/ui/dialog";
-import { analyticsConsentAtom } from "@/atoms/analytics";
+import { analyticsConsentAtom, dntStatusAtom } from "@/atoms/analytics";
 import { useAtom } from "jotai";
-import { Analytics } from "@/utils/mixpanel";
 
 export function AnalyticsConsentDialog() {
     const [consent, setConsent] = useAtom(analyticsConsentAtom);
-    const { isDntEnabled } = Analytics;
+    const [dntEnabled] = useAtom(dntStatusAtom);
 
-    const showDialog = isDntEnabled() && !consent;
+    const showDialog = dntEnabled && !consent;
 
     return (
         <Dialog open={showDialog}>

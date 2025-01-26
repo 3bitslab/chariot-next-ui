@@ -2,7 +2,7 @@
 
 import { drawerAtom } from "@/atoms/drawer";
 import { languageAtom } from "@/atoms/language";
-import { analyticsConsentAtom } from "@/atoms/analytics";
+import { analyticsConsentAtom, dntStatusAtom } from "@/atoms/analytics";
 import { Analytics } from "@/utils/mixpanel";
 import { useAtom } from "jotai";
 import { usePathname, useSearchParams } from "next/navigation";
@@ -15,13 +15,14 @@ export function AnalyticsProvider() {
     const [drawer] = useAtom(drawerAtom);
     const [language] = useAtom(languageAtom);
     const [hasConsent] = useAtom(analyticsConsentAtom);
+    const [dntEnabled] = useAtom(dntStatusAtom);
 
-    // Initialize analytics after consent
+    // Initialize analytics after consent and only if DNT is not enabled
     useEffect(() => {
-        if (hasConsent) {
+        if (hasConsent && !dntEnabled) {
             Analytics.initialize();
         }
-    }, [hasConsent]);
+    }, [hasConsent, dntEnabled]);
 
     // Track page views
     useEffect(() => {
@@ -52,7 +53,7 @@ export function AnalyticsProvider() {
         }
     }, [language, hasConsent]);
 
-    if (!hasConsent) {
+    if (!hasConsent && dntEnabled) {
         return <AnalyticsConsentDialog />;
     }
 
