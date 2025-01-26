@@ -25,7 +25,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-    metadataBase: new URL("https://chariottracker.com"),
+    metadataBase: new URL("https://www.chariottracker.com"),
     title: "Penang Silver Chariot Tracker | Live Thaipusam Chariot Tracking",
     description:
         "Live tracking service for Penang Thaipusam Silver Chariot. Follow the chariot's journey in real-time during the Thaipusam festival. Get updates on location, checkpoints, and arrival times.",
