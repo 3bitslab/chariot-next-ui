@@ -6,7 +6,7 @@ export default function JsonLd() {
             name: "Penang Thaipusam Silver Chariot Tracker",
             description:
                 "Live tracking service for Penang Thaipusam Silver Chariot.",
-            url: "https://chariottracker.com",
+            url: "https://wwww.chariottracker.com",
             applicationCategory: "TrackingTool",
             operatingSystem: "Windows, macOS, Linux, iOS, Android",
             offers: {
@@ -28,8 +28,8 @@ export default function JsonLd() {
             typicalAgeRange: "All ages",
             isAccessibleForFree: true,
             image: [
-                "https://chariottracker.com/assets/byebyte-1200x630.png",
-                "https://chariottracker.com/assets/byebyte-1200x675.png",
+                "https://www.chariottracker.com/assets/byebyte-1200x630.png",
+                "https://www.chariottracker.com/assets/byebyte-1200x675.png",
             ],
             location: [
                 {
@@ -70,8 +70,8 @@ export default function JsonLd() {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "ByeByte Technologies",
-            url: "https://chariottracker.com",
-            logo: "https://chariottracker.com/assets/byebyte.png",
+            url: "https://www.chariottracker.com",
+            logo: "https://www.chariottracker.com/assets/byebyte.png",
             sameAs: ["https://github.com/byebyteorg"],
         },
     ];
