@@ -32,8 +32,25 @@ export const metadata: Metadata = {
         "Live tracking service for Penang Thaipusam Silver Chariot. Follow the chariot's journey in real-time during the Thaipusam festival. Get updates on location, checkpoints, and arrival times.",
     keywords:
         "Penang Thaipusam, Silver Chariot, Chariot Tracker, Live Tracking, Thaipusam Festival, Penang Temple, Religious Procession, Real-time Location, Chettiar, Chettipusam, Chettipusam Tracker, Nagarathar, Kovil Veedu, Waterfall Temple",
-    authors: [{ name: "ByeByte Technologies" }],
+    authors: [
+        { name: "ByeByte Technologies", url: "https://www.chariottracker.com" },
+    ],
+    creator: "ByeByte Technologies",
+    publisher: "ByeByte Technologies",
     category: "Religious Events",
+    applicationName: "Penang Silver Chariot Tracker",
+    appleWebApp: {
+        capable: true,
+        title: "Penang Silver Chariot Tracker",
+        statusBarStyle: "default",
+    },
+    formatDetection: {
+        telephone: true,
+        date: true,
+        address: true,
+        email: true,
+        url: true,
+    },
     openGraph: {
         title: "Penang Silver Chariot Tracker | Live Thaipusam Tracking",
         description:
@@ -50,12 +67,15 @@ export const metadata: Metadata = {
         ],
         locale: "en_US",
         type: "website",
+        countryName: "Malaysia",
     },
     twitter: {
         card: "summary_large_image",
         title: "Penang Silver Chariot Tracker",
         description:
-            "Live tracking service for Penang Thaipusam Silver Chariot",
+            "Live tracking service for Penang Thaipusam Silver Chariot. Real-time updates on location and checkpoints.",
+        site: "@byebytetech",
+        creator: "@byebytetech",
         images: ["/assets/byebyte-1200x675.png"],
     },
     icons: {
@@ -171,13 +191,6 @@ export const metadata: Metadata = {
             "ta-IN": "https://www.chariottracker.com/ta",
             "ms-MY": "https://www.chariottracker.com/ms",
         },
-    },
-    formatDetection: {
-        telephone: true,
-        date: true,
-        address: true,
-        email: true,
-        url: true,
     },
 };
 
