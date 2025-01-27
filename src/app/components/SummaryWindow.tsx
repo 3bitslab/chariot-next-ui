@@ -14,7 +14,7 @@ function SummaryWindow({
 }: {
     progress: number;
     roadName: string;
-    lastUpdatedAt: Date;
+    lastUpdatedAt: Date | null;
     tracker: "kavadi" | "chariot";
 }) {
     const [fillPercentage, setFillPercentage] = useState(0);
@@ -46,6 +46,11 @@ function SummaryWindow({
     }, [progress]);
 
     useEffect(() => {
+        if (!lastUpdatedAt) {
+            setDisplayText("Loading...");
+            return;
+        }
+
         setDisplayText(convertDateToReadableDate(lastUpdatedAt));
 
         const intervalId = setInterval(() => {

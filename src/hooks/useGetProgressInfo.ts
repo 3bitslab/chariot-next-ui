@@ -9,19 +9,22 @@ import { useEffect, useState } from "react";
 import { env } from "@/env";
 import { useAtom } from "jotai";
 import { vehicleAtom } from "@/atoms/vehicle";
+import { useTranslations } from "next-intl";
+import { toast } from "sonner";
 
 export const useGetProgressInfo = () => {
     const [type] = useAtom(vehicleAtom);
+    const t = useTranslations();
     const [vehiclePosition, setVehiclePosition] = useState<{
         lat: number;
         lng: number;
     }>({ lat: MAP_COORDINATES.start[0], lng: MAP_COORDINATES.start[1] });
-    const [lastUpdatedAt, setLastUpdatedAt] = useState<Date>(new Date());
+    const [lastUpdatedAt, setLastUpdatedAt] = useState<Date | null>(null);
 
     const isMock = env.NEXT_PUBLIC_USE_MOCK_DATA;
     const [mockData, setMockData] = useState<TLocationResponse | null>(null);
 
-    const { data, isFetching, isError, dataUpdatedAt } = useQuery({
+    const { data, isFetching, isError, error, dataUpdatedAt } = useQuery({
         queryKey: ["getProgressInfo", type],
         queryFn: async ({ queryKey: [, type] }) => {
             if (isMock) return null;
@@ -36,6 +39,16 @@ export const useGetProgressInfo = () => {
     });
 
     useEffect(() => {
+        if (error) {
+            toast.error(
+                error instanceof Error
+                    ? t(error.message)
+                    : t("errors.fetchLocation")
+            );
+        }
+    }, [error, t]);
+
+    useEffect(() => {
         if (data) {
             setVehiclePosition({
                 lat: data.latitude,
@@ -45,8 +58,10 @@ export const useGetProgressInfo = () => {
     }, [data]);
 
     useEffect(() => {
-        setLastUpdatedAt(new Date(dataUpdatedAt));
-    }, [dataUpdatedAt]);
+        if (data || isMock) {
+            setLastUpdatedAt(new Date(dataUpdatedAt));
+        }
+    }, [dataUpdatedAt, data, isMock]);
 
     useEffect(() => {
         if (isMock) {

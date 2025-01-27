@@ -11,7 +11,7 @@ class LocationService {
             `${env.NEXT_PUBLIC_API_URL}/api/location?type=${type.toUpperCase()}`
         );
         if (!response.ok) {
-            throw new Error("Something went wrong while fetching location.");
+            throw new Error("errors.fetchLocation");
         }
         return await response.json();
     }
@@ -19,15 +19,25 @@ class LocationService {
     async getCheckpointsByType(
         type: TTrackerType
     ): Promise<[TCheckpointsResponse]> {
-        const response = await fetch(
-            `${env.NEXT_PUBLIC_API_URL}/api/checkpoint?type=${type.toUpperCase()}`
-        );
+        try {
+            const response = await fetch(
+                `${env.NEXT_PUBLIC_API_URL}/api/checkpoint?type=${type.toUpperCase()}`
+            );
 
-        if (!response.ok) {
-            throw new Error("Something went wrong while fetching checkpoints.");
+            if (!response.ok) {
+                throw new Error("errors.fetchCheckpoints");
+            }
+
+            return await response.json();
+        } catch (error) {
+            if (
+                error instanceof TypeError &&
+                error.message.includes("Failed to fetch")
+            ) {
+                throw new Error("errors.connectionError");
+            }
+            throw error;
         }
-
-        return await response.json();
     }
 }
 

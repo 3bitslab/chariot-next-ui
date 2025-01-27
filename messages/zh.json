@@ -117,5 +117,10 @@
             "title": "卡瓦迪",
             "description": "实时查看纳加拉塔尔卡瓦迪，他们在银色战车前方进行卡瓦迪舞蹈。"
         }
+    },
+    "errors": {
+        "fetchLocation": "获取位置信息时出错。",
+        "fetchCheckpoints": "获取检查站信息时出错。",
+        "connectionError": "无法连接到服务器。请检查您的网络连接或联系开发人员。"
     }
 }
