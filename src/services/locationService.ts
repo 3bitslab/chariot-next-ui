@@ -19,15 +19,29 @@ class LocationService {
     async getCheckpointsByType(
         type: TTrackerType
     ): Promise<[TCheckpointsResponse]> {
-        const response = await fetch(
-            `${env.NEXT_PUBLIC_API_URL}/api/checkpoint?type=${type.toUpperCase()}`
-        );
+        try {
+            const response = await fetch(
+                `${env.NEXT_PUBLIC_API_URL}/api/checkpoint?type=${type.toUpperCase()}`
+            );
 
-        if (!response.ok) {
-            throw new Error("Something went wrong while fetching checkpoints.");
+            if (!response.ok) {
+                throw new Error(
+                    "Something went wrong while fetching checkpoints."
+                );
+            }
+
+            return await response.json();
+        } catch (error) {
+            if (
+                error instanceof TypeError &&
+                error.message.includes("Failed to fetch")
+            ) {
+                throw new Error(
+                    "Unable to connect to the server. Please check your connection or notify the developers."
+                );
+            }
+            throw error;
         }
-
-        return await response.json();
     }
 }
 
