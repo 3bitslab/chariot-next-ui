@@ -1,7 +1,12 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { MapContainer, Marker, TileLayer } from "react-leaflet";
+import {
+    MapContainer,
+    Marker,
+    TileLayer,
+    AttributionControl,
+} from "react-leaflet";
 import { LatLngExpression, LatLngTuple } from "leaflet";
 
 import "leaflet/dist/leaflet.css";
@@ -9,6 +14,7 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 import "leaflet-defaulticon-compatibility";
 import Navbar from "../navigation/Navbar";
 import RightNavbar from "../navigation/RightNavbar";
+import ByeByteControl from "./ByeByteControl";
 import SummaryWindow from "../SummaryWindow";
 import AntPath from "./AntPath";
 import {
@@ -107,10 +113,13 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 zoomControl={false}
                 doubleClickZoom={false}
                 className="fixed top-0 bottom-0 left-0 right-0 z-0"
+                attributionControl={false}
             >
                 <MapViewUpdater vehiclePosition={vehiclePosition} />
+                <AttributionControl position="bottomright" />
+                <ByeByteControl />
                 <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                     className="z-0 dark:hue-rotate-180 dark:invert dark:grayscale-[50%]"
                 />
