@@ -30,16 +30,18 @@ export function PinDialog() {
     return (
         <Dialog open={true}>
             <DialogContent
-                className="sm:max-w-md"
+                className="w-[90%] max-w-[400px] p-4 sm:p-6 md:max-w-md"
                 onPointerDownOutside={(e) => e.preventDefault()}
             >
-                <DialogHeader>
-                    <DialogTitle>Enter PIN</DialogTitle>
-                    <DialogDescription>
+                <DialogHeader className="space-y-2">
+                    <DialogTitle className="text-xl sm:text-2xl">
+                        Enter PIN
+                    </DialogTitle>
+                    <DialogDescription className="text-sm sm:text-base">
                         Please enter the PIN to access the application.
                     </DialogDescription>
                 </DialogHeader>
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-4 mt-4">
                     <input
                         type="password"
                         value={pin}
@@ -47,7 +49,7 @@ export function PinDialog() {
                             setPin(e.target.value);
                             setError(false);
                         }}
-                        className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                        className="flex h-12 sm:h-10 w-full rounded-md border border-input bg-background px-4 py-2 text-base sm:text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         placeholder="Enter PIN"
                     />
                     {error && (
@@ -55,7 +57,12 @@ export function PinDialog() {
                             Incorrect PIN. Please try again.
                         </p>
                     )}
-                    <Button onClick={handlePinSubmit}>Submit</Button>
+                    <Button
+                        onClick={handlePinSubmit}
+                        className="h-12 sm:h-10 text-base sm:text-sm"
+                    >
+                        Submit
+                    </Button>
                 </div>
             </DialogContent>
         </Dialog>

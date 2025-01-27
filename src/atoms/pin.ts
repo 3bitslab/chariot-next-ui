@@ -1,3 +1,6 @@
-import { atom } from "jotai";
+import { atomWithStorage } from "jotai/utils";
 
-export const isPinVerifiedAtom = atom<boolean>(false);
+export const isPinVerifiedAtom = atomWithStorage<boolean>(
+    "isPinVerified",
+    false
+);
