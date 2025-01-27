@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description:
         "Live tracking service for Penang Thaipusam Silver Chariot. Follow the chariot's journey in real-time during the Thaipusam festival. Get updates on location, checkpoints, and arrival times.",
     keywords:
-        "Penang Thaipusam, Silver Chariot, Chariot Tracker, Live Tracking, Thaipusam Festival, Penang Temple, Religious Procession, Real-time Location, Chettiar, Chettipusam, Chettipusam Tracker, Nagarathar, Kovil Veedu, Waterfall Temple",
+        "Penang Thaipusam, Silver Chariot, Thaipusam Festival, Live Tracking, Chariot Tracker, Real-time Location, Penang Temple, Religious Procession, Penang Thaipusam 2025 Chariot Tracker, Penang Silver Chariot Live Tracking, Penang Thaipusam Live Tracker, Chettipusam Procession Tracking, Nagarathar Kovil Veedu Tracker, Kavadi Tracker for Thaipusam",
     authors: [
         { name: "ByeByte Technologies", url: "https://www.chariottracker.com" },
     ],
