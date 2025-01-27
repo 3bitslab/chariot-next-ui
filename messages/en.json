@@ -47,10 +47,10 @@
             "title": "The Developers"
         },
         "mani": {
-            "description": "Agent on the ground. I make sure the data is accurate and up-to-date."
+            "description": "See me during Thaipusam? Feedback welcome. "
         },
         "lee": {
-            "description": "The handler in the shadows. I make sure everything runs smoothly."
+            "description": "If the server goes down, blame me"
         }
     },
     "Roadblock": {
@@ -88,7 +88,7 @@
                 "nonRefundableContributions": "Non-Refundable Contributions: All donations are voluntary and non-refundable. By making a donation, you acknowledge that you do so without expectation of return or any specific service beyond the continued improvement and operation of the Penang Silver Chariot Tracker project.",
                 "transparencyAndAccountability": "Transparency and Accountability: While funds will be used to maintain and develop the project, ByeByte Technologies is committed to transparency. Summaries of how funds are allocated may be provided periodically at the discretion of the project team.",
                 "noAffiliationDisclaimer": "No Affiliation Disclaimer: Donors must acknowledge that this project operates independently and is not endorsed by or connected to any religious entity. Donations should not be construed as contributions to or support of any temple or religious practice.",
-                "acceptanceOfTerms": "Acceptance of Terms: By making a donation, you agree to these terms and conditions. You confirm that you understand the purpose and management of the funds, as well as the project's independent status."
+                "acceptanceOfTerms": "Acceptance of Terms: By making a donation, you agree to these terms and conditions. You confirm that you understand the purpose and management of the funds, as well as the project’s independent status."
             }
         }
     },
@@ -111,11 +111,11 @@
         "drawerTitle": "Choose Tracker",
         "chariot": {
             "title": "Chariot",
-            "description": "Track the silver chariot carrying the statue of Lord Murugan."
+            "description": "Track the Silver Chariot carrying the statue of Lord Murugan."
         },
         "kavadi": {
             "title": "Kavadi",
-            "description": "Track the devotees carrying their kavadi to witness their kavadi aatam ahead of the silver chariot."
+            "description": "Track the Nagarathars' Kavadi to witness their Kavadi Aatam ahead of the Silver Chariot."
         }
     }
 }

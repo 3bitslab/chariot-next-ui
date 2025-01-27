@@ -1,5 +1,5 @@
 import { LatLngExpression } from "leaflet";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
 
 export const MapViewUpdater = ({
@@ -9,9 +9,16 @@ export const MapViewUpdater = ({
 }) => {
     const map = useMap();
 
+    const initialZoomDone = useRef(false);
+
     useEffect(() => {
         if (vehiclePosition) {
-            map.setView(vehiclePosition, 25);
+            if (!initialZoomDone.current) {
+                map.setView(vehiclePosition, 25);
+                initialZoomDone.current = true;
+            } else {
+                map.panTo(vehiclePosition);
+            }
         }
     }, [vehiclePosition, map]);
 
