@@ -11,7 +11,7 @@ class LocationService {
             `${env.NEXT_PUBLIC_API_URL}/api/location?type=${type.toUpperCase()}`
         );
         if (!response.ok) {
-            throw new Error("Something went wrong while fetching location.");
+            throw new Error("errors.fetchLocation");
         }
         return await response.json();
     }
@@ -25,9 +25,7 @@ class LocationService {
             );
 
             if (!response.ok) {
-                throw new Error(
-                    "Something went wrong while fetching checkpoints."
-                );
+                throw new Error("errors.fetchCheckpoints");
             }
 
             return await response.json();
@@ -36,9 +34,7 @@ class LocationService {
                 error instanceof TypeError &&
                 error.message.includes("Failed to fetch")
             ) {
-                throw new Error(
-                    "Unable to connect to the server. Please check your connection or notify the developers."
-                );
+                throw new Error("errors.connectionError");
             }
             throw error;
         }

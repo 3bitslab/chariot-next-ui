@@ -9,9 +9,12 @@ import { useEffect, useState } from "react";
 import { env } from "@/env";
 import { useAtom } from "jotai";
 import { vehicleAtom } from "@/atoms/vehicle";
+import { useTranslations } from "next-intl";
+import { toast } from "sonner";
 
 export const useGetProgressInfo = () => {
     const [type] = useAtom(vehicleAtom);
+    const t = useTranslations();
     const [vehiclePosition, setVehiclePosition] = useState<{
         lat: number;
         lng: number;
@@ -21,7 +24,7 @@ export const useGetProgressInfo = () => {
     const isMock = env.NEXT_PUBLIC_USE_MOCK_DATA;
     const [mockData, setMockData] = useState<TLocationResponse | null>(null);
 
-    const { data, isFetching, isError, dataUpdatedAt } = useQuery({
+    const { data, isFetching, isError, error, dataUpdatedAt } = useQuery({
         queryKey: ["getProgressInfo", type],
         queryFn: async ({ queryKey: [, type] }) => {
             if (isMock) return null;
@@ -34,6 +37,16 @@ export const useGetProgressInfo = () => {
         },
         refetchInterval: 1000 * 30,
     });
+
+    useEffect(() => {
+        if (error) {
+            toast.error(
+                error instanceof Error
+                    ? t(error.message)
+                    : t("errors.fetchLocation")
+            );
+        }
+    }, [error, t]);
 
     useEffect(() => {
         if (data) {

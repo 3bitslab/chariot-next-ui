@@ -5,9 +5,11 @@ import { useQuery } from "@tanstack/react-query";
 import { useAtom } from "jotai";
 import { toast } from "sonner";
 import { useEffect } from "react";
+import { useTranslations } from "next-intl";
 
 export const useGetCheckpoints = () => {
     const [type] = useAtom(vehicleAtom);
+    const t = useTranslations();
 
     const { data, isFetching, error } = useQuery({
         queryKey: ["getCheckpoints", type],
@@ -28,11 +30,11 @@ export const useGetCheckpoints = () => {
         if (error) {
             toast.error(
                 error instanceof Error
-                    ? error.message
-                    : "An error occurred while fetching checkpoints"
+                    ? t(error.message)
+                    : t("errors.fetchCheckpoints")
             );
         }
-    }, [error]);
+    }, [error, t]);
 
     return {
         data,
