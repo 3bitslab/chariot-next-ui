@@ -66,7 +66,7 @@
             "bankName": "Nama Bank",
             "accountNumber": "Nombor Akaun",
             "accountName": "Nama Akaun",
-            "malaysiaQR": "Kod QR Negara Malaysia",
+            "malaysiaQR": "Kod QR DuitNow",
             "detail": "Butir butir Pemindahan Bank",
             "reference": "Rujukan",
             "copied": "{field} disalin ke papan klip!"
