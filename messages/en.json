@@ -117,5 +117,10 @@
             "title": "Kavadi",
             "description": "Track the Nagarathars' Kavadi to witness their Kavadi Aatam ahead of the Silver Chariot."
         }
+    },
+    "errors": {
+        "fetchLocation": "Something went wrong while fetching location.",
+        "fetchCheckpoints": "Something went wrong while fetching checkpoints.",
+        "connectionError": "Unable to connect to the server. Please check your connection or notify the developers."
     }
 }

@@ -117,5 +117,10 @@
             "title": "Kavadi",
             "description": "Pantau Kavadi Nagarathars untuk menyaksikan tarian Kavadi mereka di hadapan Kereta Perak."
         }
+    },
+    "errors": {
+        "fetchLocation": "Terdapat masalah semasa mendapatkan lokasi.",
+        "fetchCheckpoints": "Terdapat masalah semasa mendapatkan informasi pemeriksaan.",
+        "connectionError": "Tidak dapat berhubung dengan pelayan. Sila periksa talian internet anda atau maklumkan kepada pencipta."
     }
 }
