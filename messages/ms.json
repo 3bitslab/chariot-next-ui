@@ -111,19 +111,11 @@
         "drawerTitle": "Pilih Penjejak",
         "chariot": {
             "title": "Kereta Perak",
-            "description": "Pantau lokasi kereta perak yang membawa patung Dewa Murugan secara langsung."
+            "description": "Pantau lokasi Kereta Perak yang membawa patung Dewa Murugan."
         },
         "kavadi": {
             "title": "Kavadi",
-            "description": "Pantau para penganut yang membawa kavadi dan melakukan tarian kavadi di hadapan kereta perak."
+            "description": "Pantau Kavadi Nagarathars untuk menyaksikan tarian Kavadi mereka di hadapan Kereta Perak."
         }
-    },
-    "Navigation": {
-        "home": "Laman Utama",
-        "roadblocks": "Sekatan Jalan",
-        "checkpoints": "Pemeriksaan",
-        "tracker": "Penjejak",
-        "support": "Sokongan",
-        "settings": "Tetapan"
     }
 }

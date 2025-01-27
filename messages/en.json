@@ -111,11 +111,11 @@
         "drawerTitle": "Choose Tracker",
         "chariot": {
             "title": "Chariot",
-            "description": "Track the silver chariot carrying the statue of Lord Murugan."
+            "description": "Track the Silver Chariot carrying the statue of Lord Murugan."
         },
         "kavadi": {
             "title": "Kavadi",
-            "description": "Track the devotees carrying their kavadi to witness their kavadi aatam ahead of the silver chariot."
+            "description": "Track the Nagarathars' Kavadi to witness their Kavadi Aatam ahead of the Silver Chariot."
         }
     }
 }
