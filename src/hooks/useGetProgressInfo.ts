@@ -16,7 +16,7 @@ export const useGetProgressInfo = () => {
         lat: number;
         lng: number;
     }>({ lat: MAP_COORDINATES.start[0], lng: MAP_COORDINATES.start[1] });
-    const [lastUpdatedAt, setLastUpdatedAt] = useState<Date>(new Date());
+    const [lastUpdatedAt, setLastUpdatedAt] = useState<Date | null>(null);
 
     const isMock = env.NEXT_PUBLIC_USE_MOCK_DATA;
     const [mockData, setMockData] = useState<TLocationResponse | null>(null);
@@ -45,8 +45,10 @@ export const useGetProgressInfo = () => {
     }, [data]);
 
     useEffect(() => {
-        setLastUpdatedAt(new Date(dataUpdatedAt));
-    }, [dataUpdatedAt]);
+        if (data || isMock) {
+            setLastUpdatedAt(new Date(dataUpdatedAt));
+        }
+    }, [dataUpdatedAt, data, isMock]);
 
     useEffect(() => {
         if (isMock) {
