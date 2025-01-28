@@ -39,7 +39,7 @@ function formatDelta(delta: number) {
 interface CheckpointProps {
     address: string;
     landmark?: string;
-    history: { year: number; malaysia_time: string }[];
+    history: { year: number; utc_time: string }[];
     delta: number | null;
     checkpointIndex: string;
 }
@@ -53,7 +53,7 @@ function Checkpoint({
 }: CheckpointProps) {
     const getArrivalTime = (year: number) => {
         const entry = history.find((h) => h.year === year);
-        return entry ? formatDateAndTime(entry.malaysia_time) : null;
+        return entry ? formatDateAndTime(entry.utc_time) : null;
     };
 
     const arrival2025 = getArrivalTime(2025);

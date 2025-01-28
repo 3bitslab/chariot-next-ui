@@ -18,7 +18,8 @@ export const useGetCheckpoints = () => {
                 type as TTrackerType
             );
         },
-        refetchInterval: 1000 * 60,
+        // TODO:REVERT
+        refetchInterval: 1000 * 1,
         placeholderData: (prev) => prev,
         retry: 1,
         gcTime: 0,
