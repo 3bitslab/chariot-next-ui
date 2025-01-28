@@ -16,6 +16,7 @@ function formatDateAndTime(timestamp: string) {
         hour: "numeric",
         minute: "numeric",
         hour12: true,
+        timeZone: "Asia/Kuala_Lumpur",
     };
 
     return date.toLocaleString("en-GB", options);
