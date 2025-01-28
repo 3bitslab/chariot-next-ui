@@ -4,6 +4,7 @@ import { drawerAtom } from "@/atoms/drawer";
 import { languageAtom } from "@/atoms/language";
 import { analyticsConsentAtom, dntStatusAtom } from "@/atoms/analytics";
 import { Analytics } from "@/utils/mixpanel";
+import { EventName } from "@/types/analytics";
 import { useAtom } from "jotai";
 import { usePathname, useSearchParams } from "next/navigation";
 import { useEffect } from "react";
@@ -26,7 +27,7 @@ export function AnalyticsProvider() {
     // Track page views
     useEffect(() => {
         if (hasConsent && pathname) {
-            Analytics.track("Page View", {
+            Analytics.track<EventName>("Page View", {
                 path: pathname,
                 search: searchParams.toString(),
                 url: `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`,
@@ -37,7 +38,7 @@ export function AnalyticsProvider() {
     // Track drawer opens
     useEffect(() => {
         if (hasConsent && drawer) {
-            Analytics.track("Drawer Opened", {
+            Analytics.track<EventName>("Drawer Opened", {
                 drawer_type: drawer,
             });
         }
@@ -46,7 +47,7 @@ export function AnalyticsProvider() {
     // Track language changes
     useEffect(() => {
         if (hasConsent) {
-            Analytics.track("Language Changed", {
+            Analytics.track<EventName>("Language Changed", {
                 language,
             });
         }
