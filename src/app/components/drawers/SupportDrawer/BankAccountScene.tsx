@@ -14,7 +14,7 @@ function BankAccountScene() {
         { title: t("accountNumber"), value: "371348475025" },
         {
             title: t("reference"),
-            value: "Penang Thaipusam SCT 2025",
+            value: "PEN Thaipusam SCT 25",
         },
     ];
 
@@ -28,11 +28,11 @@ function BankAccountScene() {
 
     return (
         <div className="flex flex-col gap-y-2 items-center justify-center">
-            <div className="flex flex-col items-center gap-y-2">
+            <div className="flex flex-col items-center gap-y-1">
                 <span className="font-bold text-primary-850 dark:text-primary-100">
                     {t("malaysiaQR")}
                 </span>
-                <div className="relative p-2 bg-white rounded-lg shadow-lg">
+                <div className="relative p-1 bg-white rounded-lg shadow-lg">
                     <Image
                         alt="QR Code"
                         src="/assets/ManickamQR.jpeg"
