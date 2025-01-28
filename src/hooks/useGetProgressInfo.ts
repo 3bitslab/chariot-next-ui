@@ -35,7 +35,8 @@ export const useGetProgressInfo = () => {
 
             return location;
         },
-        refetchInterval: 1000 * 30,
+        // TODO:REVERT
+        refetchInterval: 1000 * 1,
     });
 
     useEffect(() => {

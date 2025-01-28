@@ -16,23 +16,22 @@ function formatDateAndTime(timestamp: string) {
         hour: "numeric",
         minute: "numeric",
         hour12: true,
+        timeZone: "Asia/Kuala_Lumpur",
     };
 
     return date.toLocaleString("en-GB", options);
 }
 
 function formatDelta(delta: number) {
-    if (delta === 0) return "0s";
+    if (delta === 0) return "0m";
 
     const absDelta = Math.abs(delta);
-    const hours = Math.floor(absDelta / 3600);
-    const minutes = Math.floor((absDelta % 3600) / 60);
-    const seconds = absDelta % 60;
+    const hours = Math.floor(absDelta / 60);
+    const minutes = absDelta % 60;
 
     let formatted = "";
     if (hours > 0) formatted += `${hours}h `;
-    if (minutes > 0) formatted += `${minutes}m `;
-    if (seconds > 0 && hours === 0) formatted += `${seconds}s`;
+    if (minutes > 0 || hours === 0) formatted += `${minutes}m`;
 
     return formatted.trim();
 }
@@ -40,7 +39,7 @@ function formatDelta(delta: number) {
 interface CheckpointProps {
     address: string;
     landmark?: string;
-    history: { year: number; malaysia_time: string }[];
+    history: { year: number; utc_time: string }[];
     delta: number | null;
     checkpointIndex: string;
 }
@@ -54,7 +53,7 @@ function Checkpoint({
 }: CheckpointProps) {
     const getArrivalTime = (year: number) => {
         const entry = history.find((h) => h.year === year);
-        return entry ? formatDateAndTime(entry.malaysia_time) : null;
+        return entry ? formatDateAndTime(entry.utc_time) : null;
     };
 
     const arrival2025 = getArrivalTime(2025);
