@@ -38,7 +38,7 @@ function SupportDrawer() {
                 </Button>
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
-                <div className="py-5 flex flex-col w-full gap-y-3">
+                <div className="py-5 flex flex-col w-full gap-y-3 max-h-[80vh] overflow-y-auto">
                     <div className="flex flex-col items-center space-y-2">
                         <span className="font-medium text-primary-850 text-2xl dark:text-primary-50">
                             {t("description")}
