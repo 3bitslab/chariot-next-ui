@@ -1,4 +1,9 @@
-import { Drawer, DrawerContent, DrawerTrigger } from "@/components/ui/drawer";
+import {
+    Drawer,
+    DrawerContent,
+    DrawerTitle,
+    DrawerTrigger,
+} from "@/components/ui/drawer";
 import React, { useState } from "react";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/atoms/drawer";
@@ -39,14 +44,16 @@ function SupportDrawer() {
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 flex flex-col w-full gap-y-3 max-h-[80vh] overflow-y-auto">
-                    <div className="flex flex-col items-center space-y-2">
-                        <span className="font-medium text-primary-850 text-2xl dark:text-primary-50">
-                            {t("description")}
-                        </span>
-                        <span className="italic text-md dark:text-primary-100">
-                            {scene === 0 ? t("reason") : t("gratitude")}
-                        </span>
-                    </div>
+                    <DrawerTitle className="text-center">
+                        <div className="flex flex-col items-center space-y-2">
+                            <span className="font-medium text-primary-850 text-2xl dark:text-primary-50">
+                                {t("description")}
+                            </span>
+                            <span className="italic text-md dark:text-primary-100">
+                                {scene === 0 ? t("reason") : t("gratitude")}
+                            </span>
+                        </div>
+                    </DrawerTitle>
                     {scene === 0 ? (
                         <TNCScene handleSceneChange={handleSceneChange} />
                     ) : (
