@@ -23,17 +23,15 @@ function formatDateAndTime(timestamp: string) {
 }
 
 function formatDelta(delta: number) {
-    if (delta === 0) return "0s";
+    if (delta === 0) return "0m";
 
     const absDelta = Math.abs(delta);
-    const hours = Math.floor(absDelta / 3600);
-    const minutes = Math.floor((absDelta % 3600) / 60);
-    const seconds = absDelta % 60;
+    const hours = Math.floor(absDelta / 60);
+    const minutes = absDelta % 60;
 
     let formatted = "";
     if (hours > 0) formatted += `${hours}h `;
-    if (minutes > 0) formatted += `${minutes}m `;
-    if (seconds > 0 && hours === 0) formatted += `${seconds}s`;
+    if (minutes > 0 || hours === 0) formatted += `${minutes}m`;
 
     return formatted.trim();
 }
