@@ -69,7 +69,11 @@
             "malaysiaQR": "Kod QR DuitNow",
             "detail": "Butir butir Pemindahan Bank",
             "reference": "Rujukan",
-            "copied": "{field} disalin ke papan klip!"
+            "copied": {
+                "accountName": "Nama Akaun disalin ke papan klip!",
+                "accountNumber": "Nombor Akaun disalin ke papan klip!",
+                "reference": "Rujukan disalin ke papan klip!"
+            }
         },
         "drawer": {
             "title": "Sokong Kami",

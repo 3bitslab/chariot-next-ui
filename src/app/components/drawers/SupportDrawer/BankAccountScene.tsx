@@ -18,9 +18,12 @@ function BankAccountScene() {
         },
     ];
 
-    const handleCopyToClipboard = (value: string, label: string) => {
+    const handleCopyToClipboard = (
+        value: string,
+        field: "accountName" | "accountNumber" | "reference"
+    ) => {
         navigator.clipboard.writeText(value);
-        toast.success(t("copied", { field: label }));
+        toast.success(t(`copied.${field}`));
     };
 
     return (
@@ -74,7 +77,12 @@ function BankAccountScene() {
                                     onClick={() =>
                                         handleCopyToClipboard(
                                             detail.value,
-                                            detail.title
+                                            detail.title === t("accountName")
+                                                ? "accountName"
+                                                : detail.title ===
+                                                    t("accountNumber")
+                                                  ? "accountNumber"
+                                                  : "reference"
                                         )
                                     }
                                     className="hover:cursor-pointer dark:text-primary-50 text-primary-900"
