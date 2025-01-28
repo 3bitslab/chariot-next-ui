@@ -36,8 +36,8 @@ function BankAccountScene() {
                     <Image
                         alt="QR Code"
                         src="/assets/ManickamQR.jpeg"
-                        width={180}
-                        height={180}
+                        width={130}
+                        height={130}
                         className="rounded-md"
                     />
                     {/* Download QR Button */}
