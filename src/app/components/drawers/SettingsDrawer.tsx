@@ -125,7 +125,7 @@ function SettingsDrawer() {
                             {t("title")}
                         </DrawerTitle>
                         <Divider />
-                        <div className="gap-y-5 md:flex md:w-full md:gap-x-10 space-y-6">
+                        <div className="flex flex-col md:flex-row md:justify-center md:items-start w-full gap-4 md:gap-6">
                             {selectableItems.map((item) => (
                                 <button
                                     key={item.value}
