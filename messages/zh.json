@@ -86,10 +86,10 @@
             "acceptTerms": "我接受条款和条件",
             "supportNow": "立即支持",
             "items": {
-                "independentInitiative": "独立项目：本项目，即 槟城银色战车追踪器(Penang Silver Chariot Tracker)，由 ByeByte Technologies 独立开发和管理。捐赠者必须承认并同意该追踪器项目是由 Manickam Murugappan 和 Lee Zi Hang 二人所领导和运营的私人项目，并与任何寺庙、宗教组织或委员会无关。",
-                "purposeOfDonations": "捐款用途：所有收到的资金将专用于槟城银色战车追踪器项目的开发、维护和改进，包括但不限于软件开发成本、服务器和托管费用，以及项目正常运行所需的其他运营开支。",
+                "independentInitiative": "独立项目：本项目，即 槟城银辇追踪器(Penang Silver Chariot Tracker)，由 ByeByte Technologies 独立开发和管理。捐赠者必须承认并同意该追踪器项目是由 Manickam Murugappan 和 Lee Zi Hang 二人所领导和运营的私人项目，并与任何寺庙、宗教组织或委员会无关。",
+                "purposeOfDonations": "捐款用途：所有收到的资金将专用于槟城银辇追踪器项目的开发、维护和改进，包括但不限于软件开发成本、服务器和托管费用，以及项目正常运行所需的其他运营开支。",
                 "ownershipAndManagement": "资金管理：所有捐款将由 ByeByte Technologies 及其创建者 Manickam Murugappan 和 Lee Zi Hang 直接管理。这些资金不会转交或通过任何与该节日或活动相关的寺庙、宗教机构或委员会。",
-                "nonRefundableContributions": "不可退款捐款：所有捐款均为自愿，且不可退款。捐款人须知并同意，捐款时不会获得任何回报或特定服务，唯一目的仅限于支持槟城银色战车追踪器的持续改进和运营。",
+                "nonRefundableContributions": "不可退款捐款：所有捐款均为自愿，且不可退款。捐款人须知并同意，捐款时不会获得任何回报或特定服务，唯一目的仅限于支持槟城银辇追踪器的持续改进和运营。",
                 "transparencyAndAccountability": "透明度和责任：尽管资金将用于项目的维护和开发，ByeByte Technologies 承诺保持财务透明度。项目负责团队可能会定期提供资金使用情况，但其具体内容和时间由项目团队决定。",
                 "noAffiliationDisclaimer": "无隶属关系声明：捐款人必须明确知悉，本项目完全独立运作，不受任何宗教机构认可或支持。捐款不应被视为对任何寺庙或宗教活动的资助或支持。",
                 "acceptanceOfTerms": "接受条款：捐款即表示您同意所例条款和条件，并确认已理解资金的用途、管理方式及项目的独立性。"
@@ -114,12 +114,12 @@
     "Tracker": {
         "drawerTitle": "选择追踪器",
         "chariot": {
-            "title": "银色战车",
-            "description": "实时查看载着穆鲁干神像的银色战车的位置。"
+            "title": "银辇",
+            "description": "实时查看载着穆鲁干神像的银辇的位置。"
         },
         "kavadi": {
             "title": "卡瓦迪",
-            "description": "实时查看纳加拉塔尔卡瓦迪，他们在银色战车前方进行卡瓦迪舞蹈。"
+            "description": "实时查看纳加拉塔尔卡瓦迪，他们在银辇前方进行卡瓦迪舞蹈。"
         }
     },
     "errors": {
