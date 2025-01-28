@@ -69,7 +69,11 @@
             "malaysiaQR": "DuitNow 二维码",
             "reference": "参考",
             "detail": "银行转账详情",
-            "copied": "{field} 已复制到剪贴板！"
+            "copied": {
+                "accountName": "账户名称已复制到剪贴板！",
+                "accountNumber": "银行账号已复制到剪贴板！",
+                "reference": "参考已复制到剪贴板！"
+            }
         },
         "drawer": {
             "title": "支持我们",

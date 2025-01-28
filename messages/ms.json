@@ -66,10 +66,14 @@
             "bankName": "Nama Bank",
             "accountNumber": "Nombor Akaun",
             "accountName": "Nama Akaun",
-            "malaysiaQR": "Kod QR Negara Malaysia",
-            "detail": "Butir butir Pemindahan Bank",
+            "malaysiaQR": "Kod QR DuitNow",
+            "detail": "Maklumat Akaun Bank",
             "reference": "Rujukan",
-            "copied": "{field} disalin ke papan klip!"
+            "copied": {
+                "accountName": "Nama Akaun disalin ke papan klip!",
+                "accountNumber": "Nombor Akaun disalin ke papan klip!",
+                "reference": "Rujukan disalin ke papan klip!"
+            }
         },
         "drawer": {
             "title": "Sokong Kami",
@@ -82,10 +86,10 @@
             "acceptTerms": "Saya menerima Terma dan Syarat",
             "supportNow": "Sokong sekarang!",
             "items": {
-                "independentInitiative": "Inisiatif Bebas: Projek ini, yang dikenali sebagai Penjejak Chariot Perak Pulau Pinang, dibangunkan dan dikendalikan oleh ByeByte Technologies, sebuah syarikat bebas. Dengan menderma, anda mengakui dan bersetuju bahawa Penjejak Chariot adalah inisiatif yang dibangunkan secara peribadi oleh penciptanya, Manickam Murugappan dan Lee Zi Hang, dan tidak mempunyai sebarang pertalian dengan mana-mana kuil, organisasi agama, atau jawatankuasa.",
-                "purposeOfDonations": "Tujuan Derma: Semua derma yang diterima akan digunakan sepenuhnya untuk penciptaan, penyelenggaraan, dan meningkatkan keberkesanan projek Penjejak Chariot Perak Pulau Pinang. Ini termasuk, tetapi tidak terhad kepada, kos pembangunan perisian, yuran pelayan dan hosting, serta perbelanjaan operasi lain.",
+                "independentInitiative": "Inisiatif Bebas: Projek ini, yang dikenali sebagai Penjejak Pedati Perak Pulau Pinang, dibangunkan dan dikendalikan oleh ByeByte Technologies, sebuah syarikat bebas. Dengan menderma, anda mengakui dan bersetuju bahawa Penjejak Chariot adalah inisiatif yang dibangunkan secara peribadi oleh penciptanya, Manickam Murugappan dan Lee Zi Hang, dan tidak mempunyai sebarang pertalian dengan mana-mana kuil, organisasi agama, atau jawatankuasa.",
+                "purposeOfDonations": "Tujuan Derma: Semua derma yang diterima akan digunakan sepenuhnya untuk penciptaan, penyelenggaraan, dan meningkatkan keberkesanan projek Penjejak Pedati Perak Pulau Pinang. Ini termasuk, tetapi tidak terhad kepada, kos pembangunan perisian, yuran pelayan dan hosting, serta perbelanjaan operasi lain.",
                 "ownershipAndManagement": "Pengurusan derma: Semua derma akan diuruskan sepenuhnya oleh ByeByte Technologies dan penciptanya, Manickam Murugappan dan Lee Zi Hang. Derma ini tidak akan disalurkan kepada atau melalui mana-mana kuil, badan agama, atau jawatankuasa yang berkaitan dengan perayaan atau acara yang dijejaki.",
-                "nonRefundableContributions": "Sumbangan Tidak Dikembalikan: Semua derma adalah secara sukarela dan tidak boleh dikembalikan. Dengan membuat derma, anda mengakui bahawa anda melakukannya tanpa jangkaan pulangan atau sebarang perkhidmatan khusus selain peningkatan keberkesanan dan operasi berterusan projek Penjejak Chariot Perak Pulau Pinang.",
+                "nonRefundableContributions": "Sumbangan Tidak Dikembalikan: Semua derma adalah secara sukarela dan tidak boleh dikembalikan. Dengan membuat derma, anda mengakui bahawa anda melakukannya tanpa jangkaan pulangan atau sebarang perkhidmatan khusus selain peningkatan keberkesanan dan operasi berterusan projek Penjejak Pedati Perak Pulau Pinang.",
                 "transparencyAndAccountability": "Ketelusan dan Akauntabiliti: Walaupun derma akan digunakan untuk meneruskan dan membangunkan projek ini, ByeByte Technologies berpegang penuh kepada ketelusan. Ringkasan penggunaan derma mungkin akan disediakan secara berkala, mengikut budi bicara pasukan projek.",
                 "noAffiliationDisclaimer": "Penafian Tiada Hubungan: Penderma mesti mengakui bahawa projek ini beroperasi secara bebas dan tidak disokong atau berkaitan dengan mana-mana badan agama. Derma tidak boleh dianggap sebagai sumbangan kepada atau sokongan terhadap mana-mana kuil atau amalan keagamaan.",
                 "acceptanceOfTerms": "Penerimaan Terma: Dengan membuat derma, anda bersetuju dengan terma dan syarat ini. Anda mengesahkan bahawa anda memahami tujuan dan pemakaian dana serta status bebas projek ini."
@@ -110,12 +114,12 @@
     "Tracker": {
         "drawerTitle": "Pilih Penjejak",
         "chariot": {
-            "title": "Kereta Perak",
-            "description": "Pantau lokasi Kereta Perak yang membawa patung Dewa Murugan."
+            "title": "Pedati Perak",
+            "description": "Pantau lokasi Pedati Perak yang membawa patung Dewa Murugan."
         },
         "kavadi": {
             "title": "Kavadi",
-            "description": "Pantau Kavadi Nagarathars untuk menyaksikan tarian Kavadi mereka di hadapan Kereta Perak."
+            "description": "Pantau Kavadi Nagarathars untuk menyaksikan tarian Kavadi mereka di hadapan Pedati Perak."
         }
     },
     "errors": {

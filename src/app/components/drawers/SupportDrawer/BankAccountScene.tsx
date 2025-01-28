@@ -14,27 +14,30 @@ function BankAccountScene() {
         { title: t("accountNumber"), value: "371348475025" },
         {
             title: t("reference"),
-            value: "Penang Thaipusam SCT 2025",
+            value: "PEN Thaipusam SCT 25",
         },
     ];
 
-    const handleCopyToClipboard = (value: string, label: string) => {
+    const handleCopyToClipboard = (
+        value: string,
+        field: "accountName" | "accountNumber" | "reference"
+    ) => {
         navigator.clipboard.writeText(value);
-        toast.success(t("copied", { field: label }));
+        toast.success(t(`copied.${field}`));
     };
 
     return (
         <div className="flex flex-col gap-y-2 items-center justify-center">
-            <div className="flex flex-col items-center gap-y-2">
+            <div className="flex flex-col items-center gap-y-1">
                 <span className="font-bold text-primary-850 dark:text-primary-100">
                     {t("malaysiaQR")}
                 </span>
-                <div className="relative p-2 bg-white rounded-lg shadow-lg">
+                <div className="relative p-1 bg-white rounded-lg shadow-lg">
                     <Image
                         alt="QR Code"
                         src="/assets/ManickamQR.jpeg"
-                        width={180}
-                        height={180}
+                        width={130}
+                        height={130}
                         className="rounded-md"
                     />
                     {/* Download QR Button */}
@@ -74,7 +77,12 @@ function BankAccountScene() {
                                     onClick={() =>
                                         handleCopyToClipboard(
                                             detail.value,
-                                            detail.title
+                                            detail.title === t("accountName")
+                                                ? "accountName"
+                                                : detail.title ===
+                                                    t("accountNumber")
+                                                  ? "accountNumber"
+                                                  : "reference"
                                         )
                                     }
                                     className="hover:cursor-pointer dark:text-primary-50 text-primary-900"

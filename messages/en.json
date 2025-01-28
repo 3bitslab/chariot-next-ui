@@ -66,10 +66,14 @@
             "bankName": "Bank Name",
             "accountNumber": "Account Number",
             "accountName": "Account Name",
-            "malaysiaQR": "Malaysia National QR",
+            "malaysiaQR": "DuitNow QR Code",
             "reference": "Reference",
             "detail": "Bank Transfer Details",
-            "copied": "{field} copied to clipboard!"
+            "copied": {
+                "accountName": "Account Name copied to clipboard!",
+                "accountNumber": "Account Number copied to clipboard!",
+                "reference": "Reference copied to clipboard!"
+            }
         },
         "drawer": {
             "title": "Support Us",
