@@ -8,7 +8,7 @@ import {
 import { Flag } from "lucide-react";
 import Checkpoint from "./Checkpoint";
 import Divider from "../../Divider";
-import { checkpointAtom } from "@/atoms/checkpoint";
+import { checkpointAtom, selectedCheckpointAtom } from "@/atoms/checkpoint";
 import { drawerAtom } from "@/atoms/drawer";
 import { useAtom } from "jotai";
 import { Switch } from "@/components/ui/switch";
@@ -21,7 +21,8 @@ function CheckpointDrawer() {
     const tc = useTranslations("common.switch");
 
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(checkpointAtom);
-    const [, setCurrentDrawer] = useAtom(drawerAtom);
+    const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
+    const [, setSelectedCheckpoint] = useAtom(selectedCheckpointAtom);
 
     const handleVisibilityChange = (newState: boolean) => {
         Analytics.track("Checkpoint Visibility Changed", {
@@ -36,8 +37,12 @@ function CheckpointDrawer() {
 
     return (
         <Drawer
+            open={currentDrawer === "checkpoint"}
             onOpenChange={(open) => {
                 setCurrentDrawer(open ? "checkpoint" : null);
+                if (!open) {
+                    setSelectedCheckpoint(null);
+                }
             }}
         >
             <DrawerTrigger asChild>

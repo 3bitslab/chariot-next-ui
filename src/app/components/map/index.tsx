@@ -26,7 +26,7 @@ import { generatePulsatingMarker } from "@/utils/helpers";
 import { roadBlockAtom, selectedRoadblockAtom } from "@/atoms/road-block";
 import Roadblock from "../road-block/Roadblock";
 import CheckpointMarkers from "../markers/Checkpoint";
-import { checkpointAtom } from "@/atoms/checkpoint";
+import { checkpointAtom, selectedCheckpointAtom } from "@/atoms/checkpoint";
 import { findIndex, isEmpty, isEqual } from "lodash";
 import { MapViewUpdater } from "../utils/MapViewUpdater";
 
@@ -39,6 +39,19 @@ const RoadblockMapUpdater = () => {
             map.flyTo(ROADBLOCK_LOCATIONS[selectedRoadblock], 18);
         }
     }, [selectedRoadblock, map]);
+
+    return null;
+};
+
+const CheckpointMapUpdater = () => {
+    const map = useMap();
+    const [selectedCheckpoint] = useAtom(selectedCheckpointAtom);
+
+    useEffect(() => {
+        if (selectedCheckpoint !== null && CHECKPOINTS[selectedCheckpoint]) {
+            map.flyTo(CHECKPOINTS[selectedCheckpoint], 18);
+        }
+    }, [selectedCheckpoint, map]);
 
     return null;
 };
@@ -124,6 +137,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
             >
                 <MapViewUpdater vehiclePosition={vehiclePosition} />
                 <RoadblockMapUpdater />
+                <CheckpointMapUpdater />
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

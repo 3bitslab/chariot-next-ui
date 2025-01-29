@@ -5,6 +5,8 @@ import Divider from "../../Divider";
 import { useTranslations } from "next-intl";
 import { vehicleAtom } from "@/atoms/vehicle";
 import { useAtom } from "jotai";
+import { checkpointAtom, selectedCheckpointAtom } from "@/atoms/checkpoint";
+import { drawerAtom } from "@/atoms/drawer";
 
 function formatDateAndTime(timestamp: string) {
     if (!timestamp || timestamp === "- - :- -") return "- - :- -";
@@ -100,7 +102,7 @@ function Checkpoint({
     delta,
     checkpointIndex,
 }: CheckpointProps) {
-    const getArrivalTime = (year: number) => {
+    const getArrivalTime = (year: number): string | null => {
         const entry = history.find((h) => h.year === year);
         return entry ? formatDateAndTime(entry.utc_time) : null;
     };
@@ -110,9 +112,19 @@ function Checkpoint({
     const [tracker] = useAtom(vehicleAtom);
 
     const t = useTranslations();
+    const [, setSelectedCheckpoint] = useAtom(selectedCheckpointAtom);
+    const [, setCurrentDrawer] = useAtom(drawerAtom);
+    const [, setCheckpoint] = useAtom(checkpointAtom);
 
     return (
-        <div className="flex flex-col rounded-xl bg-white p-5 shadow dark:bg-primary-800">
+        <div
+            className="flex flex-col rounded-xl bg-white p-5 shadow dark:bg-primary-800 cursor-pointer hover:bg-primary-50 dark:hover:bg-primary-700 transition-colors"
+            onClick={() => {
+                setSelectedCheckpoint(parseInt(checkpointIndex));
+                setCheckpoint(true);
+                setCurrentDrawer(null);
+            }}
+        >
             {/* Header */}
             <div className="flex flex-row items-center gap-4">
                 {/* Left: Index Circle */}
