@@ -1,4 +1,7 @@
-import { atom } from "jotai";
+import { atomWithStorage } from "jotai/utils";
 import { TTrackerType } from "../constants/types";
 
-export const vehicleAtom = atom<TTrackerType>("chariot");
+export const vehicleAtom = atomWithStorage<TTrackerType>(
+    "vehicle-tracker",
+    "chariot"
+);
