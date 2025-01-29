@@ -7,17 +7,44 @@ const ByeByteControl = () => {
     useEffect(() => {
         if (!map) return;
 
-        const byebyteAttribution = `
-            <a href="mailto:byebyteorg@gmail.com" class="flex flex-row gap-1 text-black underline">
-                <img src="/assets/byebyte.png" class="w-3 h-3 object-contain" alt="ByeByte" />
-                ByeByte Technologies ©
-            </a>
-        `;
+        map.attributionControl.setPrefix(false);
 
-        map.attributionControl.addAttribution(byebyteAttribution);
+        const combinedAttribution = `
+      <span>
+        <!-- 2: ByeByte -->
+        <a
+          href="mailto:byebyteorg@gmail.com"
+        style="text-decoration: underline; color: black; vertical-align: middle;"
+        >
+          ByeByte Technologies ©
+        </a>
+
+        &nbsp;|&nbsp;
+
+        <!-- 1: Leaflet -->
+        <a
+          href="https://leafletjs.com"
+          style="text-decoration: underline; color: black; vertical-align: middle;"
+        >
+          Leaflet
+        </a>
+
+        &nbsp;|&nbsp;
+
+        <!-- 3: OSM -->
+        <a
+          href="https://www.openstreetmap.org/copyright"
+          style="text-decoration: underline; color: black; vertical-align: middle;"
+        >
+          OpenStreetMap ©
+        </a>
+      </span>
+    `;
+
+        map.attributionControl.addAttribution(combinedAttribution);
 
         return () => {
-            map.attributionControl.removeAttribution(byebyteAttribution);
+            map.attributionControl.removeAttribution(combinedAttribution);
         };
     }, [map]);
 
