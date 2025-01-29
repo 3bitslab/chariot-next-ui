@@ -11,7 +11,7 @@ function Navbar() {
         <>
             {showAnnouncement && (
                 <Announcement
-                    message="Welcome to the Penang Silver Chariot Tracker! The chariot is scheduled to depart on Monday, February 10, 2025, at 7:00 AM. "
+                    message="Welcome to the Penang Silver Chariot Tracker! The chariot is scheduled to depart on Monday, February 10, 2025, at 7:00 AM."
                     onFinish={() => setShowAnnouncement(false)}
                 />
             )}
