@@ -14,10 +14,10 @@ const ByeByteControl = () => {
         if (attributionContainer) {
             if (resolvedTheme === "dark") {
                 attributionContainer.style.backgroundColor = "#1A1021";
-                attributionContainer.style.color = "#E6DCEE";
+                attributionContainer.style.color = "rgba(230,220,238,0.5)";
             } else {
                 attributionContainer.style.backgroundColor = "#F3EEF6";
-                attributionContainer.style.color = "#1A1021";
+                attributionContainer.style.color = "rgba(26,16,33,0.5)";
             }
         }
 
@@ -26,7 +26,11 @@ const ByeByteControl = () => {
         <!-- 2: ByeByte -->
         <a
           href="mailto:byebyteorg@gmail.com"
-        style="text-decoration: underline; color:${resolvedTheme === "dark" ? "#E6DCEE" : "#271832"}; vertical-align: middle;"
+          style="text-decoration: underline; color: ${
+              resolvedTheme === "dark"
+                  ? "rgba(230,220,238,0.5)"
+                  : "rgba(39,24,50,0.5)"
+          }; vertical-align: middle;"
         >
           ByeByte Technologies ©
         </a>
@@ -34,7 +38,11 @@ const ByeByteControl = () => {
         <!-- 1: Leaflet -->
         <a
           href="https://leafletjs.com"
-          style="text-decoration: underline; color:${resolvedTheme === "dark" ? "#E6DCEE" : "#271832"}; vertical-align: middle;"
+          style="text-decoration: underline; color: ${
+              resolvedTheme === "dark"
+                  ? "rgba(230,220,238,0.5)"
+                  : "rgba(39,24,50,0.5)"
+          }; vertical-align: middle;"
         >
           Leaflet
         </a>
@@ -42,7 +50,11 @@ const ByeByteControl = () => {
         <!-- 3: OSM -->
         <a
           href="https://www.openstreetmap.org/copyright"
-          style="text-decoration: underline; color:${resolvedTheme === "dark" ? "#E6DCEE" : "#271832"}; vertical-align: middle;"
+          style="text-decoration: underline; color: ${
+              resolvedTheme === "dark"
+                  ? "rgba(230,220,238,0.5)"
+                  : "rgba(39,24,50,0.5)"
+          }; vertical-align: middle;"
         >
           OpenStreetMap ©
         </a>
