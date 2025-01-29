@@ -6,6 +6,7 @@ import { useAtom } from "jotai";
 import { toast } from "sonner";
 import { useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { env } from "@/env";
 
 export const useGetCheckpoints = () => {
     const [type] = useAtom(vehicleAtom);
@@ -18,12 +19,11 @@ export const useGetCheckpoints = () => {
                 type as TTrackerType
             );
         },
-        // TODO:REVERT
-        refetchInterval: 1000 * 1,
+        refetchInterval: 1000 * env.NEXT_PUBLIC_FETCH_INTERVAL_SECONDS,
         placeholderData: (prev) => prev,
         retry: 1,
         gcTime: 0,
-        staleTime: 1000 * 30,
+        staleTime: 1000 * env.NEXT_PUBLIC_FETCH_INTERVAL_SECONDS,
         networkMode: "online",
     });
 
