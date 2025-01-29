@@ -1,6 +1,7 @@
 import { Route, Plus, Minus, Locate } from "lucide-react";
 import React from "react";
 import { useMap } from "react-leaflet";
+import { LatLngBounds } from "leaflet";
 import DevelopersDrawer from "../drawers/DevelopersDrawer/DevelopersDrawer";
 import { MAP_COORDINATES } from "@/constants/coordinates";
 import { useGetProgressInfo } from "@/hooks/useGetProgressInfo";
@@ -13,7 +14,20 @@ function RightNavbar() {
     const handleZoomIn = () => map.setZoom(map.getZoom() + 1);
     const handleZoomOut = () => map.setZoom(map.getZoom() - 1);
     const handleFocus = () => map.setView(vehiclePosition, 25);
-    const handleOverview = () => map.setView(MAP_COORDINATES.center, 15);
+    const handleOverview = () => {
+        const bounds = new LatLngBounds(
+            [
+                MAP_COORDINATES.start,
+                MAP_COORDINATES.end,
+                vehiclePosition,
+            ].filter((coord) => coord)
+        );
+
+        map.fitBounds(bounds, {
+            padding: [50, 50],
+            maxZoom: 15,
+        });
+    };
 
     return (
         <>
