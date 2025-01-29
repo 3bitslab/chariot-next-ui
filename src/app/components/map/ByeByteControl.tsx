@@ -4,7 +4,7 @@ import { useMap } from "react-leaflet";
 
 const ByeByteControl = () => {
     const map = useMap();
-    const { theme } = useTheme();
+    const { resolvedTheme } = useTheme();
 
     useEffect(() => {
         if (!map) return;
@@ -12,7 +12,7 @@ const ByeByteControl = () => {
         map.attributionControl.setPrefix(false);
         const attributionContainer = map.attributionControl.getContainer();
         if (attributionContainer) {
-            if (theme === "dark") {
+            if (resolvedTheme === "dark") {
                 attributionContainer.style.backgroundColor = "#1A1021";
                 attributionContainer.style.color = "#E6DCEE";
             } else {
@@ -26,7 +26,7 @@ const ByeByteControl = () => {
         <!-- 2: ByeByte -->
         <a
           href="mailto:byebyteorg@gmail.com"
-        style="text-decoration: underline; color:${theme === "dark" ? "#E6DCEE" : "#271832"}; vertical-align: middle;"
+        style="text-decoration: underline; color:${resolvedTheme === "dark" ? "#E6DCEE" : "#271832"}; vertical-align: middle;"
         >
           ByeByte Technologies ©
         </a>
@@ -34,7 +34,7 @@ const ByeByteControl = () => {
         <!-- 1: Leaflet -->
         <a
           href="https://leafletjs.com"
-          style="text-decoration: underline; color:${theme === "dark" ? "#E6DCEE" : "#271832"}; vertical-align: middle;"
+          style="text-decoration: underline; color:${resolvedTheme === "dark" ? "#E6DCEE" : "#271832"}; vertical-align: middle;"
         >
           Leaflet
         </a>
@@ -42,7 +42,7 @@ const ByeByteControl = () => {
         <!-- 3: OSM -->
         <a
           href="https://www.openstreetmap.org/copyright"
-          style="text-decoration: underline; color:${theme === "dark" ? "#E6DCEE" : "#271832"}; vertical-align: middle;"
+          style="text-decoration: underline; color:${resolvedTheme === "dark" ? "#E6DCEE" : "#271832"}; vertical-align: middle;"
         >
           OpenStreetMap ©
         </a>
@@ -54,7 +54,7 @@ const ByeByteControl = () => {
         return () => {
             map.attributionControl.removeAttribution(combinedAttribution);
         };
-    }, [map, theme]);
+    }, [map, resolvedTheme]);
 
     return null;
 };
