@@ -1,45 +1,25 @@
-import { useTheme } from "next-themes";
 import { useEffect } from "react";
 import { useMap } from "react-leaflet";
-import L from "leaflet";
 
 const ByeByteControl = () => {
     const map = useMap();
-    const { theme } = useTheme();
 
     useEffect(() => {
-        const LogoControl = L.Control.extend({
-            options: {
-                position: "bottomright",
-            },
-            onAdd: () => {
-                const container = L.DomUtil.create("div", "");
-                container.className = "bg-white/80 px-1.5 py-0.5 !m-0";
+        if (!map) return;
 
-                const link = L.DomUtil.create("a", "", container);
-                link.href = "mailto:byebyteorg@gmail.com";
-                link.className =
-                    "flex items-center gap-0.5 text-[10px] no-underline text-black hover:underline";
+        const byebyteAttribution = `
+            <a href="mailto:byebyteorg@gmail.com" class="flex flex-row gap-1 text-black underline">
+                <img src="/assets/byebyte.png" class="w-3 h-3 object-contain" alt="ByeByte" />
+                ByeByte Technologies ©
+            </a>
+        `;
 
-                const logo = L.DomUtil.create("img", "", link);
-                logo.src = "/assets/byebyte.png";
-                logo.className = "w-2 h-2 object-contain";
-
-                const textSpan = L.DomUtil.create("span", "", link);
-                textSpan.className = "text-[10px]";
-                textSpan.textContent = "Developed by ByteByte Technologies";
-
-                return container;
-            },
-        });
-
-        const logoControl = new LogoControl();
-        map.addControl(logoControl);
+        map.attributionControl.addAttribution(byebyteAttribution);
 
         return () => {
-            map.removeControl(logoControl);
+            map.attributionControl.removeAttribution(byebyteAttribution);
         };
-    }, [map, theme]);
+    }, [map]);
 
     return null;
 };
