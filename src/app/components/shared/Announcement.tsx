@@ -5,9 +5,10 @@ import Marquee from "react-fast-marquee";
 
 interface AnnouncementProps {
     message: string;
+    onFinish: () => void;
 }
 
-export const Announcement = ({ message }: AnnouncementProps) => {
+export const Announcement = ({ message, onFinish }: AnnouncementProps) => {
     const { theme } = useTheme();
 
     return (
@@ -25,7 +26,14 @@ export const Announcement = ({ message }: AnnouncementProps) => {
                 backdrop-blur-sm
             `}
             >
-                <Marquee speed={50} gradient={false} pauseOnHover={true}>
+                <Marquee
+                    speed={50}
+                    gradient={false}
+                    pauseOnHover={true}
+                    delay={1}
+                    loop={1}
+                    onFinish={onFinish}
+                >
                     {message}
                 </Marquee>
             </div>

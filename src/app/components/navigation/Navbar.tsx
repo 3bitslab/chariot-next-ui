@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SettingsDrawer from "../drawers/SettingsDrawer";
 import TrackerTypeDrawer from "../drawers/TrackerTypeDrawer";
 import SupportDrawer from "../drawers/SupportDrawer/SupportDrawer";
@@ -7,17 +7,13 @@ import { Announcement } from "../shared/Announcement";
 function Navbar() {
     const [showAnnouncement, setShowAnnouncement] = useState(true);
 
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowAnnouncement(false);
-        }, 5000);
-        return () => clearTimeout(timer);
-    }, []);
-
     return (
         <>
             {showAnnouncement && (
-                <Announcement message="Welcome to the Penang Silver Chariot Tracker! The chariot is scheduled to depart on Monday, February 10, 2025, at 7:00 AM. " />
+                <Announcement
+                    message="Welcome to the Penang Silver Chariot Tracker! The chariot is scheduled to depart on Monday, February 10, 2025, at 7:00 AM. "
+                    onFinish={() => setShowAnnouncement(false)}
+                />
             )}
             <div
                 className={`
