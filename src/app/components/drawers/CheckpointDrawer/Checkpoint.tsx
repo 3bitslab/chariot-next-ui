@@ -1,8 +1,10 @@
-import React from "react";
+import React, { memo } from "react";
 import { Badge } from "@/components/ui/badge";
-import { ArrowDown, ArrowUp, Clock } from "lucide-react";
+import { ArrowDown, ArrowUp, Clock, Check } from "lucide-react";
 import Divider from "../../Divider";
 import { useTranslations } from "next-intl";
+import { vehicleAtom } from "@/atoms/vehicle";
+import { useAtom } from "jotai";
 
 function formatDateAndTime(timestamp: string) {
     if (!timestamp || timestamp === "- - :- -") return "- - :- -";
@@ -21,6 +23,53 @@ function formatDateAndTime(timestamp: string) {
 
     return date.toLocaleString("en-GB", options);
 }
+
+const ChariotBadge = memo(({ delta }: { delta: number | null }) => {
+    const t = useTranslations();
+    const isDeltaAvailable = delta !== null && delta !== undefined;
+
+    if (!isDeltaAvailable) {
+        return (
+            <Badge
+                className="inline-flex items-center gap-1 text-sm font-medium whitespace-nowrap"
+                variant="secondary"
+            >
+                <Clock size={15} /> {t("common.badge.pending")}
+            </Badge>
+        );
+    }
+
+    return (
+        <Badge
+            className="inline-flex items-center gap-1 text-sm font-medium whitespace-nowrap"
+            variant={delta > 0 ? "destructive" : "constructive"}
+        >
+            {delta > 0 ? <ArrowUp size={15} /> : <ArrowDown size={15} />}
+            <span>{formatDelta(delta)} </span>
+        </Badge>
+    );
+});
+
+const KavadiBadge = memo(({ hasArrived }: { hasArrived: boolean }) => {
+    const t = useTranslations();
+
+    return (
+        <Badge
+            className="inline-flex items-center gap-1 text-sm font-medium whitespace-nowrap"
+            variant={hasArrived ? "constructive" : "secondary"}
+        >
+            {hasArrived ? (
+                <>
+                    <Check size={15} /> {t("common.badge.arrived")}
+                </>
+            ) : (
+                <>
+                    <Clock size={15} /> {t("common.badge.pending")}
+                </>
+            )}
+        </Badge>
+    );
+});
 
 function formatDelta(delta: number) {
     if (delta === 0) return "0m";
@@ -58,7 +107,7 @@ function Checkpoint({
 
     const arrival2025 = getArrivalTime(2025);
     const arrival2024 = getArrivalTime(2024);
-    const isDeltaAvailable = delta !== null && delta !== undefined;
+    const [tracker] = useAtom(vehicleAtom);
 
     const t = useTranslations();
 
@@ -85,27 +134,10 @@ function Checkpoint({
                     </div>
 
                     <div className="mt-0 ml-auto">
-                        {isDeltaAvailable ? (
-                            <Badge
-                                className="inline-flex items-center gap-1 text-sm font-medium whitespace-nowrap"
-                                variant={
-                                    delta > 0 ? "destructive" : "constructive"
-                                }
-                            >
-                                {delta > 0 ? (
-                                    <ArrowUp size={15} />
-                                ) : (
-                                    <ArrowDown size={15} />
-                                )}
-                                <span>{formatDelta(delta!)} </span>
-                            </Badge>
+                        {tracker === "chariot" ? (
+                            <ChariotBadge delta={delta} />
                         ) : (
-                            <Badge
-                                className="inline-flex items-center gap-1 text-sm font-medium whitespace-nowrap"
-                                variant="secondary"
-                            >
-                                <Clock size={15} /> {t("common.badge.pending")}
-                            </Badge>
+                            <KavadiBadge hasArrived={!!arrival2025} />
                         )}
                     </div>
                 </div>
@@ -143,5 +175,8 @@ function Checkpoint({
         </div>
     );
 }
+
+ChariotBadge.displayName = "ChariotBadge";
+KavadiBadge.displayName = "KavadiBadge";
 
 export default Checkpoint;

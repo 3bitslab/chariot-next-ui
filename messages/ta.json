@@ -7,7 +7,8 @@
         "badge": {
             "slower": "மெதுவாக",
             "faster": "வேகமாக",
-            "pending": "நிலுவையில்"
+            "pending": "நிலுவையில்",
+            "arrived": "வந்துவிட்டது"
         },
         "terms": {
             "arrival": "வருகை"

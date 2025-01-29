@@ -7,7 +7,8 @@
         "badge": {
             "slower": "较慢",
             "faster": "较快",
-            "pending": "待处理"
+            "pending": "待处理",
+            "arrived": "已到达"
         },
         "terms": {
             "arrival": "到达"
