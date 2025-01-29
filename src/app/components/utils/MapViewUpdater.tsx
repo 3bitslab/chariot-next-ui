@@ -1,6 +1,8 @@
 import { LatLngExpression } from "leaflet";
 import { useEffect, useRef } from "react";
 import { useMap } from "react-leaflet";
+import { useAtom } from "jotai";
+import { vehicleAtom } from "@/atoms/vehicle";
 
 export const MapViewUpdater = ({
     vehiclePosition,
@@ -8,7 +10,7 @@ export const MapViewUpdater = ({
     vehiclePosition: LatLngExpression;
 }) => {
     const map = useMap();
-
+    const [tracker] = useAtom(vehicleAtom);
     const initialZoomDone = useRef(false);
 
     useEffect(() => {
@@ -21,6 +23,12 @@ export const MapViewUpdater = ({
             }
         }
     }, [vehiclePosition, map]);
+
+    useEffect(() => {
+        if (vehiclePosition && initialZoomDone.current) {
+            map.flyTo(vehiclePosition, map.getZoom());
+        }
+    }, [tracker, vehiclePosition, map]);
 
     return null;
 };
