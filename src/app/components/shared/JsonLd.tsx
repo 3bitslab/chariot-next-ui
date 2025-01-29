@@ -21,11 +21,12 @@ export default function JsonLd() {
                 validThrough: `${currentYear}-12-31`,
             },
             featureList: [
-                "Real-time chariot tracking",
-                "Multi-language support",
-                "Interactive map",
-                "Checkpoint notifications",
-                "Roadblock alerts",
+                "Real-time chariot tracking with live GPS updates",
+                "Multi-language support (English, Tamil, Malay, Chinese)",
+                "Interactive map with checkpoint markers",
+                "Instant checkpoint notifications",
+                "Roadblock traffic information",
+                "Historical tracking data",
             ],
         },
         {
@@ -33,7 +34,7 @@ export default function JsonLd() {
             "@type": "ReligiousEvent",
             name: "Penang Thaipusam Silver Chariot Procession 2025",
             description:
-                "Annual Thaipusam festival silver chariot procession in Penang, from Kovil Veedu to Waterfall Temple. A significant cultural and religious event featuring real-time tracking.",
+                "Annual Thaipusam festival silver chariot procession in George Town, Penang. Journey from Kovil Veedu to Waterfall Temple. A significant cultural and religious event featuring real-time location tracking, checkpoint updates, and devotee information.",
             startDate: "2025-02-09T06:00:00+08:00",
             endDate: "2025-02-13T12:00:00+08:00",
             eventStatus: "https://schema.org/EventScheduled",
@@ -120,7 +121,7 @@ export default function JsonLd() {
                     name: "What is the Penang Thaipusam Silver Chariot Tracker?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "The Penang Thaipusam Silver Chariot Tracker is a real-time tracking application that allows devotees and visitors to follow the silver chariot's journey during the Thaipusam festival in Penang. It provides live updates on the chariot's location, estimated arrival times at various checkpoints, and important announcements.",
+                        text: "The Penang Thaipusam Silver Chariot Tracker is a real-time tracking application that allows devotees and visitors to follow the silver chariot's journey during the Thaipusam festival in George Town, Penang. It provides live GPS updates on the chariot's location, estimated arrival times at various checkpoints, roadblock information, and important announcements for both the outbound journey (Kovil Veedu to Waterfall Temple) and return journey.",
                     },
                 },
                 {
@@ -136,7 +137,39 @@ export default function JsonLd() {
                     name: "What languages are supported?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "The Chariot Tracker supports multiple languages including English, Malay (Bahasa Malaysia), Tamil, and Chinese to serve our diverse community.",
+                        text: "The Chariot Tracker supports multiple languages including English, Malay (Bahasa Malaysia), Tamil, and Chinese to serve our diverse community. All real-time updates and notifications are available in all supported languages.",
+                    },
+                },
+                {
+                    "@type": "Question",
+                    name: "What information does the tracker provide?",
+                    acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "The tracker provides real-time GPS location of the chariot, estimated arrival times at checkpoints, live roadblock updates. It also shows the complete route map with all checkpoints and historical tracking data from previous years.",
+                    },
+                },
+                {
+                    "@type": "Question",
+                    name: "How accurate is the tracking?",
+                    acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "The tracker uses real-time GPS technology with updates every few seconds, providing highly accurate location data. However, please note that the accuracy may vary based on network conditions and device settings.",
+                    },
+                },
+                {
+                    "@type": "Question",
+                    name: "What is the route of the Silver Chariot?",
+                    acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "The Silver Chariot begins its journey at Kovil Veedu in George Town and proceeds to the Waterfall Temple (Arulmigu Balathandayuthapani Temple). The procession passes through various checkpoints in George Town, with the route clearly marked on our interactive map. The return journey follows a similar route back to Kovil Veedu.",
+                    },
+                },
+                {
+                    "@type": "Question",
+                    name: "Can I get notifications about the chariot's location?",
+                    acceptedAnswer: {
+                        "@type": "Answer",
+                        text: "Yes, you can enable push notifications to receive alerts when the chariot reaches different checkpoints, when there are roadblocks or route changes, and for other important announcements. Notifications are available in all supported languages.",
                     },
                 },
             ],
