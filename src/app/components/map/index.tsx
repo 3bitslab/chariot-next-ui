@@ -14,6 +14,7 @@ import AntPath from "./AntPath";
 import {
     CHECKPOINTS,
     DEPARTURE_COORDINATES,
+    RETURN_COORDINATES,
     MAP_COORDINATES,
     ROADBLOCK_LOCATIONS,
 } from "@/constants/coordinates";
@@ -68,7 +69,20 @@ const defaults = {
 
 const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
     const { theme } = useTheme();
-    const polylineCoordsRef = useRef(DEPARTURE_COORDINATES);
+    const journey = process.env.NEXT_PUBLIC_JOURNEY || "departure";
+    const coordinates =
+        journey === "departure" ? DEPARTURE_COORDINATES : RETURN_COORDINATES;
+    const markerPositions = {
+        start:
+            journey === "departure"
+                ? MAP_COORDINATES.start
+                : MAP_COORDINATES.end,
+        end:
+            journey === "departure"
+                ? MAP_COORDINATES.end
+                : MAP_COORDINATES.start,
+    };
+    const polylineCoordsRef = useRef(coordinates);
 
     const [tracker] = useAtom(vehicleAtom);
     const [roadBlock] = useAtom(roadBlockAtom);
@@ -218,12 +232,12 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
 
                 {/* Start Pin  */}
                 <Marker
-                    position={MAP_COORDINATES.start}
+                    position={markerPositions.start}
                     icon={startIcon}
                 ></Marker>
 
                 {/* End Pin */}
-                <Marker position={MAP_COORDINATES.end} icon={endIcon}></Marker>
+                <Marker position={markerPositions.end} icon={endIcon}></Marker>
 
                 {/* Chariot Pulsating Pin */}
                 <Marker
