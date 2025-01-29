@@ -1,12 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import {
-    MapContainer,
-    Marker,
-    TileLayer,
-    AttributionControl,
-} from "react-leaflet";
+import { MapContainer, Marker, TileLayer } from "react-leaflet";
 import { LatLngExpression, LatLngTuple } from "leaflet";
 
 import "leaflet/dist/leaflet.css";
@@ -113,10 +108,9 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 zoomControl={false}
                 doubleClickZoom={false}
                 className="fixed top-0 bottom-0 left-0 right-0 z-0"
-                attributionControl={false}
+                attributionControl={true}
             >
                 <MapViewUpdater vehiclePosition={vehiclePosition} />
-                <AttributionControl position="bottomright" />
                 <ByeByteControl />
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
