@@ -134,6 +134,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 scrollWheelZoom={true}
                 zoomControl={false}
                 doubleClickZoom={false}
+                minZoom={10}
                 attributionControl={true}
                 className="fixed top-0 bottom-0 left-0 right-0 z-0"
             >
