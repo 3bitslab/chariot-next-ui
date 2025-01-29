@@ -2,7 +2,6 @@ import { MetadataRoute } from "next";
 
 const BASE_URL = "https://www.chariottracker.com";
 
-// Define supported languages with their priorities and metadata
 const languageRoutes = [
     { code: "en", priority: 0.9, region: "MY", name: "English" },
     { code: "ms", priority: 0.9, region: "MY", name: "Bahasa Malaysia" },
