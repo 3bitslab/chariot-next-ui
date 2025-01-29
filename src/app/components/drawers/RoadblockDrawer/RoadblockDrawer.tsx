@@ -17,7 +17,7 @@ import { Analytics } from "@/utils/mixpanel";
 
 function RoadblockDrawer() {
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(roadBlockAtom);
-    const [, setCurrentDrawer] = useAtom(drawerAtom);
+    const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
     const t = useTranslations();
 
     const handleVisibilityChange = (newState: boolean) => {
@@ -89,6 +89,7 @@ function RoadblockDrawer() {
 
     return (
         <Drawer
+            open={currentDrawer === "roadblock"}
             onOpenChange={(open) => {
                 setCurrentDrawer(open ? "roadblock" : null);
             }}

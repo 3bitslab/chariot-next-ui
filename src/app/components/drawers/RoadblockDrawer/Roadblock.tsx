@@ -4,6 +4,9 @@ import { Clock } from "lucide-react";
 import { PoliceIcon } from "../../markers/Police";
 import { RoadblockIcon } from "../../markers/RoadBlock";
 import { useTranslations } from "next-intl";
+import { useAtom } from "jotai";
+import { roadBlockAtom, selectedRoadblockAtom } from "@/atoms/road-block";
+import { drawerAtom } from "@/atoms/drawer";
 
 const Roadblock = ({
     streetName,
@@ -14,6 +17,9 @@ const Roadblock = ({
     duration: string;
     type: "closure" | "control";
 }) => {
+    const [, setSelectedRoadblock] = useAtom(selectedRoadblockAtom);
+    const [, setIsDisplayedOnMap] = useAtom(roadBlockAtom);
+    const [, setCurrentDrawer] = useAtom(drawerAtom);
     const badgeVariant = {
         closure: "destructive",
         control: "constructive",
@@ -22,7 +28,17 @@ const Roadblock = ({
     const t = useTranslations();
 
     return (
-        <div className="flex flex-col sm:flex-row rounded-xl bg-white p-4 sm:p-5 shadow dark:bg-primary-800">
+        <div
+            className="flex flex-col sm:flex-row rounded-xl bg-white p-4 sm:p-5 shadow dark:bg-primary-800 cursor-pointer hover:bg-primary-50 dark:hover:bg-primary-700 transition-colors"
+            onClick={() => {
+                setSelectedRoadblock((prev) => {
+                    const newValue = prev === streetName ? null : streetName;
+                    setIsDisplayedOnMap(true);
+                    setCurrentDrawer(null);
+                    return newValue;
+                });
+            }}
+        >
             {/* Left section: Icon and Street Name */}
             <div className="flex items-center gap-3 sm:gap-4 flex-1 min-w-0">
                 <Icon className="size-10 lg:size-12 flex-shrink-0" />

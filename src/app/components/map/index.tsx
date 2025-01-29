@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { MapContainer, Marker, TileLayer } from "react-leaflet";
+import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 import { LatLngExpression, LatLngTuple } from "leaflet";
 
 import "leaflet/dist/leaflet.css";
@@ -15,6 +15,7 @@ import {
     CHECKPOINTS,
     DEPARTURE_COORDINATES,
     MAP_COORDINATES,
+    ROADBLOCK_LOCATIONS,
 } from "@/constants/coordinates";
 import { useTheme } from "next-themes";
 import { endIcon, startIcon } from "@/constants/icons";
@@ -22,12 +23,25 @@ import { vehicleAtom } from "@/atoms/vehicle";
 import { useAtom } from "jotai";
 import { useGetProgressInfo } from "@/hooks/useGetProgressInfo";
 import { generatePulsatingMarker } from "@/utils/helpers";
-import { roadBlockAtom } from "@/atoms/road-block";
+import { roadBlockAtom, selectedRoadblockAtom } from "@/atoms/road-block";
 import Roadblock from "../road-block/Roadblock";
 import CheckpointMarkers from "../markers/Checkpoint";
 import { checkpointAtom } from "@/atoms/checkpoint";
 import { findIndex, isEmpty, isEqual } from "lodash";
 import { MapViewUpdater } from "../utils/MapViewUpdater";
+
+const RoadblockMapUpdater = () => {
+    const map = useMap();
+    const [selectedRoadblock] = useAtom(selectedRoadblockAtom);
+
+    useEffect(() => {
+        if (selectedRoadblock && ROADBLOCK_LOCATIONS[selectedRoadblock]) {
+            map.flyTo(ROADBLOCK_LOCATIONS[selectedRoadblock], 18);
+        }
+    }, [selectedRoadblock, map]);
+
+    return null;
+};
 
 interface MapProps {
     posix: LatLngExpression | LatLngTuple;
@@ -109,6 +123,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 className="fixed top-0 bottom-0 left-0 right-0 z-0"
             >
                 <MapViewUpdater vehiclePosition={vehiclePosition} />
+                <RoadblockMapUpdater />
                 <TileLayer
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
