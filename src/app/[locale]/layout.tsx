@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://www.chariottracker.com"),
     title: "Penang Silver Chariot Tracker 2025 | Real-time Thaipusam Chariot Location in George Town",
     description:
-        "Independent live tracking service for Penang Thaipusam Silver Chariot 2025. Real-time updates on chariot location from Kovil Veedu to Waterfall Temple. Get instant notifications for checkpoints, roadblocks, and estimated arrival times in George Town, Penang.",
+        "Independent live tracking service for the 2025 Penang Thaipusam Silver Chariot. Access real-time chariot location updates, view checkpoint history data, stay informed on PDRM roadblocks and traffic controls, and find detailed route information for the procession in George Town, Penang.",
     keywords:
         "Penang Thaipusam 2025, Silver Chariot Location, Thaipusam Festival Penang, Live Chariot Tracking, George Town Thaipusam, Real-time Location Updates, Waterfall Temple, Penang Temple Route, Religious Procession Tracking, Penang Thaipusam 2025 Route, Penang Silver Chariot Live Updates, Penang Thaipusam Live Map, Chettipusam Procession George Town, Nagarathar Kovil Veedu to Waterfall Temple, Kavadi Route Thaipusam 2025, Pulau Pinang Thaipusam Tracker",
     authors: [
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Penang Silver Chariot Tracker 2025 | Live Thaipusam Route Map",
         description:
-            "Independent live tracking service for Penang Thaipusam Silver Chariot 2025. Get real-time location updates, checkpoint, traffic and route information for the chariot procession in George Town, Penang.",
+            "Independent live tracking service for the 2025 Penang Thaipusam Silver Chariot. Access real-time chariot location updates, view checkpoint history data, stay informed on PDRM roadblocks and traffic controls, and find detailed route information for the procession in George Town, Penang.",
         url: "https://www.chariottracker.com",
         siteName: "Penang Silver Chariot Tracker",
         images: [
