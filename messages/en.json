@@ -125,7 +125,8 @@
         "kavadi": {
             "title": "Kavadi",
             "description": "Track the Nagarathars' Kavadi to witness their Kavadi Aatam ahead of the Silver Chariot."
-        }
+        },
+        "kavadi_return_disabled": "Kavadi tracking is not available during the return journey"
     },
     "errors": {
         "fetchLocation": "Something went wrong while fetching location.",

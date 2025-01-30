@@ -4,7 +4,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer";
-import React from "react";
+import React, { useMemo } from "react";
 import Selectables from "../shared/Selectables";
 import { TSelectableItem, TTrackerType } from "@/constants/types";
 import { ChevronDown } from "lucide-react";
@@ -45,24 +45,31 @@ function TrackerTypeDrawer() {
         setTracker(newType);
     };
 
-    const selectableItems: TSelectableItem[] = [
-        {
-            title: t("chariot.title"),
-            value: "chariot",
-            description: t("chariot.description"),
-            logo: (
-                <ChariotIcon className="fill-primary-800 dark:fill-primary-250 size-14 lg:size-16" />
-            ),
-        },
-        {
-            title: t("kavadi.title"),
-            value: "kavadi",
-            description: t("kavadi.description"),
-            logo: (
-                <KavadiIcon className="fill-primary-800 dark:fill-primary-250 size-14 lg:size-16" />
-            ),
-        },
-    ];
+    const isReturnJourney = process.env.NEXT_PUBLIC_JOURNEY !== "departure";
+
+    const selectableItems: TSelectableItem[] = useMemo(
+        () => [
+            {
+                title: t("chariot.title"),
+                value: "chariot",
+                description: t("chariot.description"),
+                logo: (
+                    <ChariotIcon className="fill-primary-800 dark:fill-primary-250 size-14 lg:size-16" />
+                ),
+            },
+            {
+                title: t("kavadi.title"),
+                value: "kavadi",
+                description: t("kavadi.description"),
+                logo: (
+                    <KavadiIcon className="fill-primary-800 dark:fill-primary-250 size-14 lg:size-16" />
+                ),
+                disabled: isReturnJourney,
+                disabledMessage: t("kavadi_return_disabled"),
+            },
+        ],
+        [t, isReturnJourney]
+    );
 
     return (
         <Drawer

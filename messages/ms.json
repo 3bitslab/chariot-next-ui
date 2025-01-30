@@ -125,7 +125,8 @@
         "kavadi": {
             "title": "Kavadi",
             "description": "Pantau Kavadi Nagarathars untuk menyaksikan tarian Kavadi mereka di hadapan Pedati Perak."
-        }
+        },
+        "kavadi_return_disabled": "Penjejakan Kavadi tidak tersedia untuk perjalanan pulang"
     },
     "errors": {
         "fetchLocation": "Terdapat masalah semasa mendapatkan lokasi.",

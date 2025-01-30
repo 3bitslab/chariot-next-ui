@@ -5,6 +5,8 @@ export type TSelectableItem = {
     value: string;
     description: string;
     logo: ReactNode;
+    disabled?: boolean;
+    disabledMessage?: string;
 };
 
 export type TLocationResponse = {

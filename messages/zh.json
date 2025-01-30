@@ -125,7 +125,8 @@
         "kavadi": {
             "title": "卡瓦迪",
             "description": "实时查看纳加拉塔尔卡瓦迪，他们在银辇前方进行卡瓦迪舞蹈。"
-        }
+        },
+        "kavadi_return_disabled": "返程期间无法使用卡瓦迪追踪"
     },
     "errors": {
         "fetchLocation": "获取位置信息时出错。",
