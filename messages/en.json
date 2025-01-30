@@ -1,4 +1,8 @@
 {
+    "Announcement": {
+        "welcome": "Welcome to the Penang Silver Chariot Tracker!",
+        "departure": "The chariot is scheduled to depart on Monday, February 10, 2025, at 7:00 AM."
+    },
     "common": {
         "switch": {
             "show": "Show On Map",

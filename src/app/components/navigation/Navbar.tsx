@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 import SettingsDrawer from "../drawers/SettingsDrawer";
 import TrackerTypeDrawer from "../drawers/TrackerTypeDrawer";
 import SupportDrawer from "../drawers/SupportDrawer/SupportDrawer";
@@ -6,12 +7,13 @@ import { Announcement } from "../shared/Announcement";
 
 function Navbar() {
     const [showAnnouncement, setShowAnnouncement] = useState(true);
+    const t = useTranslations("Announcement");
 
     return (
         <>
             {showAnnouncement && (
                 <Announcement
-                    message="Welcome to the Penang Silver Chariot Tracker! The chariot is scheduled to depart on Monday, February 10, 2025, at 7:00 AM."
+                    message={`${t("welcome")} ${t("departure")}`}
                     onFinish={() => setShowAnnouncement(false)}
                 />
             )}

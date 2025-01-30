@@ -1,4 +1,8 @@
 {
+    "Announcement": {
+        "welcome": "Selamat datang ke Penjejak Pedati Perak Pulau Pinang!",
+        "departure": "Pedati dijadualkan akan berlepas pada hari Isnin, 10 Februari 2025, jam 7:00 pagi."
+    },
     "common": {
         "switch": {
             "show": "Tunjukkan di Peta",
