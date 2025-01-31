@@ -12,7 +12,8 @@ import RightNavbar from "../navigation/RightNavbar";
 import SummaryWindow from "../SummaryWindow";
 import AntPath from "./AntPath";
 import {
-    CHECKPOINTS,
+    DEPATURE_CHECKPOINTS,
+    RETURN_CHECKPOINTS,
     DEPARTURE_COORDINATES,
     RETURN_COORDINATES,
     MAP_COORDINATES,
@@ -45,15 +46,19 @@ const RoadblockMapUpdater = () => {
     return null;
 };
 
-const CheckpointMapUpdater = () => {
+const CheckpointMapUpdater = ({
+    checkpoints,
+}: {
+    checkpoints: LatLngExpression[];
+}) => {
     const map = useMap();
     const [selectedCheckpoint] = useAtom(selectedCheckpointAtom);
 
     useEffect(() => {
-        if (selectedCheckpoint !== null && CHECKPOINTS[selectedCheckpoint]) {
-            map.flyTo(CHECKPOINTS[selectedCheckpoint], 18);
+        if (selectedCheckpoint !== null && checkpoints[selectedCheckpoint]) {
+            map.flyTo(checkpoints[selectedCheckpoint], 18);
         }
-    }, [selectedCheckpoint, map]);
+    }, [selectedCheckpoint, map, checkpoints]);
 
     return null;
 };
@@ -72,6 +77,8 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
     const journey = process.env.NEXT_PUBLIC_JOURNEY || "departure";
     const coordinates =
         journey === "departure" ? DEPARTURE_COORDINATES : RETURN_COORDINATES;
+    const checkpoints =
+        journey === "departure" ? DEPATURE_CHECKPOINTS : RETURN_CHECKPOINTS;
     const markerPositions = {
         start:
             journey === "departure"
@@ -154,7 +161,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
             >
                 <MapViewUpdater vehiclePosition={vehiclePosition} />
                 <RoadblockMapUpdater />
-                <CheckpointMapUpdater />
+                <CheckpointMapUpdater checkpoints={checkpoints} />
                 <ByeByteControl />
                 <TileLayer
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -222,7 +229,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 {roadBlock && <Roadblock></Roadblock>}
 
                 {checkpoint &&
-                    CHECKPOINTS.map((position, index) => (
+                    checkpoints.map((position, index) => (
                         <CheckpointMarkers
                             key={index}
                             position={position}

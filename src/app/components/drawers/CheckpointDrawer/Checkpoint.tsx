@@ -116,6 +116,8 @@ function Checkpoint({
     const [, setCurrentDrawer] = useAtom(drawerAtom);
     const [, setCheckpoint] = useAtom(checkpointAtom);
 
+    const journey = process.env.NEXT_PUBLIC_JOURNEY || "departure";
+
     return (
         <div
             className="flex flex-col rounded-xl bg-white p-5 shadow dark:bg-primary-800 cursor-pointer hover:bg-primary-50 dark:hover:bg-primary-700 transition-colors"
@@ -146,7 +148,7 @@ function Checkpoint({
                     </div>
 
                     <div className="mt-0 ml-auto">
-                        {tracker === "chariot" ? (
+                        {tracker === "chariot" && journey == "departure" ? (
                             <ChariotBadge delta={delta} />
                         ) : (
                             <KavadiBadge hasArrived={!!arrival2025} />
