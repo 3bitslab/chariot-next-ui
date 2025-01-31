@@ -34,7 +34,7 @@ export default function JsonLd() {
             "@type": "ReligiousEvent",
             name: "Penang Thaipusam Silver Chariot Procession 2025",
             description:
-                "Annual Thaipusam festival silver chariot procession in George Town, Penang. Journey from Kovil Veedu to Waterfall Temple. A significant cultural and religious event featuring real-time location tracking, checkpoint updates, and devotee information.",
+                "Annual Thaipusam festival silver chariot procession in George Town, Penang. Journey from Kovil Veedu to Nattukkottai Chettiar Temple. A significant cultural and religious event featuring real-time location tracking, checkpoint updates, and devotee information.",
             startDate: "2025-02-09T06:00:00+08:00",
             endDate: "2025-02-13T12:00:00+08:00",
             eventStatus: "https://schema.org/EventScheduled",
@@ -121,7 +121,7 @@ export default function JsonLd() {
                     name: "What is the Penang Thaipusam Silver Chariot Tracker?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "The Penang Thaipusam Silver Chariot Tracker is a real-time tracking application that allows devotees and visitors to follow the silver chariot's journey during the Thaipusam festival in George Town, Penang. It provides live GPS updates on the chariot's location, estimated arrival times at various checkpoints, roadblock information, and important announcements for both the outbound journey (Kovil Veedu to Waterfall Temple) and return journey.",
+                        text: "The Penang Thaipusam Silver Chariot Tracker is a real-time tracking application that allows devotees and visitors to follow the silver chariot's journey during the Thaipusam festival in George Town, Penang. It provides live GPS updates on the chariot's location, estimated arrival times at various checkpoints, roadblock information, and important announcements for both the outbound journey (Kovil Veedu to Nattukkottai Chettiar Temple) and return journey.",
                     },
                 },
                 {
@@ -161,7 +161,7 @@ export default function JsonLd() {
                     name: "What is the route of the Silver Chariot?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "The Silver Chariot begins its journey at Kovil Veedu in George Town and proceeds to the Waterfall Temple (Arulmigu Balathandayuthapani Temple). The procession passes through various checkpoints in George Town, with the route clearly marked on our interactive map. The return journey follows a similar route back to Kovil Veedu.",
+                        text: "The Silver Chariot begins its journey at Kovil Veedu in George Town and proceeds to the Nattukkottai Chettiar Temple. The procession passes through various checkpoints in George Town, with the route clearly marked on our interactive map. The return journey follows a similar route back to Kovil Veedu.",
                     },
                 },
                 {
