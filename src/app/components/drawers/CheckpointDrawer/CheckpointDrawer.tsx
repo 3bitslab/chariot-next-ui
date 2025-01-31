@@ -34,7 +34,7 @@ function CheckpointDrawer() {
         setIsDisplayedOnMap(newState);
     };
 
-    const { data: checkpoints, isFetching } = useGetCheckpoints();
+    const { data: checkpoints } = useGetCheckpoints();
     const nextCheckpoint = checkpoints?.find(
         (checkpoint) => !checkpoint.visited
     );
@@ -52,7 +52,7 @@ function CheckpointDrawer() {
             <DrawerTrigger asChild>
                 <button className="relative">
                     <Flag className="stroke-primary-850 dark:stroke-primary-150 size-4 lg:size-6" />
-                    {!isFetching && nextCheckpoint && (
+                    {nextCheckpoint && (
                         <Badge
                             variant="destructive"
                             className="absolute -top-2 -right-2.5 h-5 w-5 p-0 flex items-center justify-center rounded-full text-[11px] min-w-5 border-2 border-white dark:border-primary-950 z-10 font-semibold"
