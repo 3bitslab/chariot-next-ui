@@ -5,7 +5,7 @@ import {
     DrawerTitle,
     DrawerTrigger,
 } from "@/components/ui/drawer";
-import { Flag } from "lucide-react";
+import { MapPin } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import Checkpoint from "./Checkpoint";
 import Divider from "../../Divider";
@@ -51,7 +51,7 @@ function CheckpointDrawer() {
         >
             <DrawerTrigger asChild>
                 <button className="relative">
-                    <Flag className="stroke-primary-850 dark:stroke-primary-150 size-4 lg:size-6" />
+                    <MapPin className="stroke-primary-850 dark:stroke-primary-150 size-4 lg:size-6" />
                     {nextCheckpoint && (
                         <Badge
                             variant="destructive"
