@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://www.chariottracker.com"),
     title: "Penang Silver Chariot Tracker 2025 | Real-time Thaipusam Chariot Location in George Town",
     description:
-        "Independent live tracking service for the 2025 Penang Thaipusam Silver Chariot. Access real-time chariot location updates, view checkpoint history data, stay informed on PDRM roadblocks and traffic controls, and find detailed route information for the procession in George Town, Penang.",
+        "Independent live tracking service for the 2025 Penang Thaipusam Silver Chariot. Access real-time chariot location updates, view checkpoint history data, stay informed on PDRM roadblocks and traffic controls, and find detailed route information for the procession in George Town, Penang. The pioneer since 2024",
     keywords:
-        "Penang Thaipusam 2025, Silver Chariot Location, Thaipusam Festival Penang, Live Chariot Tracking, George Town Thaipusam, Real-time Location Updates, Waterfall Temple, Nattukkottai Chettiar Temple, Penang Temple Route, Religious Procession Tracking, Penang Thaipusam 2025 Route, Penang Silver Chariot Live Updates, Penang Thaipusam Live Map, Chettipusam Procession George Town, Nagarathar Kovil Veedu to Waterfall Temple, Kavadi Route Thaipusam 2025, Pulau Pinang Thaipusam Tracker",
+        "Penang Thaipusam 2025, Silver Chariot Location, Thaipusam Festival Penang, Live Chariot Tracking, George Town Thaipusam, Real-time Location Updates, Waterfall Temple, Nattukkottai Chettiar Temple, Penang Temple Route, Religious Procession Tracking, Penang Thaipusam 2025 Route, Penang Silver Chariot Live Updates, Penang Thaipusam Live Map, Chettipusam Procession George Town, Nagarathar Kovil Veedu to Waterfall Temple, Kavadi Route Thaipusam 2025, Pulau Pinang Thaipusam Tracker, Chariot Tracker Penang",
     authors: [
         { name: "ByeByte Technologies", url: "https://www.chariottracker.com" },
     ],
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Penang Silver Chariot Tracker 2025 | Live Thaipusam Route Map",
         description:
-            "Independent live tracking service for the 2025 Penang Thaipusam Silver Chariot. Access real-time chariot location updates, view checkpoint history data, stay informed on PDRM roadblocks and traffic controls, and find detailed route information for the procession in George Town, Penang.",
+            "Independent live tracking service for the 2025 Penang Thaipusam Silver Chariot. Access real-time chariot location updates, view checkpoint history data, stay informed on PDRM roadblocks and traffic controls, and find detailed route information for the procession in George Town, Penang. The pioneer since 2024",
         url: "https://www.chariottracker.com",
         siteName: "Penang Silver Chariot Tracker",
         images: [
@@ -71,9 +71,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Penang Silver Chariot Tracker 2025 | Live Updates",
+        title: "Chariot Tracker Penang | Live Thaipusam 2025 Updates",
         description:
-            "Follow Penang's Thaipusam Silver Chariot procession in real-time. Get instant updates on location, checkpoints, and estimated arrival times in George Town.",
+            "Track Penang's Thaipusam Silver Chariot procession in real-time with Penang's most reliable chariot tracker. Get instant location updates, checkpoint timings, and route information in George Town.",
         site: "@byebytetech",
         creator: "@byebytetech",
         images: ["/assets/byebyte-1200x675.png"],

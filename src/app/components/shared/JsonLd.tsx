@@ -4,9 +4,9 @@ export default function JsonLd() {
         {
             "@context": "https://schema.org",
             "@type": "WebApplication",
-            name: "Penang Thaipusam Silver Chariot Tracker",
+            name: "Chariot Tracker Penang - Thaipusam Silver Chariot Tracking",
             description:
-                "Live tracking service for Penang Thaipusam Silver Chariot. Follow the chariot's journey in real-time during the Thaipusam festival.",
+                "Independent tracking service for Penang's Thaipusam Silver Chariot. Follow the chariot's journey in real-time through George Town, Penang during the Thaipusam festival 2025.",
             url: "https://www.chariottracker.com",
             applicationCategory: "TrackingTool",
             operatingSystem: "Windows, macOS, Linux, iOS, Android",
@@ -32,9 +32,9 @@ export default function JsonLd() {
         {
             "@context": "https://schema.org",
             "@type": "ReligiousEvent",
-            name: "Penang Thaipusam Silver Chariot Procession 2025",
+            name: "Penang Thaipusam Silver Chariot Procession 2025 - Live Tracking",
             description:
-                "Annual Thaipusam festival silver chariot procession in George Town, Penang. Journey from Kovil Veedu to Nattukkottai Chettiar Temple. A significant cultural and religious event featuring real-time location tracking, checkpoint updates, and devotee information.",
+                "Annual Thaipusam festival silver chariot procession in George Town, Penang, Malaysia. Track the sacred journey from Kovil Veedu to Nattukkottai Chettiar Temple (Waterfall Temple) with our real-time GPS tracking system. Get live updates on chariot location, checkpoint timings, and roadblock information throughout Penang.",
             startDate: "2025-02-09T06:00:00+08:00",
             endDate: "2025-02-13T12:00:00+08:00",
             eventStatus: "https://schema.org/EventScheduled",
@@ -58,7 +58,7 @@ export default function JsonLd() {
                     name: "Nagarthar Kovil Veedu Penang",
                     address: {
                         "@type": "PostalAddress",
-                        streetAddress: "Georgetown, Penang",
+                        streetAddress: "26, Lebuh Queen, George Town",
                         addressLocality: "George Town",
                         postalCode: "10200",
                         addressCountry: "MY",
@@ -74,7 +74,8 @@ export default function JsonLd() {
                     name: "Nattukkottai Chettiar Temple",
                     address: {
                         "@type": "PostalAddress",
-                        streetAddress: "Georgetown, Penang",
+                        streetAddress:
+                            "Waterfall Road, Pulau Tikus, George Town",
                         addressLocality: "George Town",
                         postalCode: "10350",
                         addressCountry: "MY",
@@ -98,7 +99,18 @@ export default function JsonLd() {
                 "Technology company specializing in web and mobile applications. Creator of the Penang Thaipusam Silver Chariot Tracker.",
             foundingDate: "2024",
             email: "byebyteorg@gmail.com",
-            areaServed: "Penang, Malaysia",
+            areaServed: {
+                "@type": "City",
+                name: "George Town",
+                containedIn: {
+                    "@type": "State",
+                    name: "Penang",
+                    containedIn: {
+                        "@type": "Country",
+                        name: "Malaysia",
+                    },
+                },
+            },
         },
         {
             "@context": "https://schema.org",
@@ -121,7 +133,7 @@ export default function JsonLd() {
                     name: "What is the Penang Thaipusam Silver Chariot Tracker?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "The Penang Thaipusam Silver Chariot Tracker is a real-time tracking application that allows devotees and visitors to follow the silver chariot's journey during the Thaipusam festival in George Town, Penang. It provides live GPS updates on the chariot's location, estimated arrival times at various checkpoints, roadblock information, and important announcements for both the outbound journey (Kovil Veedu to Nattukkottai Chettiar Temple) and return journey.",
+                        text: "The Chariot Tracker Penang is the independent real-time tracking application for following the silver chariot's sacred journey during Thaipusam in George Town, Penang. Our advanced GPS tracking system provides precise location updates, estimated arrival times at key checkpoints, PDRM roadblock information, and important announcements for both outbound (Kovil Veedu to Waterfall Temple) and return journeys. Used by 38,000+ devotees and visitors in Penang in the year 2024.",
                     },
                 },
                 {
@@ -153,7 +165,7 @@ export default function JsonLd() {
                     name: "How accurate is the tracking?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "The tracker uses real-time GPS technology with updates every few seconds, providing highly accurate location data. However, please note that the accuracy may vary based on network conditions and device settings.",
+                        text: "The Chariot Tracker Penang uses advanced real-time GPS technology with updates every few seconds, providing the most accurate location data for the silver chariot in Penang. Our tracking system is specifically optimized for George Town's urban environment, though accuracy may vary slightly based on network conditions and device settings.",
                     },
                 },
                 {
@@ -161,15 +173,7 @@ export default function JsonLd() {
                     name: "What is the route of the Silver Chariot?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "The Silver Chariot begins its journey at Kovil Veedu in George Town and proceeds to the Nattukkottai Chettiar Temple. The procession passes through various checkpoints in George Town, with the route clearly marked on our interactive map. The return journey follows a similar route back to Kovil Veedu.",
-                    },
-                },
-                {
-                    "@type": "Question",
-                    name: "Can I get notifications about the chariot's location?",
-                    acceptedAnswer: {
-                        "@type": "Answer",
-                        text: "Yes, you can enable push notifications to receive alerts when the chariot reaches different checkpoints, when there are roadblocks or route changes, and for other important announcements. Notifications are available in all supported languages.",
+                        text: "The Silver Chariot begins its sacred journey at Kovil Veedu (26, Lebuh Queen) in George Town, Penang and proceeds through the heritage zone to the Nattukkottai Chettiar Temple (Waterfall Temple). The procession follows a traditional route through George Town's historic streets, with multiple checkpoints marked on our interactive map. The return journey traces the path back to Kovil Veedu, completing the auspicious circuit through Penang's cultural heart.",
                     },
                 },
             ],
