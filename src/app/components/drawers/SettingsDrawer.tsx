@@ -113,7 +113,7 @@ function SettingsDrawer() {
                             strokeWidth={1.5}
                             className="stroke-primary-850 dark:stroke-primary-150"
                         />
-                        <span className="capitalize hidden min-[300px]:block">
+                        <span className="capitalize hidden min-[450px]:block">
                             {t("title")}
                         </span>
                         <ChevronDown className="ml-1" size={20} />

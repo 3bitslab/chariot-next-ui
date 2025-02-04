@@ -25,7 +25,7 @@ const ByeByteControl = () => {
       <span>
         <!-- 2: ByeByte -->
         <a
-          href="mailto:byebyteorg@gmail.com"
+          href="https://byebyte.org"
           style="text-decoration: underline; color: ${
               resolvedTheme === "dark"
                   ? "rgba(230,220,238,0.5)"
