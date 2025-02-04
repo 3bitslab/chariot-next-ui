@@ -1,7 +1,8 @@
 {
     "Announcement": {
         "welcome": "Welcome to the Penang Silver Chariot Tracker!",
-        "departure": "The chariot is scheduled to depart on Monday, February 10, 2025, at 7:00 AM."
+        "departure": "The chariot is scheduled to depart on Monday, February 10, 2025, at 7:00 AM.",
+        "creator" : "This is an independent, self-funded service brought to you by ByeByte Technologies."
     },
     "common": {
         "switch": {
