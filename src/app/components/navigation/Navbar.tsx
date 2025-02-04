@@ -28,7 +28,7 @@ function Navbar() {
                 )}
             </div>
             <div
-                className={`flex justify-center transition-all duration-500 ease-in-out ${!showAnnouncement && !showCreatorMessage ? "mt-5" : ""}`}
+                className={`flex justify-center ${!showAnnouncement && !showCreatorMessage ? "mt-5" : "mt-1"}`}
             >
                 <div className="flex flex-row space-x-2 md:space-x-3 lg:space-x-4">
                     <TrackerTypeDrawer />
