@@ -1,8 +1,7 @@
 {
     "Announcement": {
         "welcome": "欢迎使用槟城银辇追踪器！",
-        "departure": "银辇计划于2025年2月10日（星期一）早上7:00出发。",
-        "creator": "这是由 ByeByte Technologies 独立开发和自主资助的服务。"
+        "departure": "银辇计划于2025年2月10日（星期一）早上7:00出发。"
     },
     "common": {
         "switch": {
