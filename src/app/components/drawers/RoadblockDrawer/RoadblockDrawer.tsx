@@ -29,7 +29,7 @@ function RoadblockDrawer() {
         setIsDisplayedOnMap(newState);
     };
 
-    const new_road_block = [
+    const roads = [
         {
             streetName: "Jalan Gottlieb / Lorong Air Terjun",
             duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
@@ -120,61 +120,54 @@ function RoadblockDrawer() {
         },
     ];
 
-    const roads = [
-        {
-            streetName: "Jalan Kebun Bunga / Lorong Air Terjun",
-            duration: "10/02/2025 - 12/02/2025",
-            type: "closure",
-        },
-        {
-            streetName: "Lorong Air Terjun / Jalan Gottlieb",
-            duration: "10/02/2025 - 12/02/2025",
-            type: "closure",
-        },
-        {
-            streetName: "Jalan Utama / Jalan Macalister",
-            duration: "10/02/2025 - 12/02/2025",
-            type: "closure",
-        },
+    const road_block_2023 = [
         {
             streetName: "Jalan Gotlieb / Jalan Burma",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
+            note: "Based on PDRM 2023 Official Statement",
         },
         {
             streetName: "Jalan Brown / Jalan Tunku Abdul Rahman",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
+            note: "Based on PDRM 2023 Official Statement",
         },
         {
             streetName: "Lorong Air Terjun",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
+            note: "Based on PDRM 2023 Official Statement",
         },
         {
             streetName: "Jalan D.S Ramanathan / Jalan Gottlieb",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
+            note: "Based on PDRM 2023 Official Statement",
         },
         {
             streetName: "Jalan D.S Ramanathan / Jalan Brown",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
+            note: "Based on PDRM 2023 Official Statement",
         },
         {
             streetName: "Jalan Tunku Abdul Rahman / Jalan Brown",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
+            note: "Based on PDRM 2023 Official Statement",
         },
         {
             streetName: "Jalan Cantonment / Jalan Tunku Abdul Rahman",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
+            note: "Based on PDRM 2023 Official Statement",
         },
         {
             streetName: "Jalan Utama / Jalan Nunn",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
+            note: "Based on PDRM 2023 Official Statement",
         },
     ];
 
