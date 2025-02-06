@@ -20,7 +20,8 @@ import {
     ROADBLOCK_LOCATIONS,
 } from "@/constants/coordinates";
 import { useTheme } from "next-themes";
-import { endIcon, startIcon } from "@/constants/icons";
+import { createEndIcon, createStartIcon } from "@/constants/icons";
+import { useTranslations } from "next-intl";
 import { vehicleAtom } from "@/atoms/vehicle";
 import { useAtom } from "jotai";
 import { useGetProgressInfo } from "@/hooks/useGetProgressInfo";
@@ -74,6 +75,7 @@ const defaults = {
 
 const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
     const { theme } = useTheme();
+    const t = useTranslations("map.markers");
     const journey = process.env.NEXT_PUBLIC_JOURNEY || "departure";
     const coordinates =
         journey === "departure" ? DEPARTURE_COORDINATES : RETURN_COORDINATES;
@@ -240,11 +242,14 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 {/* Start Pin  */}
                 <Marker
                     position={markerPositions.start}
-                    icon={startIcon}
+                    icon={createStartIcon(t("start"))}
                 ></Marker>
 
                 {/* End Pin */}
-                <Marker position={markerPositions.end} icon={endIcon}></Marker>
+                <Marker
+                    position={markerPositions.end}
+                    icon={createEndIcon(t("end"))}
+                ></Marker>
 
                 {/* Chariot Pulsating Pin */}
                 <Marker
