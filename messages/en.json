@@ -61,7 +61,9 @@
     "Roadblock": {
         "drawer": {
             "title": "Roadblock",
-            "statement": "PDRM 2025 Official Statement"
+            "statement": "PDRM 2025 Official Statement",
+            "estimated_announcement": "Estimated end of road closure based on last year's data since it has not been officially announced.",
+            "announcement": "End of road closure has not been officially announced."
         },
         "closure": "Road Closed",
         "control": "Traffic Control"
