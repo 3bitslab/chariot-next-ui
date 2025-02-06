@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     Drawer,
     DrawerContent,
@@ -11,7 +11,7 @@ import { Label } from "@/components/ui/label";
 import Roadblock from "./Roadblock";
 import Divider from "../../Divider";
 import { Switch } from "@/components/ui/switch";
-import { roadBlockAtom } from "@/atoms/road-block";
+import { roadBlockAtom, roadblockYearModesAtom } from "@/atoms/road-block";
 import { drawerAtom } from "@/atoms/drawer";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
@@ -20,10 +20,7 @@ import { Analytics } from "@/utils/mixpanel";
 function RoadblockDrawer() {
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(roadBlockAtom);
     const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
-    const [viewModes, setViewModes] = useState({
-        "2025": true,
-        "2023": false,
-    });
+    const [yearModes, setYearModes] = useAtom(roadblockYearModesAtom);
     const t = useTranslations();
 
     const handleVisibilityChange = (newState: boolean) => {
@@ -239,16 +236,16 @@ function RoadblockDrawer() {
                             <div className="flex items-center space-x-2">
                                 <Checkbox
                                     id="2025"
-                                    checked={viewModes["2025"]}
+                                    checked={yearModes["2025"]}
                                     onCheckedChange={(checked) => {
                                         // Only allow unchecking if 2023 is checked
                                         if (
                                             checked === false &&
-                                            !viewModes["2023"]
+                                            !yearModes["2023"]
                                         ) {
                                             return;
                                         }
-                                        setViewModes((prev) => ({
+                                        setYearModes((prev) => ({
                                             ...prev,
                                             "2025": checked === true,
                                         }));
@@ -259,16 +256,16 @@ function RoadblockDrawer() {
                             <div className="flex items-center space-x-2">
                                 <Checkbox
                                     id="2023"
-                                    checked={viewModes["2023"]}
+                                    checked={yearModes["2023"]}
                                     onCheckedChange={(checked) => {
                                         // Only allow unchecking if 2025 is checked
                                         if (
                                             checked === false &&
-                                            !viewModes["2025"]
+                                            !yearModes["2025"]
                                         ) {
                                             return;
                                         }
-                                        setViewModes((prev) => ({
+                                        setYearModes((prev) => ({
                                             ...prev,
                                             "2023": checked === true,
                                         }));
@@ -281,8 +278,8 @@ function RoadblockDrawer() {
                     <Divider />
                     <div className="flex flex-col gap-y-4">
                         {[
-                            ...(viewModes["2025"] ? roads : []),
-                            ...(viewModes["2023"] ? road_block_2023 : []),
+                            ...(yearModes["2025"] ? roads : []),
+                            ...(yearModes["2023"] ? road_block_2023 : []),
                         ].map((roadblock) => (
                             <Roadblock
                                 key={roadblock.streetName}
@@ -293,9 +290,9 @@ function RoadblockDrawer() {
                             />
                         ))}
                     </div>
-                    {(viewModes["2025"] || viewModes["2023"]) && (
+                    {(yearModes["2025"] || yearModes["2023"]) && (
                         <div className="pt-4 flex flex-col gap-2">
-                            {viewModes["2025"] && (
+                            {yearModes["2025"] && (
                                 <a
                                     href="https://www.facebook.com/share/15PcM3gBqp/?mibextid=wwXIfr"
                                     target="_blank"
@@ -307,7 +304,7 @@ function RoadblockDrawer() {
                                     </span>
                                 </a>
                             )}
-                            {viewModes["2023"] && (
+                            {yearModes["2023"] && (
                                 <a
                                     href="https://www.mkn.gov.my/web/ms/2023/02/02/kenyataan-media-ketua-polis-pulau-pinang-sempena-perayaan-thaipusam-tahun-2023/"
                                     target="_blank"

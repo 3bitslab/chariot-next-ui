@@ -3,12 +3,22 @@ import AntPath from "../map/AntPath";
 import {
     POLICE_COORD,
     ROADBLOCK_ANTPATH,
-    ROADBLOCK_COORD,
+    ROADBLOCK_COORD_2025,
+    ROADBLOCK_COORD_2023,
 } from "@/constants/coordinates";
 import RoadBlockMarker from "../markers/RoadBlock";
 import PoliceMarker from "../markers/Police";
+import { useAtomValue } from "jotai";
+import { roadblockYearModesAtom } from "@/atoms/road-block";
 
 function Roadblock() {
+    const yearModes = useAtomValue(roadblockYearModesAtom);
+
+    const coordinates = [
+        ...(yearModes["2025"] ? ROADBLOCK_COORD_2025 : []),
+        ...(yearModes["2023"] ? ROADBLOCK_COORD_2023 : []),
+    ];
+
     return (
         <>
             {ROADBLOCK_ANTPATH.map((position, index) => (
@@ -29,16 +39,17 @@ function Roadblock() {
                 />
             ))}
 
-            {ROADBLOCK_COORD.map((position, index) => (
+            {coordinates.map((position, index) => (
                 <RoadBlockMarker
                     key={`roadblock-${index}`}
                     position={position}
                 />
             ))}
 
-            {POLICE_COORD.map((position, index) => (
-                <PoliceMarker key={`police-${index}`} position={position} />
-            ))}
+            {yearModes["2023"] &&
+                POLICE_COORD.map((position, index) => (
+                    <PoliceMarker key={`police-${index}`} position={position} />
+                ))}
         </>
     );
 }

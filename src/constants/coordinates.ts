@@ -16188,7 +16188,7 @@ export const POLICE_COORD: LatLngExpression[] = [
     [5.42176, 100.303463],
 ];
 
-export const ROADBLOCK_COORD: LatLngExpression[] = [
+export const ROADBLOCK_COORD_2025: LatLngExpression[] = [
     // "Jalan Gottlieb / Lorong Air Terjun"
     [5.430668, 100.299483],
     // "Jalan Gottlieb / Kebun Bunga"
@@ -16223,6 +16223,14 @@ export const ROADBLOCK_COORD: LatLngExpression[] = [
     // Lebuh Campbell
     [5.418032, 100.333608],
     [5.416982, 100.33582],
+];
+
+export const ROADBLOCK_COORD_2023: LatLngExpression[] = [
+    [5.434239, 100.295799],
+    [5.42169, 100.303366],
+    [5.434195, 100.303314],
+    [5.42805, 100.303143],
+    [5.423317, 100.303319],
 ];
 
 export const ROADBLOCK_LOCATIONS: { [key: string]: LatLngExpression } = {
