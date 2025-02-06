@@ -13,6 +13,7 @@ import { ReactQueryProvider } from ".././components/shared/ReactQueryProvider";
 import { AnalyticsProvider } from ".././components/shared/AnalyticsProvider";
 import { Suspense } from "react";
 import JsonLd from ".././components/shared/JsonLd";
+import Script from "next/script";
 
 const geistSans = localFont({
     src: "../../fonts/GeistVF.woff",
@@ -30,8 +31,27 @@ export const metadata: Metadata = {
     title: "Penang Silver Chariot Tracker 2025 | Real-time Thaipusam Chariot Location in George Town",
     description:
         "Independent Chariot Tracker for the 2025 Penang Thaipusam Silver Chariot – Get real-time live tracking of the chariot’s location, view checkpoint history, stay updated on PDRM roadblocks, traffic controls, and explore the full procession route in George Town, Penang. Independent chariot tracker since 2024, providing accurate and up-to-date tracking for devotees and visitors",
-    keywords:
-        "Penang Thaipusam 2025, Silver Chariot Location, Thaipusam Festival Penang, Live Chariot Tracking, George Town Thaipusam, Real-time Location Updates, Waterfall Temple, Nattukkottai Chettiar Temple, Penang Temple Route, Religious Procession Tracking, Penang Thaipusam 2025 Route, Penang Silver Chariot Live Updates, Penang Thaipusam Live Map, Chettipusam Procession George Town, Nagarathar Kovil Veedu to Waterfall Temple, Kavadi Route Thaipusam 2025, Pulau Pinang Thaipusam Tracker, Chariot Tracker Penang",
+    keywords: [
+        "Chariot Tracker",
+        "Penang Thaipusam 2025",
+        "Silver Chariot Location",
+        "Thaipusam Festival Penang",
+        "Live Chariot Tracking",
+        "George Town Thaipusam",
+        "Real-time Location Updates",
+        "Waterfall Temple",
+        "Nattukkottai Chettiar Temple",
+        "Penang Temple Route",
+        "Religious Procession Tracking",
+        "Penang Thaipusam 2025 Route",
+        "Penang Silver Chariot Live Updates",
+        "Penang Thaipusam Live Map",
+        "Chettipusam Procession George Town",
+        "Nagarathar Kovil Veedu to Waterfall Temple",
+        "Kavadi Route Thaipusam 2025",
+        "Pulau Pinang Thaipusam Tracker",
+        "Chariot Tracker Penang",
+    ],
     authors: [
         { name: "ByeByte Technologies", url: "https://www.chariottracker.com" },
     ],
@@ -210,6 +230,45 @@ export default async function RootLayout({
     const messages = await getMessages();
     return (
         <html lang={locale} suppressHydrationWarning>
+            <head>
+                <Script
+                    type="application/ld+json"
+                    strategy="afterInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "Event",
+                            name: "Penang Thaipusam Chariot Tracker",
+                            startDate: "2025-02-10T06:00:00+08:00",
+                            endDate: "2025-02-11T22:00:00+08:00",
+                            eventStatus: "https://schema.org/EventScheduled",
+                            eventAttendanceMode:
+                                "https://schema.org/OfflineEventAttendanceMode",
+                            location: {
+                                "@type": "Place",
+                                name: "George Town, Penang",
+                                address: {
+                                    "@type": "PostalAddress",
+                                    addressLocality: "George Town",
+                                    addressRegion: "Penang",
+                                    addressCountry: "Malaysia",
+                                },
+                            },
+                            description:
+                                "Real-time live tracker for the Penang Thaipusam Silver Chariot procession. Get instant updates on location, roadblocks, and route details.",
+                            image: [
+                                "https://www.chariottracker.com/assets/byebyte-1200x630.png",
+                            ],
+                            url: "https://www.chariottracker.com",
+                            organizer: {
+                                "@type": "Organization",
+                                name: "ByeByte Technologies",
+                                url: "https://www.chariottracker.com",
+                            },
+                        }),
+                    }}
+                />
+            </head>
             <body
                 className={`${geistSans.variable} ${geistMono.variable} antialiased`}
             >
