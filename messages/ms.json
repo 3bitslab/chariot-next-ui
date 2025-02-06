@@ -63,7 +63,8 @@
             "title": "Sekatan Jalan Raya",
             "statement": "Kenyataan Rasmi PDRM 2025",
             "estimated_announcement": "Anggaran penutupan jalan berdasarkan data tahun lepas kerana belum diumumkan secara rasmi.",
-            "announcement": "Penutupan jalan belum diumumkan secara rasmi."
+            "announcement": "Penutupan jalan belum diumumkan secara rasmi.",
+            "based_on_2023": "Berdasarkan Kenyataan Rasmi PDRM 2023"
         },
         "closure": "Jalan Ditutup",
         "control": "Kawalan Trafik"

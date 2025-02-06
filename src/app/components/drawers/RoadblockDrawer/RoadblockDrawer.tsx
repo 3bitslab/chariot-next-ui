@@ -110,13 +110,13 @@ function RoadblockDrawer() {
             streetName: "Jalan Victoria",
             duration: "10/02/2025 12:01 AM - 10/02/2025 12:08 PM",
             type: "closure",
-            note: "Estimated end time based on last year's data since it has not been officially announced.",
+            note: t("Roadblock.drawer.estimated_announcement"),
         },
         {
             streetName: "Lebuh Campbell",
             duration: "12/02/2025 12:01 AM",
             type: "closure",
-            note: "End time has not been officially announced.",
+            note: t("Roadblock.drawer.announcement"),
         },
     ];
 
@@ -125,49 +125,49 @@ function RoadblockDrawer() {
             streetName: "Jalan Gotlieb / Jalan Burma",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
-            note: "Based on PDRM 2023 Official Statement",
+            note: t("Roadblock.drawer.based_on_2023"),
         },
         {
             streetName: "Jalan Brown / Jalan Tunku Abdul Rahman",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
-            note: "Based on PDRM 2023 Official Statement",
+            note: t("Roadblock.drawer.based_on_2023"),
         },
         {
             streetName: "Lorong Air Terjun",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
-            note: "Based on PDRM 2023 Official Statement",
+            note: t("Roadblock.drawer.based_on_2023"),
         },
         {
             streetName: "Jalan D.S Ramanathan / Jalan Gottlieb",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
-            note: "Based on PDRM 2023 Official Statement",
+            note: t("Roadblock.drawer.based_on_2023"),
         },
         {
             streetName: "Jalan D.S Ramanathan / Jalan Brown",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
-            note: "Based on PDRM 2023 Official Statement",
+            note: t("Roadblock.drawer.based_on_2023"),
         },
         {
             streetName: "Jalan Tunku Abdul Rahman / Jalan Brown",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
-            note: "Based on PDRM 2023 Official Statement",
+            note: t("Roadblock.drawer.based_on_2023"),
         },
         {
             streetName: "Jalan Cantonment / Jalan Tunku Abdul Rahman",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
-            note: "Based on PDRM 2023 Official Statement",
+            note: t("Roadblock.drawer.based_on_2023"),
         },
         {
             streetName: "Jalan Utama / Jalan Nunn",
             duration: "10/02/2025 - 12/02/2025",
             type: "control",
-            note: "Based on PDRM 2023 Official Statement",
+            note: t("Roadblock.drawer.based_on_2023"),
         },
     ];
 
@@ -224,7 +224,7 @@ function RoadblockDrawer() {
                     </div>
                     <div className="pt-4">
                         <a
-                            href="https://www.facebook.com/share/1X5sXfRPU1/"
+                            href="https://www.facebook.com/share/15PcM3gBqp/?mibextid=wwXIfr"
                             target="_blank"
                             className="text-sm text-blue-500 underline flex items-center gap-1"
                         >

@@ -63,7 +63,8 @@
             "title": "道路封闭",
             "statement": "PDRM 2025 官方声明",
             "estimated_announcement": "由于道路封闭结束时间尚未正式公布，此预计时间是根据去年的数据。",
-            "announcement": "道路封闭结束时间尚未正式公布。"
+            "announcement": "道路封闭结束时间尚未正式公布。",
+            "based_on_2023": "根据 PDRM 2023 官方声明"
         },
         "closure": "道路封闭",
         "control": "交通管制"
