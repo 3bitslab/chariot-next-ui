@@ -29,6 +29,97 @@ function RoadblockDrawer() {
         setIsDisplayedOnMap(newState);
     };
 
+    const new_road_block = [
+        {
+            streetName: "Jalan Gottlieb / Lorong Air Terjun",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Jalan Gottlieb / Kebun Bunga",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Lorong Air Terjun / Taman Gottlieb",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Jalan Burma / Jalan Wright",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Jalan Gottlieb / Jalan DS Ramanathan",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Jalan Gottlieb / Taman Gottlieb",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Jalan Brown / Jalan Brother James",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Jalan DS Ramanathan / Jalan Park",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName:
+                "Jalan Brown / Jalan Tunku Abdul Rahman (Traffic Light)",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Jalan Brown / DS Ramanathan (Traffic Light)",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Lorong Air Terjun / KG Waterfall",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Jalan Kebun Bunga / Lorong Air Terjun",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Traffic Light Jalan Burma / Jalan Gottlieb",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Jalan Utama / Jalan Brook",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Jalan Park / Jalan Tunku Abdul Rahman",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            type: "closure",
+        },
+        {
+            streetName: "Jalan Victoria",
+            duration: "10/02/2025 12:01 AM - 10/02/2025 12:08 PM",
+            type: "closure",
+            note: "Estimated end time based on last year's data since it has not been officially announced.",
+        },
+        {
+            streetName: "Lebuh Campbell",
+            duration: "12/02/2025 12:01 AM",
+            type: "closure",
+            note: "End time has not been officially announced.",
+        },
+    ];
+
     const roads = [
         {
             streetName: "Jalan Kebun Bunga / Lorong Air Terjun",
@@ -139,7 +230,7 @@ function RoadblockDrawer() {
                     </div>
                     <div className="pt-4">
                         <a
-                            href="https://www.mkn.gov.my/web/ms/2023/02/02/kenyataan-media-ketua-polis-pulau-pinang-sempena-perayaan-thaipusam-tahun-2023/"
+                            href="https://www.facebook.com/share/1X5sXfRPU1/"
                             target="_blank"
                             className="text-sm text-blue-500 underline flex items-center gap-1"
                         >
