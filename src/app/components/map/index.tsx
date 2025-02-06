@@ -1,12 +1,19 @@
 "use client";
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
-import { LatLngExpression, LatLngTuple } from "leaflet";
+import {
+    MapContainer,
+    Marker,
+    TileLayer,
+    useMap,
+    useMapEvents,
+} from "react-leaflet";
+import { LatLngExpression, LatLngTuple, LeafletMouseEvent } from "leaflet";
 
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
 import "leaflet-defaulticon-compatibility";
+import { toast } from "sonner";
 import Navbar from "../navigation/Navbar";
 import RightNavbar from "../navigation/RightNavbar";
 import SummaryWindow from "../SummaryWindow";
@@ -71,6 +78,21 @@ interface MapProps {
 
 const defaults = {
     zoom: 19,
+};
+
+const CopyCoordinatesHandler = () => {
+    useMapEvents({
+        dblclick: (e: LeafletMouseEvent) => {
+            const { lat, lng } = e.latlng;
+            const coords = `${lat.toFixed(6)}, ${lng.toFixed(6)}`;
+            navigator.clipboard.writeText(coords).then(() => {
+                toast.success("Coordinates copied to clipboard", {
+                    description: coords,
+                });
+            });
+        },
+    });
+    return null;
 };
 
 const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
@@ -162,6 +184,7 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 className="fixed top-0 bottom-0 left-0 right-0 z-0"
             >
                 <MapViewUpdater vehiclePosition={vehiclePosition} />
+                <CopyCoordinatesHandler />
                 <RoadblockMapUpdater />
                 <CheckpointMapUpdater checkpoints={checkpoints} />
                 <ByeByteControl />
