@@ -16245,6 +16245,17 @@ export const ROADBLOCK_LOCATIONS: { [key: string]: LatLngExpression } = {
     "Jalan Park / Jalan Tunku Abdul Rahman": [5.426285, 100.305158],
     "Jalan Victoria": [5.411238, 100.334586],
     "Lebuh Campbell": [5.418032, 100.333608],
+    "Jalan Kebun Bunga / Lorong Air Terjun": [5.434239, 100.295799],
+    "Jalan Utama / Jalan Macalister": [5.42169, 100.303366],
+    "Lorong Air Terjun / Jalan Gottlieb": [5.434195, 100.303314],
+    "Jalan Gotlieb / Jalan Burma": [5.42805, 100.303143],
+    "Jalan Brown / Jalan Tunku Abdul Rahman": [5.423317, 100.303319],
+    "Lorong Air Terjun": [5.434239, 100.295799],
+    "Jalan D.S Ramanathan / Jalan Gottlieb": [5.434195, 100.303314],
+    "Jalan D.S Ramanathan / Jalan Brown": [5.423317, 100.303319],
+    "Jalan Tunku Abdul Rahman / Jalan Brown": [5.423317, 100.303319],
+    "Jalan Cantonment / Jalan Tunku Abdul Rahman": [5.423317, 100.303319],
+    "Jalan Utama / Jalan Nunn": [5.42169, 100.303366],
 };
 
 export const DEPATURE_CHECKPOINTS: LatLngExpression[] = [
