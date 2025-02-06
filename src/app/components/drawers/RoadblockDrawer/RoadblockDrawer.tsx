@@ -222,7 +222,7 @@ function RoadblockDrawer() {
                             />
                         ))}
                     </div>
-                    <div className="pt-4">
+                    <div className="pt-4 flex flex-col gap-2">
                         <a
                             href="https://www.facebook.com/share/15PcM3gBqp/?mibextid=wwXIfr"
                             target="_blank"
@@ -230,6 +230,14 @@ function RoadblockDrawer() {
                         >
                             <Info size={14} />
                             <span>{t("Roadblock.drawer.statement")}</span>
+                        </a>
+                        <a
+                            href="https://www.mkn.gov.my/web/ms/2023/02/02/kenyataan-media-ketua-polis-pulau-pinang-sempena-perayaan-thaipusam-tahun-2023/"
+                            target="_blank"
+                            className="text-sm text-blue-500 underline flex items-center gap-1"
+                        >
+                            <Info size={14} />
+                            <span>{t("Roadblock.drawer.statement_2023")}</span>
                         </a>
                     </div>
                 </div>
