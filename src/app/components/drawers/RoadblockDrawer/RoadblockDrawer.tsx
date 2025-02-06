@@ -241,6 +241,13 @@ function RoadblockDrawer() {
                                     id="2025"
                                     checked={viewModes["2025"]}
                                     onCheckedChange={(checked) => {
+                                        // Only allow unchecking if 2023 is checked
+                                        if (
+                                            checked === false &&
+                                            !viewModes["2023"]
+                                        ) {
+                                            return;
+                                        }
                                         setViewModes((prev) => ({
                                             ...prev,
                                             "2025": checked === true,
@@ -254,6 +261,13 @@ function RoadblockDrawer() {
                                     id="2023"
                                     checked={viewModes["2023"]}
                                     onCheckedChange={(checked) => {
+                                        // Only allow unchecking if 2025 is checked
+                                        if (
+                                            checked === false &&
+                                            !viewModes["2025"]
+                                        ) {
+                                            return;
+                                        }
                                         setViewModes((prev) => ({
                                             ...prev,
                                             "2023": checked === true,
