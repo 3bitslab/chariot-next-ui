@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
     Drawer,
     DrawerContent,
@@ -6,6 +6,8 @@ import {
     DrawerTrigger,
 } from "@/components/ui/drawer";
 import { TrafficConeIcon, Info } from "lucide-react";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 import Roadblock from "./Roadblock";
 import Divider from "../../Divider";
 import { Switch } from "@/components/ui/switch";
@@ -18,6 +20,10 @@ import { Analytics } from "@/utils/mixpanel";
 function RoadblockDrawer() {
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(roadBlockAtom);
     const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
+    const [viewModes, setViewModes] = useState({
+        "2025": true,
+        "2023": false,
+    });
     const t = useTranslations();
 
     const handleVisibilityChange = (newState: boolean) => {
@@ -203,61 +209,104 @@ function RoadblockDrawer() {
             </DrawerTrigger>
             <DrawerContent className="px-3 w-full">
                 <div className="py-5 gap-y-3 flex flex-col w-full overflow-y-auto max-h-[50%]">
-                    <DrawerTitle className="py-3 flex justify-between items-center">
-                        <span className="font-control opacity-70 dark:opacity-90">
-                            {t("Roadblock.drawer.title")}
-                        </span>
-                        <div className="flex items-center space-x-2">
-                            <Switch
-                                checked={isDisplayedOnMap}
-                                onCheckedChange={handleVisibilityChange}
-                                className="
-                  relative inline-flex h-5 w-10 shrink-0 cursor-pointer 
-                  rounded-full border-2 border-transparent 
-                  transition-colors duration-200 ease-in-out
-                  data-[state=checked]:bg-primary-500 
-                  data-[state=unchecked]:bg-gray-200
-                  data-[state=checked]:dark:bg-primary-600
-                  data-[state=unchecked]:dark:bg-primary-150
-                "
-                            />
-                            <label className="text-sm font-control">
-                                {isDisplayedOnMap
-                                    ? t("common.switch.hide")
-                                    : t("common.switch.show")}
-                            </label>
+                    <DrawerTitle className="py-3 flex flex-col gap-4">
+                        <div className="flex justify-between items-center">
+                            <span className="font-control opacity-70 dark:opacity-90">
+                                {t("Roadblock.drawer.title")}
+                            </span>
+                            <div className="flex items-center space-x-2">
+                                <Switch
+                                    checked={isDisplayedOnMap}
+                                    onCheckedChange={handleVisibilityChange}
+                                    className="
+                      relative inline-flex h-5 w-10 shrink-0 cursor-pointer 
+                      rounded-full border-2 border-transparent 
+                      transition-colors duration-200 ease-in-out
+                      data-[state=checked]:bg-primary-500 
+                      data-[state=unchecked]:bg-gray-200
+                      data-[state=checked]:dark:bg-primary-600
+                      data-[state=unchecked]:dark:bg-primary-150
+                    "
+                                />
+                                <label className="text-sm font-control">
+                                    {isDisplayedOnMap
+                                        ? t("common.switch.hide")
+                                        : t("common.switch.show")}
+                                </label>
+                            </div>
+                        </div>
+                        <div className="flex gap-4">
+                            <div className="flex items-center space-x-2">
+                                <Checkbox
+                                    id="2025"
+                                    checked={viewModes["2025"]}
+                                    onCheckedChange={(checked) => {
+                                        setViewModes((prev) => ({
+                                            ...prev,
+                                            "2025": checked === true,
+                                        }));
+                                    }}
+                                />
+                                <Label htmlFor="2025">2025</Label>
+                            </div>
+                            <div className="flex items-center space-x-2">
+                                <Checkbox
+                                    id="2023"
+                                    checked={viewModes["2023"]}
+                                    onCheckedChange={(checked) => {
+                                        setViewModes((prev) => ({
+                                            ...prev,
+                                            "2023": checked === true,
+                                        }));
+                                    }}
+                                />
+                                <Label htmlFor="2023">2023</Label>
+                            </div>
                         </div>
                     </DrawerTitle>
                     <Divider />
                     <div className="flex flex-col gap-y-4">
-                        {[...roads, ...road_block_2023].map((type) => (
+                        {[
+                            ...(viewModes["2025"] ? roads : []),
+                            ...(viewModes["2023"] ? road_block_2023 : []),
+                        ].map((roadblock) => (
                             <Roadblock
-                                key={type.streetName}
-                                streetName={type.streetName}
-                                type={type.type as "closure" | "control"}
-                                duration={type.duration}
-                                note={type.note}
+                                key={roadblock.streetName}
+                                streetName={roadblock.streetName}
+                                type={roadblock.type as "closure" | "control"}
+                                duration={roadblock.duration}
+                                note={roadblock.note}
                             />
                         ))}
                     </div>
-                    <div className="pt-4 flex flex-col gap-2">
-                        <a
-                            href="https://www.facebook.com/share/15PcM3gBqp/?mibextid=wwXIfr"
-                            target="_blank"
-                            className="text-sm text-blue-500 underline flex items-center gap-1"
-                        >
-                            <Info size={14} />
-                            <span>{t("Roadblock.drawer.statement")}</span>
-                        </a>
-                        <a
-                            href="https://www.mkn.gov.my/web/ms/2023/02/02/kenyataan-media-ketua-polis-pulau-pinang-sempena-perayaan-thaipusam-tahun-2023/"
-                            target="_blank"
-                            className="text-sm text-blue-500 underline flex items-center gap-1"
-                        >
-                            <Info size={14} />
-                            <span>{t("Roadblock.drawer.statement_2023")}</span>
-                        </a>
-                    </div>
+                    {(viewModes["2025"] || viewModes["2023"]) && (
+                        <div className="pt-4 flex flex-col gap-2">
+                            {viewModes["2025"] && (
+                                <a
+                                    href="https://www.facebook.com/share/15PcM3gBqp/?mibextid=wwXIfr"
+                                    target="_blank"
+                                    className="text-sm text-blue-500 underline flex items-center gap-1"
+                                >
+                                    <Info size={14} />
+                                    <span>
+                                        {t("Roadblock.drawer.statement")}
+                                    </span>
+                                </a>
+                            )}
+                            {viewModes["2023"] && (
+                                <a
+                                    href="https://www.mkn.gov.my/web/ms/2023/02/02/kenyataan-media-ketua-polis-pulau-pinang-sempena-perayaan-thaipusam-tahun-2023/"
+                                    target="_blank"
+                                    className="text-sm text-blue-500 underline flex items-center gap-1"
+                                >
+                                    <Info size={14} />
+                                    <span>
+                                        {t("Roadblock.drawer.statement_2023")}
+                                    </span>
+                                </a>
+                            )}
+                        </div>
+                    )}
                 </div>
             </DrawerContent>
         </Drawer>
