@@ -2,7 +2,8 @@ import React from "react";
 import AntPath from "../map/AntPath";
 import {
     POLICE_COORD,
-    ROADBLOCK_ANTPATH,
+    ROADBLOCK_ANTPATH_2025,
+    ROADBLOCK_ANTPATH_2023,
     ROADBLOCK_COORD_2025,
     ROADBLOCK_COORD_2023,
 } from "@/constants/coordinates";
@@ -19,9 +20,17 @@ function Roadblock() {
         ...(yearModes["2023"] ? ROADBLOCK_COORD_2023 : []),
     ];
 
+    const antPath = [
+        ...(yearModes["2025"]
+            ? [...ROADBLOCK_ANTPATH_2025, ...ROADBLOCK_ANTPATH_2023]
+            : yearModes["2023"]
+              ? ROADBLOCK_ANTPATH_2023
+              : []),
+    ];
+
     return (
         <>
-            {ROADBLOCK_ANTPATH.map((position, index) => (
+            {antPath.map((position, index) => (
                 <AntPath
                     key={`antpath-${index}`}
                     positions={position}
