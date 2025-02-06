@@ -16098,7 +16098,7 @@ export const ROADBLOCK_ANTPATH = [
     [
         [5.415835, 100.341915],
         [5.415553, 100.341553],
-        [5.414566, 100.340270],
+        [5.414566, 100.34027],
         [5.414516, 100.340196],
         [5.414517, 100.3402],
         [5.414438, 100.340116],
@@ -16192,19 +16192,25 @@ export const ROADBLOCK_COORD: LatLngExpression[] = [
 ];
 
 export const ROADBLOCK_LOCATIONS: { [key: string]: LatLngExpression } = {
-    "Jalan Gottlieb / Lorong Air Terjun": [5.431201, 100.300218],
-    "Jalan Gottlieb / Kebun Bunga": [5.430668, 100.299483],
-    "Jalan Kebun Bunga / Lorong Air Terjun": [5.434239, 100.295799],
-    "Jalan Utama / Jalan Macalister": [5.42169, 100.303366],
-    "Lorong Air Terjun / Jalan Gottlieb": [5.434195, 100.303314],
-    "Jalan Gotlieb / Jalan Burma": [5.42805, 100.303143],
-    "Jalan Brown / Jalan Tunku Abdul Rahman": [5.423317, 100.303319],
-    "Lorong Air Terjun": [5.434239, 100.295799],
-    "Jalan D.S Ramanathan / Jalan Gottlieb": [5.434195, 100.303314],
-    "Jalan D.S Ramanathan / Jalan Brown": [5.423317, 100.303319],
-    "Jalan Tunku Abdul Rahman / Jalan Brown": [5.423317, 100.303319],
-    "Jalan Cantonment / Jalan Tunku Abdul Rahman": [5.423317, 100.303319],
-    "Jalan Utama / Jalan Nunn": [5.42169, 100.303366],
+    "Jalan Gottlieb / Lorong Air Terjun": [5.430668, 100.299483],
+    "Jalan Gottlieb / Kebun Bunga": [5.434239, 100.295799],
+    "Lorong Air Terjun / Taman Gottlieb": [5.432412, 100.299083],
+    "Jalan Burma / Jalan Wright": [5.433252, 100.304312],
+    "Jalan Gottlieb / Jalan DS Ramanathan": [5.43316, 100.302473],
+    "Jalan Gottlieb / Taman Gottlieb": [5.432122033674237, 100.30060559684831],
+    "Jalan Brown / Jalan Brother James": [
+        5.431489419335731, 100.30623426793564,
+    ],
+    "Jalan DS Ramanathan / Jalan Park": [5.428485658091235, 100.30736173966395],
+    "Jalan Brown / Jalan Tunku Abdul Rahman (Traffic Light)": [
+        5.428122385782108, 100.30324656113193,
+    ],
+    "Jalan Brown / DS Ramanathan (Traffic Light)": [5.430439, 100.305416],
+    "Traffic Light Jalan Burma / Jalan Gottlieb": [5.434269, 100.303369],
+    "Jalan Utama / Jalan Brook": [5.421559, 100.303431],
+    "Jalan Park / Jalan Tunku Abdul Rahman": [5.426285, 100.305158],
+    "Jalan Victoria": [5.411238, 100.334586],
+    "Lebuh Campbell": [5.418032, 100.333608],
 };
 
 export const DEPATURE_CHECKPOINTS: LatLngExpression[] = [
