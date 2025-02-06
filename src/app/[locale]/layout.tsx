@@ -232,6 +232,7 @@ export default async function RootLayout({
         <html lang={locale} suppressHydrationWarning>
             <head>
                 <Script
+                    id="ld-script"
                     type="application/ld+json"
                     strategy="afterInteractive"
                     dangerouslySetInnerHTML={{
