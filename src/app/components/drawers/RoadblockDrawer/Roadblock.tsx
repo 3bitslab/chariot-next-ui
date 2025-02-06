@@ -1,6 +1,6 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { Clock } from "lucide-react";
+import { Clock, Info } from "lucide-react";
 import { PoliceIcon } from "../../markers/Police";
 import { RoadblockIcon } from "../../markers/RoadBlock";
 import { useTranslations } from "next-intl";
@@ -12,10 +12,12 @@ const Roadblock = ({
     streetName,
     duration,
     type,
+    note,
 }: {
     streetName: string;
     duration: string;
     type: "closure" | "control";
+    note?: string;
 }) => {
     const [, setSelectedRoadblock] = useAtom(selectedRoadblockAtom);
     const [, setIsDisplayedOnMap] = useAtom(roadBlockAtom);
@@ -48,9 +50,21 @@ const Roadblock = ({
                     <div className="text-base sm:text-lg font-semibold text-primary-900 dark:text-primary-50 break-words">
                         {streetName}
                     </div>
-                    <div className="flex items-center gap-x-1 sm:gap-x-2 text-xs sm:text-sm text-primary-600 dark:text-primary-100">
-                        <Clock size={12} opacity={0.7} />
-                        <span>{duration}</span>
+                    <div className="flex flex-col gap-0.5">
+                        <div className="flex items-center gap-x-1 sm:gap-x-2 text-xs sm:text-sm text-primary-600 dark:text-primary-100">
+                            <Clock size={12} opacity={0.7} />
+                            <span>{duration}</span>
+                        </div>
+                        {note && (
+                            <div className="flex items-start gap-x-1 sm:gap-x-2 text-xs text-primary-500 dark:text-primary-200">
+                                <Info
+                                    size={12}
+                                    opacity={0.7}
+                                    className="mt-0.5"
+                                />
+                                <span>{note}</span>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

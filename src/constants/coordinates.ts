@@ -15982,7 +15982,90 @@ export const MAP_COORDINATES: Coordinates = {
     end: [5.432815107402132, 100.29829799633161],
 };
 
-export const ROADBLOCK_ANTPATH = [
+export const ROADBLOCK_ANTPATH_2025 = [
+    [
+        [5.432371, 100.299098],
+        [5.4318, 100.299629],
+        [5.431218, 100.300176],
+    ],
+    [
+        [5.432109, 100.300632],
+        [5.431703, 100.300916],
+    ],
+    [
+        [5.433225, 100.304275],
+        [5.432942, 100.304001],
+        [5.432339, 100.3034],
+    ],
+    [
+        [5.430411, 100.305369],
+        [5.431768, 100.304012],
+        [5.433135, 100.302477],
+    ],
+    [
+        [5.431479, 100.306259],
+        [5.430892, 100.305809],
+        [5.4304, 100.305396],
+    ],
+    [
+        [5.428483, 100.307359],
+        [5.429599, 100.306243],
+        [5.430395, 100.305401],
+    ],
+    [
+        [5.426278, 100.305181],
+        [5.427196, 100.304269],
+        [5.428179, 100.303239],
+    ],
+    // Victoria Street
+    [
+        [5.415835, 100.341915],
+        [5.415553, 100.341553],
+        [5.414566, 100.34027],
+        [5.414516, 100.340196],
+        [5.414517, 100.3402],
+        [5.414438, 100.340116],
+        [5.414254, 100.339863],
+        [5.414102, 100.339674],
+        [5.414064, 100.339618],
+        [5.414004, 100.339536],
+        [5.413908, 100.339398],
+        [5.413877, 100.339355],
+        [5.413641, 100.339031],
+        [5.413436, 100.338699],
+        [5.413333, 100.338534],
+        [5.413323, 100.33852],
+        [5.413285, 100.338467],
+        [5.413255, 100.338429],
+        [5.41323, 100.338397],
+        [5.413198, 100.338362],
+        [5.413134, 100.338292],
+        [5.41297, 100.338109],
+        [5.412698, 100.337745],
+        [5.412309, 100.337114],
+        [5.412224, 100.336974],
+        [5.412185, 100.336895],
+        [5.41185, 100.336322],
+        [5.411663, 100.335968],
+        [5.411567, 100.335761],
+        [5.411508, 100.335541],
+        [5.411408, 100.335114],
+        [5.41135, 100.334846],
+        [5.411322, 100.334721],
+        [5.411283, 100.334642],
+        [5.41125, 100.334596],
+        [5.411238, 100.334586],
+    ],
+    // Lebuh Campbell
+    [
+        [5.418032, 100.333608],
+        [5.417473, 100.334768],
+        [5.417156, 100.335446],
+        [5.416982, 100.33582],
+    ],
+];
+
+export const ROADBLOCK_ANTPATH_2023 = [
     [
         [5.434169, 100.295756],
         [5.434157, 100.295749],
@@ -16106,10 +16189,46 @@ export const POLICE_COORD: LatLngExpression[] = [
     [5.430419, 100.305433],
     [5.423317, 100.303322],
     [5.42176, 100.303463],
-    [5.423387, 100.307053],
 ];
 
-export const ROADBLOCK_COORD: LatLngExpression[] = [
+export const ROADBLOCK_COORD_2025: LatLngExpression[] = [
+    // "Jalan Gottlieb / Lorong Air Terjun"
+    [5.430668, 100.299483],
+    // "Jalan Gottlieb / Kebun Bunga"
+    [5.434239, 100.295799],
+    // Lorong Air Terjun / Taman Gottlieb
+    [5.432412, 100.299083],
+    // Jalan Burma / Jalan Wright
+    [5.433252, 100.304312],
+    // Jalan Gottlieb / Jalan DS Ramanathan
+    [5.43316, 100.302473],
+    // Jalan Gottlieb / Taman Gottlieb
+    [5.432122033674237, 100.30060559684831],
+    // Jalan Brown / Jalan Brother James
+    [5.431489419335731, 100.30623426793564],
+    // Jalan DS Ramanathan / Jalan Park
+    [5.428485658091235, 100.30736173966395],
+    // Jalan Brown / Jalan Tunku Abdul Rahman (Traffic Light)
+    [5.428122385782108, 100.30324656113193],
+    // Jalan Brown / DS Ramanathan (Traffic Light)
+    [5.430439, 100.305416],
+    // Lorong Air Terjun / KG Waterfall
+    // TODO
+    // "Traffic Light Jalan Burma / Jalan Gottlieb
+    [5.434269, 100.303369],
+    // Jalan Utama / Jalan Brook
+    [5.421559, 100.303431],
+    // Jalan Park / Jalan Tunku Abdul Rahman
+    [5.426285, 100.305158],
+    // Jalan Victoria
+    [5.411238, 100.334586],
+    [5.415835, 100.341915],
+    // Lebuh Campbell
+    [5.418032, 100.333608],
+    [5.416982, 100.33582],
+];
+
+export const ROADBLOCK_COORD_2023: LatLngExpression[] = [
     [5.434239, 100.295799],
     [5.42169, 100.303366],
     [5.434195, 100.303314],
@@ -16118,6 +16237,25 @@ export const ROADBLOCK_COORD: LatLngExpression[] = [
 ];
 
 export const ROADBLOCK_LOCATIONS: { [key: string]: LatLngExpression } = {
+    "Jalan Gottlieb / Lorong Air Terjun": [5.430668, 100.299483],
+    "Jalan Gottlieb / Kebun Bunga": [5.434239, 100.295799],
+    "Lorong Air Terjun / Taman Gottlieb": [5.432412, 100.299083],
+    "Jalan Burma / Jalan Wright": [5.433252, 100.304312],
+    "Jalan Gottlieb / Jalan DS Ramanathan": [5.43316, 100.302473],
+    "Jalan Gottlieb / Taman Gottlieb": [5.432122033674237, 100.30060559684831],
+    "Jalan Brown / Jalan Brother James": [
+        5.431489419335731, 100.30623426793564,
+    ],
+    "Jalan DS Ramanathan / Jalan Park": [5.428485658091235, 100.30736173966395],
+    "Jalan Brown / Jalan Tunku Abdul Rahman (Traffic Light)": [
+        5.428122385782108, 100.30324656113193,
+    ],
+    "Jalan Brown / DS Ramanathan (Traffic Light)": [5.430439, 100.305416],
+    "Traffic Light Jalan Burma / Jalan Gottlieb": [5.434269, 100.303369],
+    "Jalan Utama / Jalan Brook": [5.421559, 100.303431],
+    "Jalan Park / Jalan Tunku Abdul Rahman": [5.426285, 100.305158],
+    "Jalan Victoria": [5.411238, 100.334586],
+    "Lebuh Campbell": [5.418032, 100.333608],
     "Jalan Kebun Bunga / Lorong Air Terjun": [5.434239, 100.295799],
     "Jalan Utama / Jalan Macalister": [5.42169, 100.303366],
     "Lorong Air Terjun / Jalan Gottlieb": [5.434195, 100.303314],
