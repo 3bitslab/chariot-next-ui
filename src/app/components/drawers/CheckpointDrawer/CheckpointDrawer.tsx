@@ -72,6 +72,14 @@ function CheckpointDrawer() {
                             <Switch
                                 checked={isDisplayedOnMap}
                                 onCheckedChange={handleVisibilityChange}
+                                className="
+                      relative inline-flex h-5 w-10 shrink-0 cursor-pointer 
+                      rounded-full border-2 border-transparent 
+                      transition-colors duration-200 ease-in-out
+                      data-[state=checked]:bg-primary-500 
+                      data-[state=unchecked]:bg-gray-200
+                      data-[state=checked]:dark:bg-primary-600
+                      data-[state=unchecked]:dark:bg-primary-150"
                             />
                             <label className="text-sm font-medium">
                                 {isDisplayedOnMap ? tc("hide") : tc("show")}
