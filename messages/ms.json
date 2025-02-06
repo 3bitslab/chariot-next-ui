@@ -128,6 +128,12 @@
         },
         "kavadi_return_disabled": "Penjejakan Kavadi tidak tersedia untuk perjalanan pulang"
     },
+    "map": {
+        "markers": {
+            "start": "Mula",
+            "end": "Tamat"
+        }
+    },
     "errors": {
         "fetchLocation": "Terdapat masalah semasa mendapatkan lokasi.",
         "fetchCheckpoints": "Terdapat masalah semasa mendapatkan informasi pemeriksaan.",
