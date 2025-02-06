@@ -212,12 +212,13 @@ function RoadblockDrawer() {
                     </DrawerTitle>
                     <Divider />
                     <div className="flex flex-col gap-y-4">
-                        {roads.map((type) => (
+                        {[...roads, ...road_block_2023].map((type) => (
                             <Roadblock
                                 key={type.streetName}
                                 streetName={type.streetName}
                                 type={type.type as "closure" | "control"}
                                 duration={type.duration}
+                                note={type.note}
                             />
                         ))}
                     </div>
