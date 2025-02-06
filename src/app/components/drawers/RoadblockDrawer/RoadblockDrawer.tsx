@@ -235,7 +235,7 @@ function RoadblockDrawer() {
                                 </label>
                             </div>
                         </div>
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 justify-end mr-2 mt-2">
                             <div className="flex items-center space-x-2">
                                 <Checkbox
                                     id="2025"
