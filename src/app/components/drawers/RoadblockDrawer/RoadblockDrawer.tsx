@@ -199,7 +199,6 @@ function RoadblockDrawer() {
 
     return (
         <Drawer
-            open={currentDrawer === "roadblock"}
             onOpenChange={(open) => {
                 setCurrentDrawer(open ? "roadblock" : null);
                 if (!open) {
