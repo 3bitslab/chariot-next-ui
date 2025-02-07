@@ -74,7 +74,7 @@ function TrackerTypeDrawer() {
     return (
         <Drawer
             onOpenChange={(open) => {
-                setCurrentDrawer(open ? "tracker" : null);
+                setCurrentDrawer(open ? { type: "tracker" } : null);
             }}
         >
             <DrawerTrigger asChild>

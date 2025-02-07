@@ -16,7 +16,7 @@ function AboutUsDrawer() {
     return (
         <Drawer
             onOpenChange={(open) => {
-                setCurrentDrawer(open ? "about" : null);
+                setCurrentDrawer(open ? { type: "about" } : null);
             }}
         >
             <DrawerTrigger asChild>

@@ -19,7 +19,7 @@ function DevelopersDrawer() {
     return (
         <Drawer
             onOpenChange={(open) => {
-                setCurrentDrawer(open ? "developers" : null);
+                setCurrentDrawer(open ? { type: "developers" } : null);
             }}
         >
             <DrawerTrigger asChild>

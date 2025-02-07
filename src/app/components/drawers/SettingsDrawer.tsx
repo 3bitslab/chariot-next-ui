@@ -35,7 +35,7 @@ function SettingsDrawer() {
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        if (currentDrawer && currentDrawer !== "settings") {
+        if (currentDrawer && currentDrawer.type !== "settings") {
             setIsOpen(false);
         }
     }, [currentDrawer]);
@@ -73,11 +73,11 @@ function SettingsDrawer() {
     const handleItemChange = (value: string) => {
         if (value === "theme") {
             setIsThemeDrawerOpen(true);
-            setCurrentDrawer("theme");
+            setCurrentDrawer({ type: "theme" });
             setIsOpen(false);
         } else if (value === "language") {
             setIsLanguageDrawerOpen(true);
-            setCurrentDrawer("language");
+            setCurrentDrawer({ type: "language" });
             setIsOpen(false);
         }
     };
@@ -103,7 +103,7 @@ function SettingsDrawer() {
                 open={isOpen}
                 onOpenChange={(open) => {
                     setIsOpen(open);
-                    setCurrentDrawer(open ? "settings" : null);
+                    setCurrentDrawer(open ? { type: "settings" } : null);
                 }}
             >
                 <DrawerTrigger asChild>

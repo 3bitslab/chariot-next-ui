@@ -30,12 +30,12 @@ function LanguageDrawer({ isOpen, onClose }: LanguageDrawerProps) {
 
     useEffect(() => {
         if (isOpen) {
-            setCurrentDrawer("language");
+            setCurrentDrawer({ type: "language" });
         }
     }, [isOpen, setCurrentDrawer]);
 
     useEffect(() => {
-        if (currentDrawer && currentDrawer !== "language" && isOpen) {
+        if (currentDrawer && currentDrawer.type !== "language" && isOpen) {
             onClose();
         }
     }, [currentDrawer, isOpen, onClose]);

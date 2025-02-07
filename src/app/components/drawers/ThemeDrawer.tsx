@@ -21,12 +21,12 @@ function ThemeDrawer({ isOpen, onClose }: ThemeDrawerProps) {
 
     useEffect(() => {
         if (isOpen) {
-            setCurrentDrawer("theme");
+            setCurrentDrawer({ type: "theme" });
         }
     }, [isOpen, setCurrentDrawer]);
 
     useEffect(() => {
-        if (currentDrawer && currentDrawer !== "theme" && isOpen) {
+        if (currentDrawer && currentDrawer.type !== "theme" && isOpen) {
             onClose();
         }
     }, [currentDrawer, isOpen, onClose]);

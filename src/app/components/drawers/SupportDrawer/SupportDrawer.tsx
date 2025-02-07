@@ -27,7 +27,7 @@ function SupportDrawer() {
         <Drawer
             onClose={() => setScene(0)}
             onOpenChange={(open) => {
-                setCurrentDrawer(open ? "support" : null);
+                setCurrentDrawer(open ? { type: "support" } : null);
             }}
         >
             <DrawerTrigger asChild>
