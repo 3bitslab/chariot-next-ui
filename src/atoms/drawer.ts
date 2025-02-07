@@ -9,7 +9,13 @@ export type DrawerType =
     | "checkpoint"
     | "developers"
     | "roadblock"
-    | "support"
-    | null;
+    | "support";
 
-export const drawerAtom = atom<DrawerType>(null);
+export type DrawerPosition = "right" | "left";
+
+export type DrawerState = {
+    type: DrawerType;
+    position: DrawerPosition;
+} | null;
+
+export const drawerAtom = atom<DrawerState>(null);

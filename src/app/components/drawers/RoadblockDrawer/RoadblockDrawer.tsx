@@ -21,12 +21,19 @@ import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import { Analytics } from "@/utils/mixpanel";
 
-function RoadblockDrawer() {
+interface RoadblockDrawerProps {
+    position: "right" | "left";
+}
+
+function RoadblockDrawer({ position }: RoadblockDrawerProps) {
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(roadBlockAtom);
     const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
     const [yearModes, setYearModes] = useAtom(roadblockYearModesAtom);
     const [, setSelectedRoadBlock] = useAtom(selectedRoadblockAtom);
     const t = useTranslations();
+    const isOpen =
+        currentDrawer?.type === "roadblock" &&
+        currentDrawer.position === position;
 
     const handleVisibilityChange = (newState: boolean) => {
         Analytics.track("Roadblock Visibility Changed", {
@@ -199,8 +206,9 @@ function RoadblockDrawer() {
 
     return (
         <Drawer
+            open={isOpen}
             onOpenChange={(open) => {
-                setCurrentDrawer(open ? "roadblock" : null);
+                setCurrentDrawer(open ? { type: "roadblock", position } : null);
                 if (!open) {
                     setSelectedRoadBlock(null);
                 }
