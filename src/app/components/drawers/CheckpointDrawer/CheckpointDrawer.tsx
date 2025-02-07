@@ -41,7 +41,6 @@ function CheckpointDrawer() {
 
     return (
         <Drawer
-            open={currentDrawer === "checkpoint"}
             onOpenChange={(open) => {
                 setCurrentDrawer(open ? "checkpoint" : null);
                 if (!open) {
