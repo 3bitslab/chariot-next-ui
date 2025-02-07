@@ -25,6 +25,8 @@ function CheckpointDrawer() {
     const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
     const [, setSelectedCheckpoint] = useAtom(selectedCheckpointAtom);
 
+    const isOpen = currentDrawer === "checkpoint";
+
     const handleVisibilityChange = (newState: boolean) => {
         Analytics.track("Checkpoint Visibility Changed", {
             action: newState ? "show" : "hide",
@@ -41,7 +43,7 @@ function CheckpointDrawer() {
 
     return (
         <Drawer
-            open={currentDrawer === "checkpoint"}
+            open={isOpen}
             onOpenChange={(open) => {
                 setCurrentDrawer(open ? "checkpoint" : null);
                 if (!open) {

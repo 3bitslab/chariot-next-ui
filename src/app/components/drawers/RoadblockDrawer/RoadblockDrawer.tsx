@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
     Drawer,
     DrawerContent,
@@ -11,24 +11,29 @@ import { Label } from "@/components/ui/label";
 import Roadblock from "./Roadblock";
 import Divider from "../../Divider";
 import { Switch } from "@/components/ui/switch";
-import { roadBlockAtom, roadblockYearModesAtom } from "@/atoms/road-block";
+import {
+    roadBlockAtom,
+    roadblockYearModesAtom,
+    selectedRoadblockAtom,
+} from "@/atoms/road-block";
 import { drawerAtom } from "@/atoms/drawer";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import { Analytics } from "@/utils/mixpanel";
 
-function RoadblockDrawer() {
+interface RoadblockDrawerProps {
+    position: "right" | "left";
+}
+
+function RoadblockDrawer({ position }: RoadblockDrawerProps) {
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(roadBlockAtom);
     const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
     const [yearModes, setYearModes] = useAtom(roadblockYearModesAtom);
-    const [isOpen, setIsOpen] = useState(false);
+    const [, setSelectedRoadBlock] = useAtom(selectedRoadblockAtom);
     const t = useTranslations();
-
-    useEffect(() => {
-        if (currentDrawer && currentDrawer !== "roadblock") {
-            setIsOpen(false);
-        }
-    }, [currentDrawer]);
+    const isOpen =
+        currentDrawer?.type === "roadblock" &&
+        currentDrawer.position === position;
 
     const handleVisibilityChange = (newState: boolean) => {
         Analytics.track("Roadblock Visibility Changed", {
@@ -203,8 +208,10 @@ function RoadblockDrawer() {
         <Drawer
             open={isOpen}
             onOpenChange={(open) => {
-                setIsOpen(open);
-                setCurrentDrawer(open ? "roadblock" : null);
+                setCurrentDrawer(open ? { type: "roadblock", position } : null);
+                if (!open) {
+                    setSelectedRoadBlock(null);
+                }
             }}
         >
             <DrawerTrigger asChild>
