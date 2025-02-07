@@ -286,11 +286,21 @@ function RoadblockDrawer() {
                     <Divider />
                     <div className="flex flex-col gap-y-4">
                         {[
-                            ...(yearModes["2025"] ? roads : []),
-                            ...(yearModes["2023"] ? road_block_2023 : []),
+                            ...(yearModes["2025"]
+                                ? roads.map((road) => ({
+                                      ...road,
+                                      year: "2025",
+                                  }))
+                                : []),
+                            ...(yearModes["2023"]
+                                ? road_block_2023.map((road) => ({
+                                      ...road,
+                                      year: "2023",
+                                  }))
+                                : []),
                         ].map((roadblock) => (
                             <Roadblock
-                                key={roadblock.streetName}
+                                key={`${roadblock.streetName}-${roadblock.year}`}
                                 streetName={roadblock.streetName}
                                 type={roadblock.type as "closure" | "control"}
                                 duration={roadblock.duration}
