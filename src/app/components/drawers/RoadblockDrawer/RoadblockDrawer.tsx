@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
     Drawer,
     DrawerContent,
@@ -21,7 +21,14 @@ function RoadblockDrawer() {
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(roadBlockAtom);
     const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
     const [yearModes, setYearModes] = useAtom(roadblockYearModesAtom);
+    const [isOpen, setIsOpen] = useState(false);
     const t = useTranslations();
+
+    useEffect(() => {
+        if (currentDrawer && currentDrawer !== "roadblock") {
+            setIsOpen(false);
+        }
+    }, [currentDrawer]);
 
     const handleVisibilityChange = (newState: boolean) => {
         Analytics.track("Roadblock Visibility Changed", {
@@ -91,7 +98,7 @@ function RoadblockDrawer() {
         },
         {
             streetName: "Jalan Kebun Bunga / Lorong Air Terjun",
-            duration: "10/02/2025 10:00 AM - 13/02/2025 12:01 AM",
+            duration: "10/02/2025 10:00 AM - 13/02/2025 12:05 AM",
             type: "closure",
         },
         {
@@ -194,8 +201,9 @@ function RoadblockDrawer() {
 
     return (
         <Drawer
-            open={currentDrawer === "roadblock"}
+            open={isOpen}
             onOpenChange={(open) => {
+                setIsOpen(open);
                 setCurrentDrawer(open ? "roadblock" : null);
             }}
         >
@@ -278,11 +286,21 @@ function RoadblockDrawer() {
                     <Divider />
                     <div className="flex flex-col gap-y-4">
                         {[
-                            ...(yearModes["2025"] ? roads : []),
-                            ...(yearModes["2023"] ? road_block_2023 : []),
+                            ...(yearModes["2025"]
+                                ? roads.map((road) => ({
+                                      ...road,
+                                      year: "2025",
+                                  }))
+                                : []),
+                            ...(yearModes["2023"]
+                                ? road_block_2023.map((road) => ({
+                                      ...road,
+                                      year: "2023",
+                                  }))
+                                : []),
                         ].map((roadblock) => (
                             <Roadblock
-                                key={roadblock.streetName}
+                                key={`${roadblock.streetName}-${roadblock.year}`}
                                 streetName={roadblock.streetName}
                                 type={roadblock.type as "closure" | "control"}
                                 duration={roadblock.duration}
