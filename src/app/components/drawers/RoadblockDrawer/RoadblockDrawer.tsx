@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
     Drawer,
     DrawerContent,
@@ -11,7 +11,11 @@ import { Label } from "@/components/ui/label";
 import Roadblock from "./Roadblock";
 import Divider from "../../Divider";
 import { Switch } from "@/components/ui/switch";
-import { roadBlockAtom, roadblockYearModesAtom } from "@/atoms/road-block";
+import {
+    roadBlockAtom,
+    roadblockYearModesAtom,
+    selectedRoadblockAtom,
+} from "@/atoms/road-block";
 import { drawerAtom } from "@/atoms/drawer";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
@@ -21,14 +25,8 @@ function RoadblockDrawer() {
     const [isDisplayedOnMap, setIsDisplayedOnMap] = useAtom(roadBlockAtom);
     const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
     const [yearModes, setYearModes] = useAtom(roadblockYearModesAtom);
-    const [isOpen, setIsOpen] = useState(false);
+    const [, setSelectedRoadBlock] = useAtom(selectedRoadblockAtom);
     const t = useTranslations();
-
-    useEffect(() => {
-        if (currentDrawer && currentDrawer !== "roadblock") {
-            setIsOpen(false);
-        }
-    }, [currentDrawer]);
 
     const handleVisibilityChange = (newState: boolean) => {
         Analytics.track("Roadblock Visibility Changed", {
@@ -201,10 +199,12 @@ function RoadblockDrawer() {
 
     return (
         <Drawer
-            open={isOpen}
+            open={currentDrawer === "roadblock"}
             onOpenChange={(open) => {
-                setIsOpen(open);
                 setCurrentDrawer(open ? "roadblock" : null);
+                if (!open) {
+                    setSelectedRoadBlock(null);
+                }
             }}
         >
             <DrawerTrigger asChild>

@@ -33,12 +33,11 @@ const Roadblock = ({
         <div
             className="flex flex-col sm:flex-row rounded-xl bg-white p-4 sm:p-5 shadow dark:bg-primary-800 cursor-pointer hover:bg-primary-50 dark:hover:bg-primary-700 transition-colors"
             onClick={() => {
-                setSelectedRoadblock((prev) => {
-                    const newValue = prev === streetName ? null : streetName;
-                    setIsDisplayedOnMap(true);
-                    setCurrentDrawer(null);
-                    return newValue;
-                });
+                setSelectedRoadblock((prev) =>
+                    prev === streetName ? null : streetName
+                );
+                setIsDisplayedOnMap(true);
+                setCurrentDrawer(null);
             }}
         >
             {/* Left section: Icon and Street Name */}
