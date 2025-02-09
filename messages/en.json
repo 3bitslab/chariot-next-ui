@@ -8,6 +8,7 @@
             "show": "Show On Map",
             "hide": "Hide On Map"
         },
+        "lastUpdated": "Last updated",
         "badge": {
             "slower": "Slower",
             "faster": "Faster",

@@ -5,6 +5,7 @@ import React from "react";
 import { Navigation2 } from "lucide-react";
 import { convertDateToReadableDate } from "../../utils/helpers";
 import CheckpointDrawer from "./drawers/CheckpointDrawer/CheckpointDrawer";
+import { useTranslations } from "next-intl";
 
 function SummaryWindow({
     progress,
@@ -119,7 +120,7 @@ function SummaryWindow({
             <div className="flex justify-center text-center">
                 {/* Current Road Name */}
                 <span className="text-sm lg:text-md dark:text-primary-100/80 text-primary-800/80 font-inter">
-                    Last updated: {displayText}
+                    {useTranslations("common")("lastUpdated")}: {displayText}
                 </span>
             </div>
         </div>

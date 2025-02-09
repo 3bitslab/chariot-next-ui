@@ -8,6 +8,7 @@
             "show": "在地图上显示",
             "hide": "在地图上隐藏"
         },
+        "lastUpdated": "最后更新",
         "badge": {
             "slower": "较慢",
             "faster": "较快",
