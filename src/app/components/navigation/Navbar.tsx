@@ -6,7 +6,7 @@ import SupportDrawer from "../drawers/SupportDrawer/SupportDrawer";
 import { Announcement } from "../shared/Announcement";
 
 function Navbar() {
-    const [showAnnouncement, setShowAnnouncement] = useState(true);
+    const [showAnnouncement, setShowAnnouncement] = useState(false);
     const t = useTranslations("Announcement");
 
     return (
