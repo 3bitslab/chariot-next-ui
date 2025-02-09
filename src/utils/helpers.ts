@@ -26,18 +26,34 @@ export const generatePulsatingMarker = (
     });
 };
 
-export const convertDateToReadableDate = (date: Date) => {
+export const convertDateToReadableDate = (
+    date: Date,
+    t?: (key: string) => string
+) => {
     const now = new Date();
     const diff = (now.getTime() - date.getTime()) / 1000;
 
+    if (!t) {
+        const options: Intl.DateTimeFormatOptions = {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "2-digit",
+            minute: "2-digit",
+            second: "2-digit",
+        };
+        return date.toLocaleString(undefined, options);
+    }
+
     if (diff < 5) {
-        return "just now";
+        return t("time.just_now");
     } else if (diff < 60) {
         const seconds = Math.floor(diff);
-        return `${seconds} ${seconds === 1 ? "second" : "seconds"} ago`;
+        return `${seconds} ${t(seconds === 1 ? "time.second_ago" : "time.seconds_ago")}`;
     } else if (diff < 3600) {
         const minutes = Math.floor(diff / 60);
-        return `${minutes} ${minutes === 1 ? "minute" : "minutes"} ago`;
+        return `${minutes} ${t(minutes === 1 ? "time.minute_ago" : "time.minutes_ago")}`;
     } else {
         const options: Intl.DateTimeFormatOptions = {
             weekday: "long",
@@ -48,6 +64,6 @@ export const convertDateToReadableDate = (date: Date) => {
             minute: "2-digit",
             second: "2-digit",
         };
-        return date.toLocaleString("en-US", options);
+        return date.toLocaleString(undefined, options);
     }
 };

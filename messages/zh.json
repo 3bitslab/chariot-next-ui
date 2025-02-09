@@ -8,6 +8,7 @@
             "show": "在地图上显示",
             "hide": "在地图上隐藏"
         },
+        "lastUpdated": "最后更新",
         "badge": {
             "slower": "较慢",
             "faster": "较快",
@@ -142,5 +143,12 @@
         "fetchLocation": "获取位置信息时出错。",
         "fetchCheckpoints": "获取检查站信息时出错。",
         "connectionError": "无法连接到服务器。请检查您的网络连接或联系开发人员。"
+    },
+    "time": {
+        "just_now": "刚刚",
+        "second_ago": "秒前",
+        "seconds_ago": "秒前",
+        "minute_ago": "分钟前",
+        "minutes_ago": "分钟前"
     }
 }

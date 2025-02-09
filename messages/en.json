@@ -8,6 +8,7 @@
             "show": "Show On Map",
             "hide": "Hide On Map"
         },
+        "lastUpdated": "Last updated",
         "badge": {
             "slower": "Slower",
             "faster": "Faster",
@@ -142,5 +143,12 @@
         "fetchLocation": "Something went wrong while fetching location.",
         "fetchCheckpoints": "Something went wrong while fetching checkpoints.",
         "connectionError": "Unable to connect to the server. Please check your connection or notify the developers."
+    },
+    "time": {
+        "just_now": "just now",
+        "second_ago": "second ago",
+        "seconds_ago": "seconds ago",
+        "minute_ago": "minute ago",
+        "minutes_ago": "minutes ago"
     }
 }
