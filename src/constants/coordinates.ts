@@ -1226,6 +1226,8 @@ export const DEPARTURE_COORDINATES = [
     [5.432279547418254, 100.29841272566833],
     [5.432314321125357, 100.29838408849751],
     [5.43238, 100.29833],
+    [5.432707, 100.297961],
+    [5.432868, 100.297789],
 ];
 
 export const RETURN_COORDINATES = [
@@ -8761,6 +8763,16 @@ export const VERBOSE_DEPARTURE_COORDINATES = [
     {
         lat: 5.43238,
         lon: 100.29833,
+        roadName: "Jalan Kebun Bunga",
+    },
+    {
+        lat: 5.432707,
+        lon: 100.297961,
+        roadName: "Jalan Kebun Bunga",
+    },
+    {
+        lat: 5.432868,
+        lon: 100.297789,
         roadName: "Jalan Kebun Bunga",
     },
 ];
