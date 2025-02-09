@@ -13,14 +13,17 @@ function RightNavbar() {
 
     const handleZoomIn = () => map.setZoom(map.getZoom() + 1);
     const handleZoomOut = () => map.setZoom(map.getZoom() - 1);
-    const handleFocus = () => map.setView(vehiclePosition, 25);
+    const handleFocus = () =>
+        vehiclePosition && map.setView(vehiclePosition, 25);
     const handleOverview = () => {
         const bounds = new LatLngBounds(
             [
                 MAP_COORDINATES.start,
                 MAP_COORDINATES.end,
                 vehiclePosition,
-            ].filter((coord) => coord)
+            ].filter(
+                (coord): coord is { lat: number; lng: number } => coord !== null
+            )
         );
 
         map.fitBounds(bounds, {
