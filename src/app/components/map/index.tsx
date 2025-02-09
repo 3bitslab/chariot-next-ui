@@ -2,7 +2,7 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
-import { LatLngExpression, LatLngTuple } from "leaflet";
+import { LatLngExpression } from "leaflet";
 
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
@@ -65,7 +65,6 @@ const CheckpointMapUpdater = ({
 };
 
 interface MapProps {
-    posix: LatLngExpression | LatLngTuple;
     zoom?: number;
 }
 
@@ -73,7 +72,7 @@ const defaults = {
     zoom: 19,
 };
 
-const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
+const Map = ({ zoom = defaults.zoom }: MapProps) => {
     const { theme } = useTheme();
     const t = useTranslations("map.markers");
     const journey = process.env.NEXT_PUBLIC_JOURNEY || "departure";
@@ -152,7 +151,6 @@ const Map = ({ posix, zoom = defaults.zoom }: MapProps) => {
                 tracker={tracker}
             />
             <MapContainer
-                center={posix}
                 zoom={zoom}
                 scrollWheelZoom={true}
                 zoomControl={false}

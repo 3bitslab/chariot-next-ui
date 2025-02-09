@@ -12,5 +12,5 @@ export default function Page() {
         []
     );
 
-    return <Map posix={[5.41613, 100.33944]} />;
+    return <Map />;
 }
