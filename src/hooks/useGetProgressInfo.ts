@@ -1,10 +1,7 @@
 import locationService from "@/services/locationService";
 import { useQuery } from "@tanstack/react-query";
 import { TLocationResponse, TTrackerType } from "../constants/types";
-import {
-    MAP_COORDINATES,
-    VERBOSE_DEPARTURE_COORDINATES,
-} from "../constants/coordinates";
+import { VERBOSE_DEPARTURE_COORDINATES } from "../constants/coordinates";
 import { useEffect, useState } from "react";
 import { env } from "@/env";
 import { useAtom } from "jotai";
@@ -18,7 +15,7 @@ export const useGetProgressInfo = () => {
     const [vehiclePosition, setVehiclePosition] = useState<{
         lat: number;
         lng: number;
-    }>({ lat: MAP_COORDINATES.start[0], lng: MAP_COORDINATES.start[1] });
+    } | null>(null);
     const [lastUpdatedAt, setLastUpdatedAt] = useState<Date | null>(null);
 
     const isMock = env.NEXT_PUBLIC_USE_MOCK_DATA;

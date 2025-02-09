@@ -159,7 +159,9 @@ const Map = ({ zoom = defaults.zoom }: MapProps) => {
                 attributionControl={true}
                 className="fixed top-0 bottom-0 left-0 right-0 z-0"
             >
-                <MapViewUpdater vehiclePosition={vehiclePosition} />
+                {vehiclePosition && (
+                    <MapViewUpdater vehiclePosition={vehiclePosition} />
+                )}
                 <RoadblockMapUpdater />
                 <CheckpointMapUpdater checkpoints={checkpoints} />
                 <ByeByteControl />
@@ -250,10 +252,12 @@ const Map = ({ zoom = defaults.zoom }: MapProps) => {
                 ></Marker>
 
                 {/* Chariot Pulsating Pin */}
-                <Marker
-                    position={vehiclePosition}
-                    icon={generatePulsatingMarker(tracker, theme)}
-                ></Marker>
+                {vehiclePosition && (
+                    <Marker
+                        position={vehiclePosition}
+                        icon={generatePulsatingMarker(tracker, theme)}
+                    ></Marker>
+                )}
                 <Navbar />
                 <RightNavbar />
             </MapContainer>
