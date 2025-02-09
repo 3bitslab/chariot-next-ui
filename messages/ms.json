@@ -143,5 +143,12 @@
         "fetchLocation": "Terdapat masalah semasa mendapatkan lokasi.",
         "fetchCheckpoints": "Terdapat masalah semasa mendapatkan informasi pemeriksaan.",
         "connectionError": "Tidak dapat berhubung dengan pelayan. Sila periksa talian internet anda atau maklumkan kepada pencipta."
+    },
+    "time": {
+        "just_now": "sebentar tadi",
+        "second_ago": "saat yang lalu",
+        "seconds_ago": "saat yang lalu",
+        "minute_ago": "minit yang lalu",
+        "minutes_ago": "minit yang lalu"
     }
 }

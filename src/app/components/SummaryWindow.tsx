@@ -46,20 +46,22 @@ function SummaryWindow({
         return () => cancelAnimationFrame(animationFrameId);
     }, [progress]);
 
+    const t = useTranslations();
+
     useEffect(() => {
         if (!lastUpdatedAt) {
             setDisplayText("Loading...");
             return;
         }
 
-        setDisplayText(convertDateToReadableDate(lastUpdatedAt));
+        setDisplayText(convertDateToReadableDate(lastUpdatedAt, t));
 
         const intervalId = setInterval(() => {
-            setDisplayText(convertDateToReadableDate(lastUpdatedAt));
+            setDisplayText(convertDateToReadableDate(lastUpdatedAt, t));
         }, 1000);
 
         return () => clearInterval(intervalId);
-    }, [lastUpdatedAt]);
+    }, [lastUpdatedAt, t]);
 
     const progressBarStyles = {
         width: `${fillPercentage}%`,
