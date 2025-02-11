@@ -15955,23 +15955,8 @@ export const VERBOSE_RETURN_COORDINATES = [
         roadName: "Lebuh Penang",
     },
     {
-        lat: 5.41626821967077,
-        lon: 100.3395499677795,
-        roadName: "Lebuh Penang",
-    },
-    {
-        lat: 5.416232698098176,
-        lon: 100.3395222730161,
-        roadName: "Lebuh Penang",
-    },
-    {
-        lat: 5.416197176524324,
-        lon: 100.33949457825597,
-        roadName: "Lebuh Penang",
-    },
-    {
-        lat: 5.41614,
-        lon: 100.33945,
+        lat: 5.416259,
+        lon: 100.339535,
         roadName: "Lebuh Penang",
     },
 ];
