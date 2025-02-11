@@ -10,6 +10,7 @@ import ".././globals.css";
 import { ThemeProvider } from ".././components/shared/ThemeProvider";
 import { Toaster } from "@/components/ui/sonner";
 import { ReactQueryProvider } from ".././components/shared/ReactQueryProvider";
+import { StorageResetter } from ".././components/shared/StorageResetter";
 import { AnalyticsProvider } from ".././components/shared/AnalyticsProvider";
 import { Suspense } from "react";
 import JsonLd from ".././components/shared/JsonLd";
@@ -275,6 +276,7 @@ export default async function RootLayout({
             >
                 <NextIntlClientProvider messages={messages}>
                     <Provider>
+                        <StorageResetter />
                         <JsonLd />
                         <Suspense>
                             <AnalyticsProvider />

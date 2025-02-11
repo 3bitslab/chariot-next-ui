@@ -3,6 +3,7 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
 import { LatLngExpression } from "leaflet";
+import { env } from "@/env";
 
 import "leaflet/dist/leaflet.css";
 import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.css";
@@ -75,7 +76,7 @@ const defaults = {
 const Map = ({ zoom = defaults.zoom }: MapProps) => {
     const { theme } = useTheme();
     const t = useTranslations("map.markers");
-    const journey = process.env.NEXT_PUBLIC_JOURNEY || "departure";
+    const journey = env.NEXT_PUBLIC_JOURNEY;
     const coordinates =
         journey === "departure" ? DEPARTURE_COORDINATES : RETURN_COORDINATES;
     const checkpoints =

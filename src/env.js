@@ -12,6 +12,9 @@ export const env = createEnv({
             .enum(["true", "false"])
             .transform((val) => val === "true"),
         NEXT_PUBLIC_MIXPANEL_TOKEN: z.string(),
+        NEXT_PUBLIC_JOURNEY: z
+            .enum(["departure", "return"])
+            .default("departure"),
     },
     runtimeEnv: {
         NEXT_PUBLIC_API_URL: process.env.NEXT_PUBLIC_API_URL,
@@ -19,5 +22,6 @@ export const env = createEnv({
         NEXT_PUBLIC_MIXPANEL_TOKEN: process.env.NEXT_PUBLIC_MIXPANEL_TOKEN,
         NEXT_PUBLIC_FETCH_INTERVAL_SECONDS:
             process.env.NEXT_PUBLIC_FETCH_INTERVAL_SECONDS,
+        NEXT_PUBLIC_JOURNEY: process.env.NEXT_PUBLIC_JOURNEY,
     },
 });

@@ -7,6 +7,7 @@ import { vehicleAtom } from "@/atoms/vehicle";
 import { useAtom } from "jotai";
 import { checkpointAtom, selectedCheckpointAtom } from "@/atoms/checkpoint";
 import { drawerAtom } from "@/atoms/drawer";
+import { env } from "@/env";
 
 function formatDateAndTime(timestamp: string) {
     if (!timestamp || timestamp === "- - :- -") return "- - :- -";
@@ -116,7 +117,7 @@ function Checkpoint({
     const [, setCurrentDrawer] = useAtom(drawerAtom);
     const [, setCheckpoint] = useAtom(checkpointAtom);
 
-    const journey = process.env.NEXT_PUBLIC_JOURNEY || "departure";
+    const journey = env.NEXT_PUBLIC_JOURNEY || "departure";
 
     return (
         <div

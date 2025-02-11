@@ -17,6 +17,7 @@ import ChariotIcon from "../icons/Chariot";
 import KavadiIcon from "../icons/Kavadi";
 import { useTranslations } from "next-intl";
 import { Analytics } from "@/utils/mixpanel";
+import { env } from "@/env";
 
 function TrackerTypeDrawer() {
     const [tracker, setTracker] = useAtom(vehicleAtom);
@@ -45,7 +46,7 @@ function TrackerTypeDrawer() {
         setTracker(newType);
     };
 
-    const isReturnJourney = process.env.NEXT_PUBLIC_JOURNEY !== "departure";
+    const isReturnJourney = env.NEXT_PUBLIC_JOURNEY !== "departure";
 
     const selectableItems: TSelectableItem[] = useMemo(
         () => [
