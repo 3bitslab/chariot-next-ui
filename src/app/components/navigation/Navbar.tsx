@@ -6,14 +6,14 @@ import SupportDrawer from "../drawers/SupportDrawer/SupportDrawer";
 import { Announcement } from "../shared/Announcement";
 
 function Navbar() {
-    const [showAnnouncement, setShowAnnouncement] = useState(false);
+    const [showAnnouncement, setShowAnnouncement] = useState(true);
     const t = useTranslations("Announcement");
 
     return (
         <>
             {showAnnouncement && (
                 <Announcement
-                    message={`${t("welcome")} ${t("return")}`}
+                    message={`${t("thanks")}`}
                     onFinish={() => setShowAnnouncement(false)}
                 />
             )}
