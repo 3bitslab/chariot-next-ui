@@ -155,6 +155,8 @@
         "minutes_ago": "minutes ago"
     },
     "Financial":{
-        "title": "Financials"
+        "title": "Financials",
+        "total": "Total Donations",
+        "currency": "MYR"
     }
 }

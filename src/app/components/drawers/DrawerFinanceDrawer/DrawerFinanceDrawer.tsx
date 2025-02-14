@@ -1,5 +1,6 @@
 import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
 import React from "react";
+import DonationsList from "./DonationsList";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/atoms/drawer";
 import Divider from "../../Divider";
@@ -22,7 +23,7 @@ function DrawerFinanceDrawer() {
             }}
         >
             <DrawerContent className="px-3 w-full">
-                <div className="py-5 gap-y-3 flex flex-col w-full max-h-[50%] overflow-auto">
+                <div className="py-5 gap-y-3 flex flex-col w-full h-[80vh]">
                     <DrawerTitle className="py-3 flex justify-between items-center">
                         <span className="font-semibold opacity-80 text-primary-800 dark:text-primary-150">
                             {t("title")}
@@ -31,6 +32,9 @@ function DrawerFinanceDrawer() {
 
                     {/* Divider */}
                     <Divider />
+
+                    {/* Donations List */}
+                    <DonationsList />
                 </div>
             </DrawerContent>
         </Drawer>
