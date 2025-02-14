@@ -93,7 +93,7 @@ interface CheckpointProps {
     landmark?: string;
     history: { year: number; utc_time: string }[];
     delta: number | null;
-    checkpointIndex: string;
+    checkpointIndex: number;
 }
 
 function Checkpoint({

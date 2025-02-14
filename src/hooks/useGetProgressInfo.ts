@@ -1,7 +1,6 @@
 import locationService from "@/services/locationService";
 import { useQuery } from "@tanstack/react-query";
 import { TLocationResponse, TTrackerType } from "../constants/types";
-import { VERBOSE_DEPARTURE_COORDINATES } from "../constants/coordinates";
 import { useEffect, useState } from "react";
 import { env } from "@/env";
 import { useAtom } from "jotai";
@@ -19,7 +18,7 @@ export const useGetProgressInfo = () => {
     const [lastUpdatedAt, setLastUpdatedAt] = useState<Date | null>(null);
 
     const isMock = env.NEXT_PUBLIC_USE_MOCK_DATA;
-    const [mockData, setMockData] = useState<TLocationResponse | null>(null);
+    const [mockData] = useState<TLocationResponse | null>(null);
 
     const { data, isFetching, isError, error, dataUpdatedAt } = useQuery({
         queryKey: ["getProgressInfo", type],
@@ -61,32 +60,11 @@ export const useGetProgressInfo = () => {
     }, [dataUpdatedAt, data, isMock]);
 
     useEffect(() => {
-        if (isMock) {
-            let index = 0;
-
-            const interval = setInterval(() => {
-                const mockPayload = VERBOSE_DEPARTURE_COORDINATES[index];
-
-                setMockData({
-                    latitude: mockPayload.lat,
-                    longitude: mockPayload.lon,
-                    roadName: mockPayload.roadName,
-                    progress: (
-                        ((index + 1) / VERBOSE_DEPARTURE_COORDINATES.length) *
-                        100
-                    ).toString(),
-                } as TLocationResponse);
-
-                setVehiclePosition({
-                    lat: mockPayload.lat,
-                    lng: mockPayload.lon,
-                });
-                setLastUpdatedAt(new Date());
-
-                index = (index + 1) % VERBOSE_DEPARTURE_COORDINATES.length;
-            }, 1000);
-
-            return () => clearInterval(interval);
+        if (isMock && type == "chariot") {
+            setVehiclePosition({
+                lat: 5.416352,
+                lng: 100.339714,
+            });
         }
     }, [isMock, type]);
 
