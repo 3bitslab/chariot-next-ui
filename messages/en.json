@@ -157,6 +157,7 @@
     "Financial":{
         "title": "Financials",
         "total": "Total Donations",
-        "currency": "MYR"
+        "currency": "MYR",
+        "privacyNotice": "* Names are partially hidden to protect donor privacy"
     }
 }
