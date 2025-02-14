@@ -158,6 +158,7 @@
         "title": "Financials",
         "total": "Total Donations",
         "currency": "MYR",
-        "privacyNotice": "* Names are partially hidden to protect donor privacy"
+        "privacyNotice": "* Names are partially hidden to protect donor privacy",
+        "lastUpdated": "* Last updated on February 14, 2025."
     }
 }

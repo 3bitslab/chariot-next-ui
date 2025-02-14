@@ -16,7 +16,7 @@ const donations: Donation[] = [
     { name: "C*** Y*** Y**", amount: 20 },
     { name: "S******* A/L S******", amount: 10 },
     { name: "J***** A** S* F***", amount: 50 },
-    { name: "T********* A/L P*********", amount: 25 },
+    { name: "T********* A/P P*********", amount: 25 },
     { name: "N******* A/L R*********", amount: 50 },
     { name: "L****** M******* A/P K**", amount: 5 },
     { name: "A***** S****** A/P C******", amount: 50 },
@@ -36,8 +36,8 @@ const DonationsList = () => {
                     {t("currency")} {total}
                 </Badge>
             </div>
-            <div className="flex-1 rounded-md overflow-y-auto">
-                <div className="space-y-2">
+            <div className="flex-1 rounded-md overflow-y-auto min-h-0 max-h-[calc(80vh-150px)]">
+                <div className="flex flex-col gap-y-3 pb-4">
                     {donations.map((donation, index) => (
                         <div
                             key={index}
