@@ -1,13 +1,16 @@
 import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
-import React from "react";
+import React, { useState } from "react";
 import DonationsList from "./DonationsList";
+import ExpensesList from "./ExpensesList";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/atoms/drawer";
 import Divider from "../../Divider";
 import { useTranslations } from "next-intl";
+import { Badge } from "@/components/ui/badge";
 
 function DrawerFinanceDrawer() {
     const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
+    const [isExpenses, setIsExpenses] = useState(false);
     const isOpen = currentDrawer?.type === "drawerFinance";
     const t = useTranslations("Financial");
 
@@ -36,11 +39,29 @@ function DrawerFinanceDrawer() {
                         </p>
                     </DrawerTitle>
 
+                    {/* Switch */}
+                    <div className="flex justify-center gap-2">
+                        <Badge
+                            variant={!isExpenses ? "default" : "outline"}
+                            className="cursor-pointer px-4 py-2"
+                            onClick={() => setIsExpenses(false)}
+                        >
+                            {t("donations")}
+                        </Badge>
+                        <Badge
+                            variant={isExpenses ? "default" : "outline"}
+                            className="cursor-pointer px-4 py-2"
+                            onClick={() => setIsExpenses(true)}
+                        >
+                            {t("expenses")}
+                        </Badge>
+                    </div>
+
                     {/* Divider */}
                     <Divider />
 
-                    {/* Donations List */}
-                    <DonationsList />
+                    {/* Content */}
+                    {isExpenses ? <ExpensesList /> : <DonationsList />}
                 </div>
             </DrawerContent>
         </Drawer>
