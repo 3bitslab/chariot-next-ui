@@ -153,5 +153,8 @@
         "seconds_ago": "seconds ago",
         "minute_ago": "minute ago",
         "minutes_ago": "minutes ago"
+    },
+    "Financial":{
+        "title": "Financials"
     }
 }
