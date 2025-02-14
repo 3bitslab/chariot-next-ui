@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 
 function DrawerFinanceDrawer() {
     const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
-    const [isExpenses, setIsExpenses] = useState(false);
+    const [isExpenses, setIsExpenses] = useState(true);
     const isOpen = currentDrawer?.type === "drawerFinance";
     const t = useTranslations("Financial");
 
@@ -40,7 +40,7 @@ function DrawerFinanceDrawer() {
                     </DrawerTitle>
 
                     {/* Switch */}
-                    <div className="flex justify-center gap-2">
+                    <div className="flex justify-end gap-2">
                         <Badge
                             variant={!isExpenses ? "default" : "outline"}
                             className="cursor-pointer px-4 py-2"
