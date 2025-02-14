@@ -35,6 +35,7 @@ import { checkpointAtom, selectedCheckpointAtom } from "@/atoms/checkpoint";
 import { findIndex, isEmpty, isEqual } from "lodash";
 import { MapViewUpdater } from "../utils/MapViewUpdater";
 import ByeByteControl from "./ByeByteControl";
+import { useDrawerUrlSync } from "@/hooks/useDrawerUrlSync";
 
 const RoadblockMapUpdater = () => {
     const map = useMap();
@@ -76,6 +77,7 @@ const defaults = {
 
 const Map = ({ zoom = defaults.zoom }: MapProps) => {
     const { theme } = useTheme();
+    useDrawerUrlSync();
     const t = useTranslations("map.markers");
     const journey = env.NEXT_PUBLIC_JOURNEY;
     const coordinates =

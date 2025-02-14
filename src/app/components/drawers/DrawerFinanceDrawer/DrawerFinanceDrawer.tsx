@@ -4,14 +4,12 @@ import DonationsList from "./DonationsList";
 import ExpensesList from "./ExpensesList";
 import { useAtom } from "jotai";
 import { drawerAtom } from "@/atoms/drawerAtom";
-import { useDrawerUrlSync } from "@/hooks/useDrawerUrlSync";
 import Divider from "../../Divider";
 import { useTranslations } from "next-intl";
 import { Badge } from "@/components/ui/badge";
 
 function DrawerFinanceDrawer() {
     const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
-    useDrawerUrlSync();
     const [isExpenses, setIsExpenses] = useState(true);
     const isOpen = currentDrawer?.type === "finance";
     const t = useTranslations("Financial");
