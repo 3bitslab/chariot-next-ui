@@ -31,7 +31,7 @@ const DonationsList = () => {
     return (
         <div className="flex flex-col h-full">
             <div className="flex justify-between items-center p-4 bg-primary/10 rounded-lg mb-4">
-                <span className="font-semibold">{t("total")}</span>
+                <span className="font-semibold">{t("totalDonations")}</span>
                 <Badge variant="default" className="text-lg">
                     {t("currency")} {total}
                 </Badge>

@@ -153,5 +153,16 @@
         "seconds_ago": "秒前",
         "minute_ago": "分钟前",
         "minutes_ago": "分钟前"
+    },
+    "Financial":{
+        "title": "财务",
+        "total": "总额",
+        "totalDonations": "总捐款",
+        "totalExpenses": "总支出",
+        "currency": "MYR",
+        "privacyNotice": "* 为保护捐赠者隐私，姓名已部分隐藏",
+        "lastUpdated": "* 最后更新于2025年2月14日",
+        "donations": "捐款",
+        "expenses": "支出"
     }
 }

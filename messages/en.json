@@ -157,6 +157,8 @@
     "Financial":{
         "title": "Financials",
         "total": "Total",
+        "totalDonations": "Total Donations",
+        "totalExpenses": "Total Expenses",
         "currency": "MYR",
         "privacyNotice": "* Names are partially hidden to protect donor privacy",
         "lastUpdated": "* Last updated on February 14, 2025.",

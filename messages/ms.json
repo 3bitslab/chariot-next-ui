@@ -153,5 +153,16 @@
         "seconds_ago": "saat yang lalu",
         "minute_ago": "minit yang lalu",
         "minutes_ago": "minit yang lalu"
+    },
+    "Financial":{
+        "title": "Kewangan",
+        "total": "Jumlah",
+        "totalDonations": "Jumlah Derma",
+        "totalExpenses": "Jumlah Perbelanjaan",
+        "currency": "MYR",
+        "privacyNotice": "* Nama dirahsiakan untuk melindungi privasi penderma",
+        "lastUpdated": "* Kemas kini terakhir pada 14 Februari 2025.",
+        "donations": "Derma",
+        "expenses": "Perbelanjaan"
     }
 }
