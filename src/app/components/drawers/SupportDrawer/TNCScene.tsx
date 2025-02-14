@@ -3,13 +3,15 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { Button } from "@/components/ui/button";
 import { HeartIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
-import DrawerFinanceDrawer from "../DrawerFinanceDrawer/DrawerFinanceDrawer";
+import { useAtom } from "jotai";
+import { drawerAtom } from "@/atoms/drawer";
 
 function TNCScene({
     handleSceneChange,
 }: {
     handleSceneChange: (scene: 0 | 1) => void;
 }) {
+    const [, setCurrentDrawer] = useAtom(drawerAtom);
     const [isAccepted, setIsAccepted] = useState<boolean>(false);
     const t = useTranslations("Support.tnc");
 
@@ -37,7 +39,13 @@ function TNCScene({
                 <span className="text-sm">{t("acceptTerms")}</span>
             </div>
             <div className="flex gap-x-4 w-full justify-center">
-                <DrawerFinanceDrawer />
+                <Button
+                    variant="secondary"
+                    className="flex items-center gap-x-2 bg-primary-600 text-primary-150 dark:bg-primary-50 dark:text-primary-800 opacity-80"
+                    onClick={() => setCurrentDrawer({ type: "drawerFinance" })}
+                >
+                    {t("finance")}
+                </Button>
                 <Button
                     disabled={!isAccepted}
                     onClick={() => handleSceneChange(1)}

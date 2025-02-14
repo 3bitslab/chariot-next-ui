@@ -11,6 +11,7 @@ import "leaflet-defaulticon-compatibility";
 import Navbar from "../navigation/Navbar";
 import RightNavbar from "../navigation/RightNavbar";
 import SummaryWindow from "../SummaryWindow";
+import DrawerFinanceDrawer from "../drawers/DrawerFinanceDrawer/DrawerFinanceDrawer";
 import AntPath from "./AntPath";
 import {
     DEPATURE_CHECKPOINTS,
@@ -261,6 +262,7 @@ const Map = ({ zoom = defaults.zoom }: MapProps) => {
                 )}
                 <Navbar />
                 <RightNavbar />
+                <DrawerFinanceDrawer />
             </MapContainer>
         </div>
     );
