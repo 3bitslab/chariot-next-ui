@@ -59,7 +59,7 @@ function DrawerFinanceDrawer() {
                         </p>
                     </DrawerTitle>
                     <Divider />
-                    <div className="flex flex-col gap-y-4 overflow-y-auto">
+                    <div className="flex flex-col gap-y-4 overflow-y-auto h-full">
                         {isExpenses ? <ExpensesList /> : <DonationsList />}
                     </div>
                 </div>

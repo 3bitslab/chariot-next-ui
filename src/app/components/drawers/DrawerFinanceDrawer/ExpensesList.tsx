@@ -31,7 +31,7 @@ const ExpensesList = () => {
                     {t("currency")} {total}
                 </Badge>
             </div>
-            <div className="flex flex-col gap-y-3 h-[300px] overflow-y-auto">
+            <div className="flex flex-col gap-y-3 h-[40vh] overflow-y-auto">
                 {expenses.map((expense, index) => (
                     <div
                         key={index}
