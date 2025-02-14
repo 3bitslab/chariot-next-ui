@@ -58,12 +58,10 @@ function DrawerFinanceDrawer() {
                             {t("lastUpdated")}
                         </p>
                     </DrawerTitle>
-
-                    {/* Divider */}
                     <Divider />
-
-                    {/* Content */}
-                    {isExpenses ? <ExpensesList /> : <DonationsList />}
+                    <div className="flex flex-col gap-y-4 overflow-y-auto">
+                        {isExpenses ? <ExpensesList /> : <DonationsList />}
+                    </div>
                 </div>
             </DrawerContent>
         </Drawer>
