@@ -101,7 +101,7 @@ const Map = ({ zoom = defaults.zoom }: MapProps) => {
 
     const fallback = {
         progress: 0,
-        roadName: "Loading...",
+        roadName: env.NEXT_PUBLIC_USE_MOCK_DATA ? "Lebuh Penang" : "Loading...",
     };
 
     const { progress, roadName } = data || fallback;
