@@ -9,7 +9,8 @@ export type DrawerType =
     | "checkpoint"
     | "developers"
     | "roadblock"
-    | "support";
+    | "support"
+    | "drawerFinance";
 
 export type DrawerPosition = "right" | "left";
 
