@@ -65,6 +65,11 @@ export const useGetProgressInfo = () => {
                 lat: 5.416352,
                 lng: 100.339714,
             });
+        } else {
+            setVehiclePosition({
+                lat: 5.416208,
+                lng: 100.339395,
+            });
         }
     }, [isMock, type]);
 
