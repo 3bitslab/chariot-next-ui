@@ -7,21 +7,21 @@ interface Donation {
     amount: number;
 }
 
-// Names are pre-masked to protect privacy in the bundle
+// Names are pre-masked to protect privacy in the bundle and alphabetical order
 const donations: Donation[] = [
-    { name: "M****** M********", amount: 100 },
+    { name: "A***** S****** A/P C******", amount: 50 },
+    { name: "C*** Y*** Y**", amount: 20 },
+    { name: "J***** A** S* F***", amount: 50 },
     { name: "K******* A/L M A********", amount: 10 },
     { name: "L** E S****", amount: 30 },
-    { name: "S******* A/L M*****", amount: 5 },
-    { name: "C*** Y*** Y**", amount: 20 },
-    { name: "S******* A/L S******", amount: 10 },
-    { name: "J***** A** S* F***", amount: 50 },
-    { name: "T********* A/P P*********", amount: 25 },
-    { name: "N******* A/L R*********", amount: 50 },
     { name: "L****** M******* A/P K**", amount: 5 },
-    { name: "A***** S****** A/P C******", amount: 50 },
+    { name: "M****** M********", amount: 100 },
+    { name: "N******* A/L R*********", amount: 50 },
     { name: "P***** A/P S**********", amount: 30 },
+    { name: "S******* A/L M*****", amount: 5 },
+    { name: "S******* A/L S******", amount: 10 },
     { name: "T*** A* P***", amount: 405 },
+    { name: "T********* A/P P*********", amount: 25 },
 ];
 
 const DonationsList = () => {
