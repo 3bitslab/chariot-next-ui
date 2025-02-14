@@ -51,9 +51,11 @@ function DrawerFinanceDrawer() {
                                 </Badge>
                             </div>
                         </div>
-                        <p className="text-xs text-muted-foreground">
-                            {t("privacyNotice")}
-                        </p>
+                        {!isExpenses && (
+                            <p className="text-xs text-muted-foreground">
+                                {t("privacyNotice")}
+                            </p>
+                        )}
                         <p className="text-xs text-muted-foreground">
                             {t("lastUpdated")}
                         </p>
