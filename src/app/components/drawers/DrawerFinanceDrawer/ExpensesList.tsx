@@ -10,11 +10,7 @@ interface Expense {
 
 const expenses: Expense[] = [
     { name: "banners", amount: 255 },
-    {
-        name: "gps",
-        amount: 117,
-        note: "gpsNote",
-    },
+    { name: "gps", amount: 117, note: "gpsNote" },
     { name: "hosting", amount: 377 },
     { name: "domain", amount: 49 },
 ];
@@ -31,7 +27,7 @@ const ExpensesList = () => {
                     {t("currency")} {total}
                 </Badge>
             </div>
-            <div className="flex flex-col gap-y-3 h-[40vh] overflow-y-auto">
+            <div className="flex flex-col gap-y-3">
                 {expenses.map((expense, index) => (
                     <div
                         key={index}

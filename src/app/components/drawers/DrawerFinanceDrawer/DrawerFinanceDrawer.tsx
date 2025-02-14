@@ -25,8 +25,8 @@ function DrawerFinanceDrawer() {
                 }
             }}
         >
-            <DrawerContent className="px-3 w-full">
-                <div className="py-5 gap-y-3 flex flex-col w-full max-h-[50%]">
+            <DrawerContent className="px-3 w-full h-full flex flex-col">
+                <div className="py-5 gap-y-3">
                     <DrawerTitle className="py-3 flex flex-col gap-2">
                         <div className="flex justify-between items-center">
                             <span className="font-semibold opacity-80 text-primary-800 dark:text-primary-150">
@@ -59,9 +59,10 @@ function DrawerFinanceDrawer() {
                         </p>
                     </DrawerTitle>
                     <Divider />
-                    <div className="flex flex-col gap-y-4 overflow-y-auto h-full">
-                        {isExpenses ? <ExpensesList /> : <DonationsList />}
-                    </div>
+                </div>
+
+                <div className="flex-1 overflow-y-auto flex flex-col gap-y-4 pb-4">
+                    {isExpenses ? <ExpensesList /> : <DonationsList />}
                 </div>
             </DrawerContent>
         </Drawer>
