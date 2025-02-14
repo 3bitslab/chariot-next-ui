@@ -26,7 +26,7 @@ function DrawerFinanceDrawer() {
             }}
         >
             <DrawerContent className="px-3 w-full">
-                <div className="py-5 gap-y-3 flex flex-col w-full h-[80vh]">
+                <div className="py-5 gap-y-3 flex flex-col w-full max-h-[50%] overflow-auto">
                     <DrawerTitle className="py-3 flex flex-col gap-2">
                         <div className="flex justify-between items-center">
                             <span className="font-semibold opacity-80 text-primary-800 dark:text-primary-150">

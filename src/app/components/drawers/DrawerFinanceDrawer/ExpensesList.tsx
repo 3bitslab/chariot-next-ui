@@ -24,36 +24,34 @@ const ExpensesList = () => {
     const total = expenses.reduce((sum, expense) => sum + expense.amount, 0);
 
     return (
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col">
             <div className="flex justify-between items-center p-4 bg-primary/10 rounded-lg mb-4">
                 <span className="font-semibold">{t("totalExpenses")}</span>
                 <Badge variant="default" className="text-lg">
                     {t("currency")} {total}
                 </Badge>
             </div>
-            <div className="flex-1 rounded-md overflow-y-auto min-h-0 max-h-[calc(80vh-150px)]">
-                <div className="flex flex-col gap-y-3 pb-4">
-                    {expenses.map((expense, index) => (
-                        <div
-                            key={index}
-                            className="flex flex-col p-3 bg-secondary/10 rounded-lg"
-                        >
-                            <div className="flex justify-between items-center">
-                                <span className="text-sm font-medium">
-                                    {t(`expenseItems.${expense.name}`)}
-                                </span>
-                                <Badge variant="secondary">
-                                    {t("currency")} {expense.amount}
-                                </Badge>
-                            </div>
-                            {expense.note && (
-                                <span className="text-xs text-muted-foreground mt-2">
-                                    {t(`expenseItems.${expense.note}`)}
-                                </span>
-                            )}
+            <div className="flex flex-col gap-y-3">
+                {expenses.map((expense, index) => (
+                    <div
+                        key={index}
+                        className="flex flex-col p-3 bg-secondary/10 rounded-lg"
+                    >
+                        <div className="flex justify-between items-center">
+                            <span className="text-sm font-medium">
+                                {t(`expenseItems.${expense.name}`)}
+                            </span>
+                            <Badge variant="secondary">
+                                {t("currency")} {expense.amount}
+                            </Badge>
                         </div>
-                    ))}
-                </div>
+                        {expense.note && (
+                            <span className="text-xs text-muted-foreground mt-2">
+                                {t(`expenseItems.${expense.note}`)}
+                            </span>
+                        )}
+                    </div>
+                ))}
             </div>
         </div>
     );

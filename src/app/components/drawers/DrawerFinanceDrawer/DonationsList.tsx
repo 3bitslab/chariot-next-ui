@@ -29,29 +29,27 @@ const DonationsList = () => {
     const total = donations.reduce((sum, donation) => sum + donation.amount, 0);
 
     return (
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col">
             <div className="flex justify-between items-center p-4 bg-primary/10 rounded-lg mb-4">
                 <span className="font-semibold">{t("totalDonations")}</span>
                 <Badge variant="default" className="text-lg">
                     {t("currency")} {total}
                 </Badge>
             </div>
-            <div className="flex-1 rounded-md overflow-y-auto min-h-0 max-h-[calc(80vh-150px)]">
-                <div className="flex flex-col gap-y-3 pb-4">
-                    {donations.map((donation, index) => (
-                        <div
-                            key={index}
-                            className="flex justify-between items-center p-3 bg-secondary/10 rounded-lg"
-                        >
-                            <span className="text-sm font-medium">
-                                {donation.name}
-                            </span>
-                            <Badge variant="secondary">
-                                {t("currency")} {donation.amount}
-                            </Badge>
-                        </div>
-                    ))}
-                </div>
+            <div className="flex flex-col gap-y-3">
+                {donations.map((donation, index) => (
+                    <div
+                        key={index}
+                        className="flex justify-between items-center p-3 bg-secondary/10 rounded-lg"
+                    >
+                        <span className="text-sm font-medium">
+                            {donation.name}
+                        </span>
+                        <Badge variant="secondary">
+                            {t("currency")} {donation.amount}
+                        </Badge>
+                    </div>
+                ))}
             </div>
         </div>
     );
