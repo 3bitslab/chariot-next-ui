@@ -93,7 +93,7 @@ interface CheckpointProps {
     landmark?: string;
     history: { year: number; utc_time: string }[];
     delta: number | null;
-    checkpointIndex: string;
+    checkpointIndex: number;
 }
 
 function Checkpoint({
@@ -123,7 +123,7 @@ function Checkpoint({
         <div
             className="flex flex-col rounded-xl bg-white p-5 shadow dark:bg-primary-800 cursor-pointer hover:bg-primary-50 dark:hover:bg-primary-700 transition-colors"
             onClick={() => {
-                setSelectedCheckpoint(parseInt(checkpointIndex));
+                setSelectedCheckpoint(checkpointIndex);
                 setCheckpoint(true);
                 setCurrentDrawer(null);
             }}

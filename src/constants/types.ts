@@ -37,7 +37,7 @@ export type TCheckpointsResponse = {
         city: string;
     };
     _id: string;
-    checkpointIndex: string;
+    checkpointIndex: number;
     coordinates: Location;
     visited: boolean;
     history: TCheckpointHistory[];
