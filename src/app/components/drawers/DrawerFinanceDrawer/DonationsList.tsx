@@ -15,6 +15,8 @@ const donations: Donation[] = [
     { name: "K******* A/L M A********", amount: 10 },
     { name: "L** E S****", amount: 30 },
     { name: "L****** M******* A/P K**", amount: 5 },
+    { name: "M***** A/P R**********", amount: 30 },
+    { name: "M**** A/L N*******", amount: 100 },
     { name: "M****** M********", amount: 100 },
     { name: "N******* A/L R*********", amount: 50 },
     { name: "P***** A/P S**********", amount: 30 },
@@ -30,11 +32,16 @@ const DonationsList = () => {
 
     return (
         <div className="flex flex-col">
-            <div className="flex justify-between items-center p-4 bg-primary/10 rounded-lg mb-4">
-                <span className="font-semibold">{t("totalDonations")}</span>
-                <Badge variant="default" className="text-lg">
-                    {t("currency")} {total}
-                </Badge>
+            <div className="flex flex-col p-4 bg-primary/10 rounded-lg mb-4">
+                <div className="flex justify-between items-center">
+                    <span className="font-semibold">{t("totalDonations")}</span>
+                    <Badge variant="default" className="text-lg">
+                        {t("currency")} {total}
+                    </Badge>
+                </div>
+                <span className="text-xs text-muted-foreground/75 mt-2">
+                    {t("donationNotice")}
+                </span>
             </div>
             <div className="flex flex-col gap-y-3">
                 {donations.map((donation, index) => (

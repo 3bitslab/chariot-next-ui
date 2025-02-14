@@ -161,6 +161,7 @@
         "totalExpenses": "总支出",
         "currency": "MYR",
         "privacyNotice": "* 为保护捐赠者隐私，姓名已部分隐藏",
+        "donationNotice": "* 剩余资金将结转至下一年度支出。",
         "lastUpdated": "* 最后更新于2025年2月14日",
         "donations": "捐款",
         "expenses": "支出",
