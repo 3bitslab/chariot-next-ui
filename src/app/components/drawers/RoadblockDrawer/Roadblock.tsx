@@ -6,7 +6,7 @@ import { RoadblockIcon } from "../../markers/RoadBlock";
 import { useTranslations } from "next-intl";
 import { useAtom } from "jotai";
 import { roadBlockAtom, selectedRoadblockAtom } from "@/atoms/road-block";
-import { drawerAtom } from "@/atoms/drawer";
+import { drawerAtom } from "@/atoms/drawerAtom";
 
 const Roadblock = ({
     streetName,

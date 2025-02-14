@@ -97,6 +97,7 @@
             "title": "Terma dan Syarat",
             "acceptTerms": "Saya menerima Terma dan Syarat",
             "supportNow": "Sokong sekarang!",
+            "finance": "Lihat Kewangan",
             "items": {
                 "independentInitiative": "Inisiatif Bebas: Projek ini, yang dikenali sebagai Penjejak Pedati Perak Pulau Pinang, dibangunkan dan dikendalikan oleh ByeByte Technologies, sebuah syarikat bebas. Dengan menderma, anda mengakui dan bersetuju bahawa Penjejak Chariot adalah inisiatif yang dibangunkan secara peribadi oleh penciptanya, Manickam Murugappan dan Lee Zi Hang, dan tidak mempunyai sebarang pertalian dengan mana-mana kuil, organisasi agama, atau jawatankuasa.",
                 "purposeOfDonations": "Tujuan Derma: Semua derma yang diterima akan digunakan sepenuhnya untuk penciptaan, penyelenggaraan, dan meningkatkan keberkesanan projek Penjejak Pedati Perak Pulau Pinang. Ini termasuk, tetapi tidak terhad kepada, kos pembangunan perisian, yuran pelayan dan hosting, serta perbelanjaan operasi lain.",
@@ -152,5 +153,23 @@
         "seconds_ago": "saat yang lalu",
         "minute_ago": "minit yang lalu",
         "minutes_ago": "minit yang lalu"
+    },
+    "Financial":{
+        "title": "Kewangan",
+        "total": "Jumlah",
+        "totalDonations": "Jumlah Derma",
+        "totalExpenses": "Jumlah Perbelanjaan",
+        "currency": "MYR",
+        "privacyNotice": "* Nama dirahsiakan untuk melindungi privasi penderma",
+        "lastUpdated": "* Kemas kini terakhir pada 14 Februari 2025.",
+        "donations": "Derma",
+        "expenses": "Perbelanjaan",
+        "expenseItems": {
+            "banners": "Sepanduk",
+            "gps": "GPS",
+            "gpsNote": "* Maklumat tepat berkaitan GPS tidak didedahkan kerana teknologi proprietari.",
+            "hosting": "Yuran Pengehosan Laman Web",
+            "domain": "Kos Domain"
+        }
     }
 }

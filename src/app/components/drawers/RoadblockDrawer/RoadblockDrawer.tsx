@@ -16,7 +16,7 @@ import {
     roadblockYearModesAtom,
     selectedRoadblockAtom,
 } from "@/atoms/road-block";
-import { drawerAtom } from "@/atoms/drawer";
+import { drawerAtom } from "@/atoms/drawerAtom";
 import { useAtom } from "jotai";
 import { useTranslations } from "next-intl";
 import { Analytics } from "@/utils/mixpanel";

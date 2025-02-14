@@ -97,6 +97,7 @@
             "title": "Terms and Conditions",
             "acceptTerms": "I accept the Terms and Conditions",
             "supportNow": "Support now!",
+            "finance": "View Financials",
             "items": {
                 "independentInitiative": "Independent Initiative: This project, known as the Penang Silver Chariot Tracker, is developed and managed by ByeByte Technologies, an independent company. By donating, you acknowledge and agree that the Chariot Tracker is a privately developed initiative led by its creators, Manickam Murugappan and Lee Zi Hang, and is not affiliated with any temple, religious organization, or committee.",
                 "purposeOfDonations": "Purpose of Donations: All funds received will be used exclusively for the development, maintenance, and enhancement of the Penang Silver Chariot Tracker project. This includes, but is not limited to, software development costs, server and hosting fees, and other operational expenses necessary for the functioning of the project.",
@@ -152,5 +153,23 @@
         "seconds_ago": "seconds ago",
         "minute_ago": "minute ago",
         "minutes_ago": "minutes ago"
+    },
+    "Financial":{
+        "title": "Financials",
+        "total": "Total",
+        "totalDonations": "Total Donations",
+        "totalExpenses": "Total Expenses",
+        "currency": "MYR",
+        "privacyNotice": "* Names are partially hidden to protect donor privacy",
+        "lastUpdated": "* Last updated on February 14, 2025.",
+        "donations": "Donations",
+        "expenses": "Expenses",
+        "expenseItems": {
+            "banners": "Banners",
+            "gps": "GPS",
+            "gpsNote": "* Exact GPS-related information is not disclosed due to proprietary technology.",
+            "hosting": "Website Hosting Fees",
+            "domain": "Domain Cost"
+        }
     }
 }

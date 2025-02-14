@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/drawer";
 import React from "react";
 import { useAtom } from "jotai";
-import { drawerAtom } from "@/atoms/drawer";
+import { drawerAtom } from "@/atoms/drawerAtom";
 import { UserIcon } from "lucide-react";
 import { DEVELOPERS } from "@/constants/developers";
 import Developer from "./Developer";

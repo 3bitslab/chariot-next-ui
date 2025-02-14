@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { vehicleAtom } from "@/atoms/vehicle";
 import { useAtom } from "jotai";
 import { checkpointAtom, selectedCheckpointAtom } from "@/atoms/checkpoint";
-import { drawerAtom } from "@/atoms/drawer";
+import { drawerAtom } from "@/atoms/drawerAtom";
 import { env } from "@/env";
 
 function formatDateAndTime(timestamp: string) {

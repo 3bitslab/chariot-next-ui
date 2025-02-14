@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/drawer";
 import React from "react";
 import { useAtom } from "jotai";
-import { drawerAtom } from "@/atoms/drawer";
+import { drawerAtom } from "@/atoms/drawerAtom";
 import { Info } from "lucide-react";
 import AboutUsTabs from "./AboutUsTabs";
 

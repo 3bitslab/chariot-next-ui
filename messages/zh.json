@@ -97,6 +97,7 @@
             "title": "条款与条件",
             "acceptTerms": "我接受条款和条件",
             "supportNow": "立即支持",
+            "finance": "查看财务",
             "items": {
                 "independentInitiative": "独立项目：本项目，即 槟城银辇追踪器(Penang Silver Chariot Tracker)，由 ByeByte Technologies 独立开发和管理。捐赠者必须承认并同意该追踪器项目是由 Manickam Murugappan 和 Lee Zi Hang 二人所领导和运营的私人项目，并与任何寺庙、宗教组织或委员会无关。",
                 "purposeOfDonations": "捐款用途：所有收到的资金将专用于槟城银辇追踪器项目的开发、维护和改进，包括但不限于软件开发成本、服务器和托管费用，以及项目正常运行所需的其他运营开支。",
@@ -152,5 +153,23 @@
         "seconds_ago": "秒前",
         "minute_ago": "分钟前",
         "minutes_ago": "分钟前"
+    },
+    "Financial":{
+        "title": "财务",
+        "total": "总额",
+        "totalDonations": "总捐款",
+        "totalExpenses": "总支出",
+        "currency": "MYR",
+        "privacyNotice": "* 为保护捐赠者隐私，姓名已部分隐藏",
+        "lastUpdated": "* 最后更新于2025年2月14日",
+        "donations": "捐款",
+        "expenses": "支出",
+        "expenseItems": {
+            "banners": "横幅",
+            "gps": "GPS",
+            "gpsNote": "* 由于专有技术原因，不披露具体GPS相关信息。",
+            "hosting": "网站托管费用",
+            "domain": "域名费用"
+        }
     }
 }

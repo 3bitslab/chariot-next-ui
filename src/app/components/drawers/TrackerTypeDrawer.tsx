@@ -11,7 +11,7 @@ import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useAtom } from "jotai";
 import { vehicleAtom } from "@/atoms/vehicle";
-import { drawerAtom } from "@/atoms/drawer";
+import { drawerAtom } from "@/atoms/drawerAtom";
 import Divider from "../Divider";
 import ChariotIcon from "../icons/Chariot";
 import KavadiIcon from "../icons/Kavadi";
