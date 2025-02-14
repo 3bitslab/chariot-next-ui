@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge";
 function DrawerFinanceDrawer() {
     const [currentDrawer, setCurrentDrawer] = useAtom(drawerAtom);
     const [isExpenses, setIsExpenses] = useState(true);
-    const isOpen = currentDrawer?.type === "drawerFinance";
+    const isOpen = currentDrawer?.type === "finance";
     const t = useTranslations("Financial");
 
     return (
@@ -19,8 +19,8 @@ function DrawerFinanceDrawer() {
             open={isOpen}
             onOpenChange={(open) => {
                 if (open) {
-                    setCurrentDrawer({ type: "drawerFinance" });
-                } else if (currentDrawer?.type === "drawerFinance") {
+                    setCurrentDrawer({ type: "finance" });
+                } else if (currentDrawer?.type === "finance") {
                     setCurrentDrawer(null);
                 }
             }}

@@ -10,7 +10,7 @@ export type DrawerType =
     | "developers"
     | "roadblock"
     | "support"
-    | "drawerFinance";
+    | "finance";
 
 export type DrawerPosition = "right" | "left";
 

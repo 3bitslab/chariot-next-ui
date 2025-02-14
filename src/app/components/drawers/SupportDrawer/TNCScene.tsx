@@ -42,7 +42,7 @@ function TNCScene({
                 <Button
                     variant="secondary"
                     className="flex items-center gap-x-2 bg-primary-600 text-primary-150 dark:bg-primary-50 dark:text-primary-800 opacity-80"
-                    onClick={() => setCurrentDrawer({ type: "drawerFinance" })}
+                    onClick={() => setCurrentDrawer({ type: "finance" })}
                 >
                     {t("finance")}
                 </Button>
