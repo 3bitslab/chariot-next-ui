@@ -15,7 +15,7 @@ const expenses: Expense[] = [
         amount: 117,
         note: "* Exact GPS-related information is not disclosed due to proprietary technology.",
     },
-    { name: "Website Hosting Fees", amount: 377 },
+    { name: "Infrastructure Cost", amount: 377 },
     { name: "Domain Cost", amount: 49 },
 ];
 
