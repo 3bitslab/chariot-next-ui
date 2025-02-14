@@ -36,7 +36,7 @@ const DonationsList = () => {
                     {t("currency")} {total}
                 </Badge>
             </div>
-            <div className="flex flex-col gap-y-3">
+            <div className="flex flex-col gap-y-3 h-[300px] overflow-y-auto">
                 {donations.map((donation, index) => (
                     <div
                         key={index}
