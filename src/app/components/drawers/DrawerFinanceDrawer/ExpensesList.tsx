@@ -9,14 +9,14 @@ interface Expense {
 }
 
 const expenses: Expense[] = [
-    { name: "Banners", amount: 255 },
+    { name: "banners", amount: 255 },
     {
-        name: "GPS",
+        name: "gps",
         amount: 117,
-        note: "* Exact GPS-related information is not disclosed due to proprietary technology.",
+        note: "gpsNote",
     },
-    { name: "Infrastructure Cost", amount: 377 },
-    { name: "Domain Cost", amount: 49 },
+    { name: "hosting", amount: 377 },
+    { name: "domain", amount: 49 },
 ];
 
 const ExpensesList = () => {
@@ -40,7 +40,7 @@ const ExpensesList = () => {
                         >
                             <div className="flex justify-between items-center">
                                 <span className="text-sm font-medium">
-                                    {expense.name}
+                                    {t(`expenseItems.${expense.name}`)}
                                 </span>
                                 <Badge variant="secondary">
                                     {t("currency")} {expense.amount}
@@ -48,7 +48,7 @@ const ExpensesList = () => {
                             </div>
                             {expense.note && (
                                 <span className="text-xs text-muted-foreground mt-2">
-                                    {expense.note}
+                                    {t(`expenseItems.${expense.note}`)}
                                 </span>
                             )}
                         </div>
