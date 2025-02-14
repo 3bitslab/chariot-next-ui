@@ -6,7 +6,7 @@ import Divider from "../Divider";
 import { useTranslations } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import { useAtom } from "jotai";
-import { drawerAtom } from "@/atoms/drawer";
+import { drawerAtom } from "@/atoms/drawerAtom";
 import { languageAtom } from "@/atoms/language";
 
 interface LanguageDrawerProps {

@@ -1,6 +1,6 @@
 "use client";
 
-import { drawerAtom } from "@/atoms/drawer";
+import { drawerAtom } from "@/atoms/drawerAtom";
 import { languageAtom } from "@/atoms/language";
 import { analyticsConsentAtom, dntStatusAtom } from "@/atoms/analytics";
 import { Analytics } from "@/utils/mixpanel";

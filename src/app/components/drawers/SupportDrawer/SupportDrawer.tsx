@@ -6,7 +6,7 @@ import {
 } from "@/components/ui/drawer";
 import React, { useState } from "react";
 import { useAtom } from "jotai";
-import { drawerAtom } from "@/atoms/drawer";
+import { drawerAtom } from "@/atoms/drawerAtom";
 import { HeartIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import TNCScene from "./TNCScene";

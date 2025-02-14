@@ -10,7 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import Checkpoint from "./Checkpoint";
 import Divider from "../../Divider";
 import { checkpointAtom, selectedCheckpointAtom } from "@/atoms/checkpoint";
-import { drawerAtom } from "@/atoms/drawer";
+import { drawerAtom } from "@/atoms/drawerAtom";
 import { useAtom } from "jotai";
 import { Switch } from "@/components/ui/switch";
 import { useGetCheckpoints } from "@/hooks/useGetCheckpoints";

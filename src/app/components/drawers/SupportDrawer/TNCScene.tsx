@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { HeartIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { useAtom } from "jotai";
-import { drawerAtom } from "@/atoms/drawer";
+import { drawerAtom } from "@/atoms/drawerAtom";
 
 function TNCScene({
     handleSceneChange,

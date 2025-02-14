@@ -1,7 +1,7 @@
 import { Drawer, DrawerContent, DrawerTitle } from "@/components/ui/drawer";
 import React, { useEffect } from "react";
 import { useAtom } from "jotai";
-import { drawerAtom } from "@/atoms/drawer";
+import { drawerAtom } from "@/atoms/drawerAtom";
 import Selectables from "../shared/Selectables";
 import { TSelectableItem } from "@/constants/types";
 import { ComputerIcon, MoonIcon, SunIcon } from "lucide-react";
