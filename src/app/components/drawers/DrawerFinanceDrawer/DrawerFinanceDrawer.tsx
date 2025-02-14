@@ -34,6 +34,13 @@ function DrawerFinanceDrawer() {
                             </span>
                             <div className="flex gap-2">
                                 <Badge
+                                    variant={isExpenses ? "default" : "outline"}
+                                    className="cursor-pointer px-4 py-2"
+                                    onClick={() => setIsExpenses(true)}
+                                >
+                                    {t("expenses")}
+                                </Badge>
+                                <Badge
                                     variant={
                                         !isExpenses ? "default" : "outline"
                                     }
@@ -41,13 +48,6 @@ function DrawerFinanceDrawer() {
                                     onClick={() => setIsExpenses(false)}
                                 >
                                     {t("donations")}
-                                </Badge>
-                                <Badge
-                                    variant={isExpenses ? "default" : "outline"}
-                                    className="cursor-pointer px-4 py-2"
-                                    onClick={() => setIsExpenses(true)}
-                                >
-                                    {t("expenses")}
                                 </Badge>
                             </div>
                         </div>

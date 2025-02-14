@@ -163,6 +163,13 @@
         "privacyNotice": "* Names are partially hidden to protect donor privacy",
         "lastUpdated": "* Last updated on February 14, 2025.",
         "donations": "Donations",
-        "expenses": "Expenses"
+        "expenses": "Expenses",
+        "expenseItems": {
+            "banners": "Banners",
+            "gps": "GPS",
+            "gpsNote": "* Exact GPS-related information is not disclosed due to proprietary technology.",
+            "hosting": "Website Hosting Fees",
+            "domain": "Domain Cost"
+        }
     }
 }
