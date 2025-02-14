@@ -1,6 +1,5 @@
 import React from "react";
 import { Badge } from "@/components/ui/badge";
-import { ScrollArea } from "@radix-ui/react-scroll-area";
 import { useTranslations } from "next-intl";
 
 interface Donation {
@@ -31,7 +30,13 @@ const DonationsList = () => {
 
     return (
         <div className="flex flex-col h-full">
-            <ScrollArea className="flex-1 rounded-md mb-4">
+            <div className="flex justify-between items-center p-4 bg-primary/10 rounded-lg mb-4">
+                <span className="font-semibold">{t("total")}</span>
+                <Badge variant="default" className="text-lg">
+                    {t("currency")} {total}
+                </Badge>
+            </div>
+            <div className="flex-1 rounded-md overflow-y-auto">
                 <div className="space-y-2">
                     {donations.map((donation, index) => (
                         <div
@@ -47,13 +52,6 @@ const DonationsList = () => {
                         </div>
                     ))}
                 </div>
-            </ScrollArea>
-
-            <div className="flex justify-between items-center p-4 bg-primary/10 rounded-lg sticky bottom-0">
-                <span className="font-semibold">{t("total")}</span>
-                <Badge variant="default" className="text-lg">
-                    {t("currency")} {total}
-                </Badge>
             </div>
         </div>
     );
