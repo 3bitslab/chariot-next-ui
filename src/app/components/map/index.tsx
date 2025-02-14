@@ -2,7 +2,6 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { MapContainer, Marker, TileLayer, useMap } from "react-leaflet";
-import { useSearchParams } from "next/navigation";
 import { LatLngExpression } from "leaflet";
 import { env } from "@/env";
 
@@ -26,11 +25,10 @@ import { useTheme } from "next-themes";
 import { createEndIcon, createStartIcon } from "@/constants/icons";
 import { useTranslations } from "next-intl";
 import { vehicleAtom } from "@/atoms/vehicle";
-import { useAtom, useSetAtom } from "jotai";
+import { useAtom } from "jotai";
 import { useGetProgressInfo } from "@/hooks/useGetProgressInfo";
 import { generatePulsatingMarker } from "@/utils/helpers";
 import { roadBlockAtom, selectedRoadblockAtom } from "@/atoms/road-block";
-import { drawerAtom, type DrawerType } from "@/atoms/drawer";
 import Roadblock from "../road-block/Roadblock";
 import CheckpointMarkers from "../markers/Checkpoint";
 import { checkpointAtom, selectedCheckpointAtom } from "@/atoms/checkpoint";
@@ -77,37 +75,6 @@ const defaults = {
 };
 
 const Map = ({ zoom = defaults.zoom }: MapProps) => {
-    const searchParams = useSearchParams();
-    const setDrawer = useSetAtom(drawerAtom);
-
-    useEffect(() => {
-        const drawerParam = Array.from(searchParams.keys()).find((param) =>
-            [
-                "settings",
-                "language",
-                "theme",
-                "tracker",
-                "about",
-                "checkpoint",
-                "developers",
-                "roadblock",
-                "support",
-                "finance",
-            ].includes(param)
-        );
-
-        if (drawerParam) {
-            console.log("Found drawer param:", drawerParam);
-            if (drawerParam === "roadblock") {
-                setDrawer({ type: "roadblock", position: "right" });
-            } else {
-                setDrawer({
-                    type: drawerParam as Exclude<DrawerType, "roadblock">,
-                });
-            }
-        }
-    }, [searchParams, setDrawer]);
-
     const { theme } = useTheme();
     const t = useTranslations("map.markers");
     const journey = env.NEXT_PUBLIC_JOURNEY;
