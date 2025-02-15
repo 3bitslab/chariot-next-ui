@@ -37,7 +37,7 @@ const ExpensesList = () => {
                             <span className="text-sm font-medium">
                                 {t(`expenseItems.${expense.name}`)}
                             </span>
-                            <Badge variant="secondary">
+                            <Badge variant="default">
                                 {t("currency")} {expense.amount}
                             </Badge>
                         </div>

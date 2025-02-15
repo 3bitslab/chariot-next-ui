@@ -20,6 +20,7 @@ const donations: Donation[] = [
     { name: "M****** M********", amount: 100 },
     { name: "N******* A/L R*********", amount: 50 },
     { name: "P***** A/P S**********", amount: 30 },
+    { name: "S.P. P********* A/L S******", amount: 51 },
     { name: "S******* A/L M*****", amount: 5 },
     { name: "S******* A/L S******", amount: 10 },
     { name: "T*** A* P***", amount: 405 },
@@ -52,7 +53,7 @@ const DonationsList = () => {
                         <span className="text-sm font-medium">
                             {donation.name}
                         </span>
-                        <Badge variant="secondary">
+                        <Badge variant="default">
                             {t("currency")} {donation.amount}
                         </Badge>
                     </div>
