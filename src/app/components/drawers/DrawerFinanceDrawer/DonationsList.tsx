@@ -12,6 +12,7 @@ const donations: Donation[] = [
     { name: "A***** S****** A/P C******", amount: 50 },
     { name: "C*** Y*** Y**", amount: 20 },
     { name: "J***** A** S* F***", amount: 50 },
+    { name: "K****** A/P R**********", amount: 100 },
     { name: "K******* A/L M A********", amount: 10 },
     { name: "L** E S****", amount: 30 },
     { name: "L****** M******* A/P K**", amount: 5 },
@@ -25,6 +26,7 @@ const donations: Donation[] = [
     { name: "S******* A/L S******", amount: 10 },
     { name: "T*** A* P***", amount: 405 },
     { name: "T********* A/P P*********", amount: 25 },
+    { name: "V****** A/L T*********", amount: 50 },
 ];
 
 const DonationsList = () => {
