@@ -29,14 +29,14 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.chariottracker.com"),
-    title: "Chariot Tracker | Real-time Penang Thaipusam Silver Chariot Location (2025)",
+    title: "Track Chariot Location | Real-time Penang Thaipusam Silver Chariot Tracker (2025)",
     description:
-        "Chariot Tracker - The most reliable real-time tracking system for Penang's Thaipusam Silver Chariot. Get instant location updates, checkpoint history, roadblock alerts, and live route tracking. Trusted by 38,000+ devotees since 2024.",
+        "Track the Silver Chariot in real-time with Chariot Tracker - Penang's most reliable tracking system for Thaipusam. Get instant location updates, live tracking alerts, and route information. Track every movement with precision. Trusted by 38,000+ devotees since 2024.",
     keywords: [
-        "Chariot Tracker",
-        "Best Chariot Tracking App",
-        "Real-time Chariot Tracker",
-        "Live Chariot Location",
+        "Track Chariot Location",
+        "Track Silver Chariot",
+        "Real-time Chariot Tracking",
+        "Live Track Chariot",
         "Penang Thaipusam 2025",
         "Silver Chariot Location",
         "Thaipusam Festival Penang",
@@ -74,9 +74,9 @@ export const metadata: Metadata = {
         url: true,
     },
     openGraph: {
-        title: "Chariot Tracker | Independent Real-time Thaipusam Silver Chariot Tracking App",
+        title: "Track Silver Chariot | Real-time Thaipusam Chariot Tracking App",
         description:
-            "Independent Chariot Tracker for Penang Thaipusam 2025. Get real-time location updates, checkpoint alerts, and live route tracking. Join 38,000+ users for accurate silver chariot tracking.",
+            "Track the Silver Chariot during Penang Thaipusam 2025 in real-time. Get precise location tracking, checkpoint alerts, and live route updates. Join 38,000+ users tracking the chariot's journey with accuracy.",
         url: "https://www.chariottracker.com",
         siteName: "Chariot Tracker",
         images: [
@@ -93,9 +93,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Chariot Tracker | Real-time Thaipusam Updates",
+        title: "Track Silver Chariot | Real-time Thaipusam Location Tracking",
         description:
-            "Real-time chariot tracking app. Get instant location updates, checkpoint timings, and live route information for Penang Thaipusam 2025.",
+            "Track the Silver Chariot in real-time during Thaipusam 2025. Get precise location tracking, instant updates, and live route information for Penang's sacred journey.",
         site: "@byebytetech",
         creator: "@byebytetech",
         images: ["/assets/byebyte-1200x675.png"],

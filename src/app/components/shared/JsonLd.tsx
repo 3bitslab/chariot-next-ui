@@ -6,11 +6,14 @@ export default function JsonLd() {
             "@type": "WebApplication",
             name: "Chariot Tracker",
             alternateName: [
+                "Track Silver Chariot",
+                "Track Chariot Location",
                 "Penang Chariot Tracker",
                 "Thaipusam Chariot Tracker",
+                "Real-time Chariot Tracking",
             ],
             description:
-                "Independent real-time chariot tracking application. Get instant location updates, checkpoint alerts, and live route information for Penang Thaipusam 2025.",
+                "Track the Silver Chariot in real-time with Malaysia's most advanced tracking application. Get precise location tracking, instant updates, checkpoint alerts, and live route information for Penang Thaipusam 2025.",
             url: "https://www.chariottracker.com",
             applicationCategory: "TrackingTool",
             operatingSystem: "Windows, macOS, Linux, iOS, Android",
@@ -32,12 +35,14 @@ export default function JsonLd() {
                 validThrough: `${currentYear}-12-31`,
             },
             featureList: [
-                "Real-time GPS tracking with live updates",
+                "Real-time GPS tracking with live location updates every few seconds",
+                "Precise chariot position tracking with advanced GPS technology",
                 "Multi-language support (English, Tamil, Malay, Chinese)",
-                "Interactive map with checkpoint markers",
-                "Instant checkpoint notifications",
-                "Roadblock and traffic information",
-                "Historical tracking data",
+                "Interactive tracking map with checkpoint markers",
+                "Track checkpoints and get instant notifications",
+                "Live roadblock and traffic tracking",
+                "Historical tracking data with route replay",
+                "Track multiple aspects of the chariot journey",
             ],
             screenshot: [
                 {
@@ -167,18 +172,18 @@ export default function JsonLd() {
             mainEntity: [
                 {
                     "@type": "Question",
-                    name: "What is the Chariot Tracker?",
+                    name: "How can I track the Silver Chariot's location?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Chariot Tracker is an independent real-time tracking application for following the silver chariot during Thaipusam in Penang. Our advanced GPS tracking system provides precise location updates, estimated arrival times, roadblock information, and important announcements. Used and trusted by 38,000+ devotees and visitors.",
+                        text: "You can easily track the Silver Chariot's location in real-time using Chariot Tracker. Our advanced GPS tracking system provides precise location updates every few seconds, showing you exactly where the chariot is on its sacred journey. Simply visit our website to start tracking - no installation required. Used and trusted by 38,000+ devotees for accurate tracking.",
                     },
                 },
                 {
                     "@type": "Question",
-                    name: "Why choose Chariot Tracker?",
+                    name: "What makes Chariot Tracker the best tracking solution?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Chariot Tracker is the most reliable and accurate tracking system for Penang's Thaipusam silver chariot. We provide real-time GPS updates every few seconds, comprehensive checkpoint information, and instant notifications. Our tracking system is specifically optimized for George Town's urban environment.",
+                        text: "Chariot Tracker is the most reliable and accurate tracking system for Penang's Thaipusam silver chariot. We provide real-time GPS tracking updates every few seconds, comprehensive checkpoint tracking, and instant notifications. Our tracking system is specifically optimized for George Town's urban environment, ensuring you never lose track of the chariot's location.",
                     },
                 },
                 {
@@ -191,18 +196,18 @@ export default function JsonLd() {
                 },
                 {
                     "@type": "Question",
-                    name: "What features does Chariot Tracker offer?",
+                    name: "What tracking features does Chariot Tracker offer?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Chariot Tracker provides real-time GPS location tracking, estimated arrival times at checkpoints, live roadblock updates, multi-language support (English, Tamil, Malay, Chinese), interactive maps, historical tracking data, and offline mode support.",
+                        text: "Chariot Tracker offers comprehensive tracking features including real-time GPS location tracking, precise position monitoring, estimated arrival times at checkpoints, live roadblock tracking, multi-language support (English, Tamil, Malay, Chinese), interactive tracking maps, historical tracking data with route replay, and offline mode support.",
                     },
                 },
                 {
                     "@type": "Question",
-                    name: "How accurate is Chariot Tracker?",
+                    name: "How accurate is the tracking in Chariot Tracker?",
                     acceptedAnswer: {
                         "@type": "Answer",
-                        text: "Chariot Tracker uses advanced real-time GPS technology with updates every few seconds, providing the most accurate location data for the silver chariot in Penang. Our system is specifically optimized for George Town's urban environment and maintains high accuracy even in crowded conditions.",
+                        text: "Chariot Tracker uses advanced real-time GPS tracking technology with updates every few seconds, providing the most accurate location tracking data for the silver chariot in Penang. Our tracking system is specifically optimized for George Town's urban environment and maintains high accuracy even in crowded conditions, ensuring you can track the chariot's exact position at all times.",
                     },
                 },
                 {

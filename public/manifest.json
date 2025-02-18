@@ -1,7 +1,7 @@
 {
-    "name": "Penang Silver Chariot Tracker",
-    "short_name": "Chariot Tracker",
-    "description": "Live tracking service for Penang Thaipusam Silver Chariot",
+    "name": "Track Silver Chariot Location | Penang Thaipusam",
+    "short_name": "Track Chariot",
+    "description": "Track the Silver Chariot in real-time during Penang Thaipusam. Get precise location tracking, live updates, and instant notifications.",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
