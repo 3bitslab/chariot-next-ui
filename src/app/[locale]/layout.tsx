@@ -74,7 +74,7 @@ export const metadata: Metadata = {
         url: true,
     },
     openGraph: {
-        title: "Chariot Tracker | #1 Real-time Thaipusam Tracking App",
+        title: "Chariot Tracker | Independent Real-time Thaipusam Silver Chariot Tracking App",
         description:
             "Independent Chariot Tracker for Penang Thaipusam 2025. Get real-time location updates, checkpoint alerts, and live route tracking. Join 38,000+ users for accurate silver chariot tracking.",
         url: "https://www.chariottracker.com",
