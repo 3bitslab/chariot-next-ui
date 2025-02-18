@@ -29,11 +29,14 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.chariottracker.com"),
-    title: "Penang Silver Chariot Tracker 2025 | Real-time Thaipusam Chariot Location in George Town",
+    title: "Chariot Tracker | Real-time Penang Thaipusam Silver Chariot Location (2025)",
     description:
-        "Independent Chariot Tracker for the 2025 Penang Thaipusam Silver Chariot – Get real-time live tracking of the chariot’s location, view checkpoint history, stay updated on PDRM roadblocks, traffic controls, and explore the full procession route in George Town, Penang. Independent chariot tracker since 2024, providing accurate and up-to-date tracking for devotees and visitors",
+        "Chariot Tracker - The most reliable real-time tracking system for Penang's Thaipusam Silver Chariot. Get instant location updates, checkpoint history, roadblock alerts, and live route tracking. Trusted by 38,000+ devotees since 2024.",
     keywords: [
         "Chariot Tracker",
+        "Best Chariot Tracking App",
+        "Real-time Chariot Tracker",
+        "Live Chariot Location",
         "Penang Thaipusam 2025",
         "Silver Chariot Location",
         "Thaipusam Festival Penang",
@@ -50,8 +53,6 @@ export const metadata: Metadata = {
         "Chettipusam Procession George Town",
         "Nagarathar Kovil Veedu to Waterfall Temple",
         "Kavadi Route Thaipusam 2025",
-        "Pulau Pinang Thaipusam Tracker",
-        "Chariot Tracker Penang",
     ],
     authors: [
         { name: "ByeByte Technologies", url: "https://www.chariottracker.com" },
@@ -59,10 +60,10 @@ export const metadata: Metadata = {
     creator: "ByeByte Technologies",
     publisher: "ByeByte Technologies",
     category: "Religious Events",
-    applicationName: "Penang Silver Chariot Tracker",
+    applicationName: "Chariot Tracker",
     appleWebApp: {
         capable: true,
-        title: "Penang Silver Chariot Tracker",
+        title: "Chariot Tracker",
         statusBarStyle: "default",
     },
     formatDetection: {
@@ -73,17 +74,17 @@ export const metadata: Metadata = {
         url: true,
     },
     openGraph: {
-        title: "Penang Silver Chariot Tracker 2025 | Live Thaipusam Route Map",
+        title: "Chariot Tracker | Independent Real-time Thaipusam Silver Chariot Tracking App",
         description:
-            "Independent Chariot Tracker for the 2025 Penang Thaipusam Silver Chariot – Get real-time live tracking of the chariot’s location, view checkpoint history, stay updated on PDRM roadblocks, traffic controls, and explore the full procession route in George Town, Penang. Independent chariot tracker since 2024, providing accurate and up-to-date tracking for devotees and visitors",
+            "Independent Chariot Tracker for Penang Thaipusam 2025. Get real-time location updates, checkpoint alerts, and live route tracking. Join 38,000+ users for accurate silver chariot tracking.",
         url: "https://www.chariottracker.com",
-        siteName: "Penang Silver Chariot Tracker",
+        siteName: "Chariot Tracker",
         images: [
             {
                 url: "/assets/byebyte-1200x630.png",
                 width: 1200,
                 height: 630,
-                alt: "Penang Silver Chariot",
+                alt: "Chariot Tracker - Real-time Silver Chariot Location",
             },
         ],
         locale: "en_US",
@@ -92,9 +93,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Chariot Tracker Penang | Live Thaipusam 2025 Updates",
+        title: "Chariot Tracker | Real-time Thaipusam Updates",
         description:
-            "Track Penang's Thaipusam Silver Chariot procession in real-time with Penang's most reliable chariot tracker. Get instant location updates, checkpoint timings, and route information in George Town.",
+            "Real-time chariot tracking app. Get instant location updates, checkpoint timings, and live route information for Penang Thaipusam 2025.",
         site: "@byebytetech",
         creator: "@byebytetech",
         images: ["/assets/byebyte-1200x675.png"],
@@ -240,7 +241,7 @@ export default async function RootLayout({
                         __html: JSON.stringify({
                             "@context": "https://schema.org",
                             "@type": "Event",
-                            name: "Penang Thaipusam Chariot Tracker",
+                            name: "Chariot Tracker - Penang Thaipusam 2025",
                             startDate: "2025-02-10T06:00:00+08:00",
                             endDate: "2025-02-11T22:00:00+08:00",
                             eventStatus: "https://schema.org/EventScheduled",
@@ -257,7 +258,7 @@ export default async function RootLayout({
                                 },
                             },
                             description:
-                                "Real-time live tracker for the Penang Thaipusam Silver Chariot procession. Get instant updates on location, roadblocks, and route details.",
+                                "Independent real-time chariot tracking system. Get instant location updates, checkpoint alerts, and live route information for Penang Thaipusam 2025.",
                             image: [
                                 "https://www.chariottracker.com/assets/byebyte-1200x630.png",
                             ],
